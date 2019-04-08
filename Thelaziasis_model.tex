@@ -1,0 +1,195 @@
+
+\documentclass[preprint,12pt]{elsarticle}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{lineno}
+\journal{Journal Name}
+\begin{document}
+\begin{frontmatter}
+%% Title, authors and addresses
+
+\title{A Mathematical model for Thelaziasis in a multihost setting}
+
+\author{Olmos Liceaga D., Diaz-Infante Velasco S., Acu\~na Zegarra M. A.}
+\address{Universidad de Sonora}
+\begin{abstract}
+%% Text of abstract
+In the present manuscript we present a mathematical model for thelaziasis. We consider outbreak studies and estimate the severity of the disease. We base our study on a multiple hosts ...
+\end{abstract}
+
+\begin{keyword}
+Thelaziasis \sep Mathematical Model \sep Parameter Estimation \sep Basic Reproductive number
+%% keywords here, in the form: keyword \sep keyword
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+\linenumbers
+
+%% main text
+\section{Introduction}
+\label{S:1}
+
+\noindent The disease. Hosts. What are the effects on the infected individuals. Where has been found. What is the vector in each case. Case studies. The use of a mathematical model to study a particular place.
+
+\noindent Thelaziasis is a vector neglected disease that affects mainly mammals, including humans and in a minor scales, birds. The transmission takes place due to the presence of a vector which is the face fly \textit{Musca autumnalis}. Depending on the region this vector might vary as well as the host species.
+
+\noindent The transmission depends upon the presence of vectors and therefore thelaziasis has a seasonal occurrence \cite{Asrat:2016}
+
+\noindent The transmitted by the face fly \cite{Otranto:2003}. The disease has spread in animals but in humans it has been reported but in a very isolated cases \cite{Wang:2014}, \cite{Otranto:2008}, \cite{shen:2006}.\\
+
+\noindent In \cite{Moolenbeek:1980} it was found the presence of \textit{Thelazia gulosa} and \textit{Thelazia lacrymalis} in cattle where the main responsible vector is the face fly (\textit{Musca autumnalis}) in which of larvae of \textit{Thelaszia spp} were found. Data from slaugtered cattle was collected from April to October
+1978. In \cite{Lyons:2000} the authors present a survey for different diseases in equids in Kentucky USA. In their study, they found the presence \textit{Thelazia Lacrymalis} in which it is pressumed that the face fly (\textit{Musca autumnalis}) is the vector responsible for transmission. Otranto et. al. \cite{Otranto:2003} made a survey in different regions in Italy to observe the current status on dogs, cats and foxes. In their work they present the proportion of infected animals (by \textit{Thelazia Callipaeda}) in each of the regions they studied. In \cite{Dubay:2000} data about the proportions of mule deer from Wyoming and Utah by \textit{T. californiensis} was reported. Asrat \cite{Asrat:2016} sudy the prevalence of Thelaziasis in Ethiopia whereas Beitel \cite{Beitel:1974} studied the prevalence of eyeworms in the columbian black tailed deer in Oregon, USA by \textit{Thelazia californiensis}. Khedri et. al. \cite{Khedri:2016} present a one year data about infected bovine in Southeast Iran (puede ser útil).
+
+\noindent In \cite{Ohara:1989}, the authors present a study about the prevalence and intensity of \textit{Thelazia spp} in a flies population in Alberta, Canada.
+
+
+In \cite{Beitel:1974} studied the prevalence of eyeworms in the Columbian Black-Tailed Deer in Oregon. 
+
+A special work was done in \cite{Moolenbeek:1980} were it was estimated the proportion of infected animals as well as the proportion of infected vectors.
+
+\subsection{Some questions to explore.}
+\noindent An important issue in this disease is that the propagation coincides with the presence of flies that carry the disease. If the life expectancy of the fly is reduced, then
+the complete cycle of the thelazia within the vector does not complete and therefore, the 
+disease no longer can be transmitted. Therefore, it might be expected that as soon as the temperature of a place of study is reduced, then the levels of the infected individuals 
+with thelazia, must reach a final steady level.
+
+\noindent In the mathematical side, analyse the model about stability, persistance, what would happen if stochasticity gets implemented? how?
+
+\subsection{Model parameters}
+\noindent Flies have a life expectancy of about 28 days, but it might live up to two months (\cite{sanchez:1998}). The first larval stage (L1) of the worm is ingested by the fly when it feeds from lachrymal secretions, where in the internal organs, the worm develops into its second (L2) and third (L3) larval stages within 21 days post infection \cite{Otranto:2003}. \textit{Thelazia lacrymalis} can reach the infective stage in 12-15 days, while this takes 28-32 days for \textit{T. gulosa} \cite{Chanie:2014}. Once in the infective stage, the fly releases L3 larvae into the definite host. Finally, once in the definite host, the L3 larvae matures within 3 to 6 weeks, where the new worm deposits new eggs into the definite host becoming infective \cite{Chanie:2014}. Foxes lifespan is 2 years \cite{Devenish:2014}.
+
+\noindent We will use the model to fit two data sets. One referring to a multi-host case given
+by dogs and foxes and the second in a one host study, particularly the case of cattle.
+\subsubsection{Dogs and foxes}
+\noindent Foxes lifespan is about 2 years \cite{Devenish:2014}. Dogs lifespan is approximately 7 to 14 years \cite{selman:2013}.
+
+\subsubsection{Cattle only.}
+\noindent The problem can be seen as a simple host or multi-host when considering beef and milk cattle.
+\noindent Some considerations about the life expectancy of the individuals. A common technique 
+to detect thelazia in farming animals is done by sacrificing the animal. In this case, the infected individual is no longer part of the infection cycle and basically out of the dynamics.
+In this work we consider that the sample used to observe the proportion of infected individuals is of little to neglected significance respect to the total population.
+
+\noindent The life expectancy of beef cattle is approximately 16 to 24 months (and can be up to 30 months \cite{stanley:2003}), whereas for diary cattle is 5 to 6 years. The natural cattle life expectancy is 18 to 22 years.
+
+
+\section{Mathematical Model}
+
+\noindent We base our model in the studies done in \cite{Otranto:2003} where the disease spread over a multihost population. In their work, three host species were studied, dogs, cats and foxes. However, due to the data presented we will focus on dogs and foxes. Following the formulation in Esteva (citar Esteva 1998), we obtain that the infection rates per host $i$ and the infection rate for a fly due to a infected host $i$ are given by
+$$ \hat{\beta}_ib\frac{I_v}{N_1+N_2}$$
+$$ \hat{\beta}_{vi}b\frac{I_i}{N_1+N_2},$$
+respectively.  
+\noindent The model is a vectorial multihost SEI model and is given by
+\begin{equation}
+\begin{array}{lcl}
+\dot{S}_v&=&\Lambda_v-\frac{S_v}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\mu_vS_v\\
+\dot{L}_v&=&\frac{S_v}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\kappa_vL_v-\mu_vL_v\\
+\dot{I}_v&=&\kappa_vL_v-\mu_vI_v\\
+\dot{L}_1&=&\frac{\beta_1I_v}{N_1+N_2}\left(N_1-\left(L_1+I_1\right)\right)-\kappa_1L_1 -\mu_1 L_1 \\
+\dot{I}_1&=& \kappa_1L_1-\mu_1I_1\\
+\dot{L}_2&=&\frac{\beta_2I_v}{N_1+N_2}\left(N_2-\left(L_2+I_2\right)\right)-\kappa_2L_2 -\mu_2 L_2 \\
+\dot{I}_2&=& \kappa_2L_2-\mu_2I_2
+\end{array}
+\end{equation}
+where $\beta_i=b\hat{\beta}_i$ and $\beta_{vi}=b\hat{\beta}_{vi}.$
+
+
+For this model, the basic reproductive number is given by
+
+ \begin{equation}
+     R_0=\left(\sum_{i=1}^{2}\left(\frac{k_v}{\mu_v+k_v}\right)\left(\frac{\beta_iN_i}{\mu_v(N_1+N_2)}\right)\left(\frac{k_i}{k_i+\mu_i}\right)\left(\frac{\Lambda_v\beta_{vi}}{\mu_v\mu_i(N_1+N_2)} \right) \right)^{1/4}
+ \end{equation}
+Clearly, the root is due to the presence of the four-cycle as shown in figure (Z)
+%which is the contribution of the infection cycles fox-flies and dogs-flies.\\
+
+\begin{table*}[htb]
+	\begin{center}
+       
+		\begin{tabular}{|c|l|l|l|}
+	%		\toprule
+			\hline
+			Parameter		&	Meaning & Interval & Reference
+			\\
+			\hline
+			$N_v$, & Vector limit carrying capacity&&This study
+			\\
+			$N_i$,& Total number of individuals $i=1,2$ &&This study
+			\\
+			$\Lambda_v$,& Vector recruitment rate & & This study
+			\\
+			$b$,&number of fly stops per time unit& &This study
+			\\
+			$\hat{\beta}_1$, $\hat{\beta}_2$& probability of successful contact that &&
+				\\
+			& infect a host &&
+				\\
+			$\hat{\beta}_{v1}$, $\hat{\beta}_{v2}$& probability of successful contact that &&
+				\\
+			& infect a vector by a host $i$ &&
+				\\
+			$k_v^{-1}$	& average latency time for vectors &&
+			\\
+			$k_{i}^{-1}$
+			&
+				average latency time for hosts $i=1,2$ &&
+			\\
+			 $\mu_v^{-1}$	& vector average lifespan &&
+			\\
+			$\mu_i$
+			&
+				host average lifespan $i=1,2$&& 
+			\\
+			
+			\hline
+%		\bottomrule
+		\end{tabular}
+	\end{center}
+	\caption{
+		Meaning of variables. Time in days.	}
+\end{table*}
+
+
+
+
+\section{Local and global stability analysis}
+\noindent This part is practically done
+\subsection{Persistance}
+
+
+
+\section{A multiple host multiple vector model with latency. hahaha done already! But has not been done with latency in the vector.}
+\begin{equation}
+\begin{array}{lcl}
+\dot{S}_{v1}&=&\Lambda_{v1}-\frac{S_{v1}}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\mu_{v1}S_{v1}\\
+\dot{L}_{v1}&=&\frac{S_{v1}}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\kappa_{v1}L_{v1}-\mu_{v1}L_{v1}\\b v|  u1hg
+\dot{I}_{v1}&=&\kappa_{v1}L_{v1}-\mu_{v1}I_{v1}\\
+
+\dot{S}_{v2}&=&\Lambda_{v2}-\frac{S_{v2}}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\mu_{v2}S_{v2}\\
+\dot{L}_{v2}&=&\frac{S_{v2}}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\kappa_{v2}L_{v2}-\mu_{v2}L_{v2}\\
+\dot{I}_{v2}&=&\kappa_{v2}L_{v2}-\mu_{v2}I_{v2}\\
+
+\dot{L}_1&=&\frac{\beta_1N_1(I_{v1}+I_{v2})}{(N_1+N_2)^2}\left(N_1-\left(L_1+I_1\right)\right)-\kappa_1L_1 -\mu_1 L_1 \\
+\dot{I}_1&=& \kappa_1L_1-\mu_1I_1\\
+
+\dot{L}_2&=&\frac{\beta_2N_2(I_{v1})}{(N_1+N_2)^2}\left(N_2-\left(L_2+I_2\right)\right)-\kappa_2L_2 -\mu_2 L_2 \\
+\dot{I}_2&=& \kappa_2L_2-\mu_2I_2
+
+\end{array}
+\end{equation}
+
+\section{Data analysis}
+\section{Discussion}
+
+
+
+\textbf{Bibliography}
+\bibliographystyle{model1-num-names}
+\bibliography{thelazbiblio.bib}
+\end{document}
