@@ -35,7 +35,7 @@ Thelaziasis \sep Mathematical Model \sep Parameter Estimation \sep Basic Reprodu
 
 %% main text
 \section{Introduction}
-\label{S:1}
+\label{Section:Intro}
 
 \noindent The disease. Hosts. What are the effects on the infected individuals. Where has been found. What is the vector in each case. Case studies. The use of a mathematical model to study a particular place.
 
@@ -64,12 +64,12 @@ with thelazia, must reach a final steady level.
 \noindent In the mathematical side, analyse the model about stability, persistance, what would happen if stochasticity gets implemented? how?
 
 \subsection{Model parameters}
-\noindent Flies have a life expectancy of about 28 days, but it might live up to two months (\cite{sanchez:1998}). The first larval stage (L1) of the worm is ingested by the fly when it feeds from lachrymal secretions, where in the internal organs, the worm develops into its second (L2) and third (L3) larval stages within 21 days post infection \cite{Otranto:2003}. \textit{Thelazia lacrymalis} can reach the infective stage in 12-15 days, while this takes 28-32 days for \textit{T. gulosa} \cite{Chanie:2014}. Once in the infective stage, the fly releases L3 larvae into the definite host. Finally, once in the definite host, the L3 larvae matures within 3 to 6 weeks, where the new worm deposits new eggs into the definite host becoming infective \cite{Chanie:2014}. Foxes lifespan is 2 years \cite{Devenish:2014}.
+\noindent Flies have a life expectancy of about 28 days, but it might live up to two months (\cite{sanchez:1998}). The first larval stage (L1) of the worm is ingested by the fly when it feeds from lachrymal secretions, where in the internal organs, the worm develops into its second (L2) and third (L3) larval stages within 21 days post infection \cite{Otranto:2003}. Other studies
+\cite{Chanie:2014}, show that flies infected with \textit{Thelazia lacrymalis} can reach the infective stage in 12-15 days, while this takes 28-32 days for flies infected with \textit{T. gulosa} \cite{Chanie:2014}. Once in the infective stage, the fly releases L3 larvae into the definite host. Finally, once in the definite host, the L3 larvae matures within 3 to 6 weeks, where the new worm deposits new eggs into the definite host becoming infective \cite{Chanie:2014}. Foxes lifespan is 2 years \cite{Devenish:2014}.
 
-\noindent We will use the model to fit two data sets. One referring to a multi-host case given
-by dogs and foxes and the second in a one host study, particularly the case of cattle.
-\subsubsection{Dogs and foxes}
-\noindent Foxes lifespan is about 2 years \cite{Devenish:2014}. Dogs lifespan is approximately 7 to 14 years \cite{selman:2013}.
+\noindent We will use the model to fit two data sets. One referring to a multi-host case given by dogs and foxes and the second in a one host study, particularly the case of cattle.
+%\subsubsection{Dogs and foxes}
+%\noindent Foxes lifespan is about 2 years \cite{Devenish:2014}. Dogs lifespan is approximately 7 to 14 years \cite{selman:2013}.
 
 \subsubsection{Cattle only.}
 \noindent The problem can be seen as a simple host or multi-host when considering beef and milk cattle.
@@ -82,34 +82,30 @@ In this work we consider that the sample used to observe the proportion of infec
 
 \section{Mathematical Model}
 
-\noindent We base our model in the studies done in \cite{Otranto:2003} where the disease spread over a multihost population. In their work, three host species were studied, dogs, cats and foxes. However, due to the data presented we will focus on dogs and foxes. Following the formulation in Esteva (citar Esteva 1998), we obtain that the infection rates per host $i$ and the infection rate for a fly due to a infected host $i$ are given by
-$$ \hat{\beta}_ib\frac{I_v}{N_1+N_2}$$
-$$ \hat{\beta}_{vi}b\frac{I_i}{N_1+N_2},$$
-respectively.  
-\noindent The model is a vectorial multihost SEI model and is given by
-\begin{equation}
+\noindent Our model is based on the interaction of flies and cattle. Following the formulation in Esteva \cite{Esteva:1998} we obtain the following SI vector host model for cattle and flies.
+\begin{equation}\label{Eq:SIvectorhostmodel}
 \begin{array}{lcl}
-\dot{S}_v&=&\Lambda_v-\frac{S_v}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\mu_vS_v\\
-\dot{L}_v&=&\frac{S_v}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\kappa_vL_v-\mu_vL_v\\
-\dot{I}_v&=&\kappa_vL_v-\mu_vI_v\\
-\dot{L}_1&=&\frac{\beta_1I_v}{N_1+N_2}\left(N_1-\left(L_1+I_1\right)\right)-\kappa_1L_1 -\mu_1 L_1 \\
-\dot{I}_1&=& \kappa_1L_1-\mu_1I_1\\
-\dot{L}_2&=&\frac{\beta_2I_v}{N_1+N_2}\left(N_2-\left(L_2+I_2\right)\right)-\kappa_2L_2 -\mu_2 L_2 \\
-\dot{I}_2&=& \kappa_2L_2-\mu_2I_2
+\dot{S}_f&=&\Lambda_f-\frac{\beta_f}{N_c}I_cS_f-\mu_fS_f\\
+\dot{L}_f&=&\frac{\beta_f}{N_c}I_cS_f-\kappa_fL_f-\mu_fL_f\\
+\dot{I}_f&=&\kappa_fL_f-\mu_fI_f\\
+\dot{S}_c&=&\Lambda_c-\frac{\beta_c}{N_c}I_fS_c-\mu_cS_c\\
+\dot{L}_c&=&\frac{\beta_c}{N_c}I_fS_c-\kappa_cL_c-\mu_cL_c\\
+\dot{I}_c&=&\kappa_cL_c-\mu_cI_c\\
 \end{array}
 \end{equation}
-where $\beta_i=b\hat{\beta}_i$ and $\beta_{vi}=b\hat{\beta}_{vi}.$
-
-
-For this model, the basic reproductive number is given by
-
+where $N_c=S_c+L_c+I_c$. For this model, the basic reproductive number is given by
  \begin{equation}
-     R_0=\left(\sum_{i=1}^{2}\left(\frac{k_v}{\mu_v+k_v}\right)\left(\frac{\beta_iN_i}{\mu_v(N_1+N_2)}\right)\left(\frac{k_i}{k_i+\mu_i}\right)\left(\frac{\Lambda_v\beta_{vi}}{\mu_v\mu_i(N_1+N_2)} \right) \right)^{1/4}
+     R_0=\left(\left(\frac{k_f}{\mu_f+k_f}\right)\left(\frac{\beta_c}{\mu_f}\right)\left(\frac{k_c}{k_c+\mu_c}\right)\left(\frac{F_c\beta_f}{\mu_c} \right) \right)^{1/4}
  \end{equation}
-Clearly, the root is due to the presence of the four-cycle as shown in figure (Z)
+ where $F_c=\frac{N_f^{\infty}}{N_c^{\infty}}$, $N_f^{\infty}=\frac{\Lambda_f}{\mu_f}$ and $N_c^{\infty}=\frac{\Lambda_c}{\mu_c}$. Table \ref{Table:Parameters} show the meaning and the values of the parameters considered in this study.
+ 
+%Clearly, the root is due to the presence of the four-cycle as shown in figure (Z)
 %which is the contribution of the infection cycles fox-flies and dogs-flies.\\
 
-\begin{table*}[htb]
+%About the number of cattle in a farm
+%http://www.agr.gc.ca/eng/industry-markets-and-trade/canadian-agri-food-sector-intelligence/red-meat-and-livestock/red-meat-and-livestock-market-information/inventories/cattle-inventory-by-farm-type-ontario/?id=1415860000081
+
+\begin{table*}[htb]\label{Table:Parameters}
 	\begin{center}
        
 		\begin{tabular}{|c|l|l|l|}
@@ -118,33 +114,37 @@ Clearly, the root is due to the presence of the four-cycle as shown in figure (Z
 			Parameter		&	Meaning & Interval & Reference
 			\\
 			\hline
-			$N_v$, & Vector limit carrying capacity&&This study
+			$N_c$,& Total number of individuals at time $t$ &1000&This study
 			\\
-			$N_i$,& Total number of individuals $i=1,2$ &&This study
+			$\Lambda_f$,& Fly recruitment rate & & This study
 			\\
-			$\Lambda_v$,& Vector recruitment rate & & This study
+			$\Lambda_c$,& Cattle recruitment rate & & This study
+			\\			
+			$\beta_c$& Number of successful contacts of a fly &&
+				\\
+			& that infects a cattle host &&This study
+				\\
+			$\beta_f$& Number of successful contacts in which &&
+				\\
+			& a fly gets infected by a cattle host &&This study
+				\\
+			$k_v^{-1}$	& average latency time for vectors & 14-21 days &\cite{Otranto:bookchapter}
 			\\
-			$b$,&number of fly stops per time unit& &This study
+				& & 12-15 days (\textit{T. Lacrymalis}) &\cite{Chanie:2014}
 			\\
-			$\hat{\beta}_1$, $\hat{\beta}_2$& probability of successful contact that &&
-				\\
-			& infect a host &&
-				\\
-			$\hat{\beta}_{v1}$, $\hat{\beta}_{v2}$& probability of successful contact that &&
-				\\
-			& infect a vector by a host $i$ &&
-				\\
-			$k_v^{-1}$	& average latency time for vectors &&
+				& & 28-32 days (\textit{T. Gulosa}) &\cite{Chanie:2014}
 			\\
 			$k_{i}^{-1}$
 			&
-				average latency time for hosts $i=1,2$ &&
+				average latency time for hosts $i=1,2$ & $\approx$ 35 days& \cite{Otranto:bookchapter}
 			\\
-			 $\mu_v^{-1}$	& vector average lifespan &&
+			& & 21-42 days& \cite{Chanie:2014}
+			\\			
+			 $\mu_v^{-1}$	& vector average lifespan &1-2 months&\cite{sanchez:1998}
 			\\
-			$\mu_i$
+			$\mu_c^{-1}$
 			&
-				host average lifespan $i=1,2$&& 
+				cows average lifespan & 36 months& \cite{FAOweb}
 			\\
 			
 			\hline
@@ -152,39 +152,23 @@ Clearly, the root is due to the presence of the four-cycle as shown in figure (Z
 		\end{tabular}
 	\end{center}
 	\caption{
-		Meaning of variables. Time in days.	}
+		Parameter meaning and values.	}
 \end{table*}
 
 
-
-
 \section{Local and global stability analysis}
+\noindent In the present section,
+
+\noindent The free disease equilibrium is Globally asymptotically stable.
+Consider the Lyapunov function
+$$V(L_f,I_f,L_c,I_c)=a_1L_f+a_2I_f+a_3L_c+a_4I_c$$
+Then
+$$\dot{V(t)}=$$
+
+
 \noindent This part is practically done
 \subsection{Persistance}
 
-
-
-\section{A multiple host multiple vector model with latency. hahaha done already! But has not been done with latency in the vector.}
-\begin{equation}
-\begin{array}{lcl}
-\dot{S}_{v1}&=&\Lambda_{v1}-\frac{S_{v1}}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\mu_{v1}S_{v1}\\
-\dot{L}_{v1}&=&\frac{S_{v1}}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\kappa_{v1}L_{v1}-\mu_{v1}L_{v1}\\b v|  u1hg
-\dot{I}_{v1}&=&\kappa_{v1}L_{v1}-\mu_{v1}I_{v1}\\
-
-\dot{S}_{v2}&=&\Lambda_{v2}-\frac{S_{v2}}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\mu_{v2}S_{v2}\\
-\dot{L}_{v2}&=&\frac{S_{v2}}{N_1+N_2}\left(\beta_{v1}I_1+\beta_{v2}I_2\right)-\kappa_{v2}L_{v2}-\mu_{v2}L_{v2}\\
-\dot{I}_{v2}&=&\kappa_{v2}L_{v2}-\mu_{v2}I_{v2}\\
-
-\dot{L}_1&=&\frac{\beta_1N_1(I_{v1}+I_{v2})}{(N_1+N_2)^2}\left(N_1-\left(L_1+I_1\right)\right)-\kappa_1L_1 -\mu_1 L_1 \\
-\dot{I}_1&=& \kappa_1L_1-\mu_1I_1\\
-
-\dot{L}_2&=&\frac{\beta_2N_2(I_{v1})}{(N_1+N_2)^2}\left(N_2-\left(L_2+I_2\right)\right)-\kappa_2L_2 -\mu_2 L_2 \\
-\dot{I}_2&=& \kappa_2L_2-\mu_2I_2
-
-\end{array}
-\end{equation}
-
-\section{Data analysis}
 \section{Discussion}
 
 
