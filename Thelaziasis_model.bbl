@@ -1,0 +1,153 @@
+\begin{thebibliography}{18}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Asrat(2016)}]{Asrat:2016}
+\bibinfo{author}{M.~Asrat},
+\newblock \bibinfo{title}{Prevalence and risk factors for bovine thelaziasis at
+  mersa town of south wollo zone, amhara regional state, ethiopia},
+\newblock \bibinfo{journal}{J. Ecosys. Ecograph.} \bibinfo{volume}{6}
+  (\bibinfo{year}{2016}) \bibinfo{pages}{1000212 (1--4)}.
+%Type = Article
+\bibitem[{Otranto et~al.(2003)Otranto, Ferroglio, Lia, Traversa, and
+  Rossi}]{Otranto:2003}
+\bibinfo{author}{D.~Otranto}, \bibinfo{author}{E.~Ferroglio},
+  \bibinfo{author}{R.~P. Lia}, \bibinfo{author}{D.~Traversa},
+  \bibinfo{author}{L.~Rossi},
+\newblock \bibinfo{title}{Current status and epidemiological observation of
+  \textit{Thelazia callipaeda} (spirurida, thelaziidae) in dogs, cats and foxes
+  in italy: a “coincidence”or a parasitic disease of the old continent?},
+\newblock \bibinfo{journal}{Vet. Parasit.} \bibinfo{volume}{116}
+  (\bibinfo{year}{2003}) \bibinfo{pages}{315--325}.
+%Type = Article
+\bibitem[{Wang et~al.(2014)Wang, Guo, Wang, Ma, Wang, and An}]{Wang:2014}
+\bibinfo{author}{X.-L. Wang}, \bibinfo{author}{J.-L. Guo},
+  \bibinfo{author}{X.-L. Wang}, \bibinfo{author}{X.-L. Ma},
+  \bibinfo{author}{Y.~Wang}, \bibinfo{author}{C.-L. An},
+\newblock \bibinfo{title}{Two cases of human thelaziasis as confirmed by
+  mitochondrial \textit{cox1} sequencing in china},
+\newblock \bibinfo{journal}{Path. and Global Health} \bibinfo{volume}{108}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{298--301}.
+%Type = Article
+\bibitem[{Otranto and Dutto(2008)}]{Otranto:2008}
+\bibinfo{author}{D.~Otranto}, \bibinfo{author}{M.~Dutto},
+\newblock \bibinfo{title}{Human thelaziasis,europe},
+\newblock \bibinfo{journal}{Emerg. Inf. diseas.} \bibinfo{volume}{14}
+  (\bibinfo{year}{2008}) \bibinfo{pages}{647--649}.
+%Type = Article
+\bibitem[{Shen et~al.(2006)Shen, Gasser, Chu, Wang, Yuan, Cantacessi, and
+  D.}]{shen:2006}
+\bibinfo{author}{J.~Shen}, \bibinfo{author}{R.~B. Gasser},
+  \bibinfo{author}{D.~Chu}, \bibinfo{author}{Z.~Wang},
+  \bibinfo{author}{X.~Yuan}, \bibinfo{author}{C.~Cantacessi},
+  \bibinfo{author}{O.~D.},
+\newblock \bibinfo{title}{Human thelaziosis—a neglected parasitic disease of
+  the eye},
+\newblock \bibinfo{journal}{J. Parasitol.} \bibinfo{volume}{92}
+  (\bibinfo{year}{2006}) \bibinfo{pages}{872--876}.
+%Type = Article
+\bibitem[{Moolenbeek and A.(1980)}]{Moolenbeek:1980}
+\bibinfo{author}{W.~J. Moolenbeek}, \bibinfo{author}{S.~G. A.},
+\newblock \bibinfo{title}{Southern ontario survey of eyeworms, \textit{Thelazia
+  gulosa} and \textit{Thelazia lacrymalis} in cattle and larvae of
+  \textit{Thelazia spp.} in the face fly, \textit{Musca autumnalis}},
+\newblock \bibinfo{journal}{Can. Vet. J.} \bibinfo{volume}{21}
+  (\bibinfo{year}{1980}) \bibinfo{pages}{50--52}.
+%Type = Article
+\bibitem[{Lyons et~al.(2000)Lyons, Swerczek, Tolliver, Bair, Drudge, and
+  Ennis}]{Lyons:2000}
+\bibinfo{author}{E.~T. Lyons}, \bibinfo{author}{T.~W. Swerczek},
+  \bibinfo{author}{S.~C. Tolliver}, \bibinfo{author}{H.~D. Bair},
+  \bibinfo{author}{J.~H. Drudge}, \bibinfo{author}{L.~E. Ennis},
+\newblock \bibinfo{title}{Prevalence of selected species of internal parasites
+  in equids at necropsy in central kentucky (1995–1999)},
+\newblock \bibinfo{journal}{Vet Parasit.} \bibinfo{volume}{92}
+  (\bibinfo{year}{2000}) \bibinfo{pages}{51--62}.
+%Type = Article
+\bibitem[{Dubay et~al.(2000)Dubay, Williams, Mills, and
+  Boerger-Fileds}]{Dubay:2000}
+\bibinfo{author}{S.~A. Dubay}, \bibinfo{author}{E.~S. Williams},
+  \bibinfo{author}{K.~Mills}, \bibinfo{author}{A.~M. Boerger-Fileds},
+\newblock \bibinfo{title}{Bacteria and nematodes in the conjunctiva of mule
+  deer from wyoming and utah},
+\newblock \bibinfo{journal}{J. Wildlife disease} \bibinfo{volume}{36}
+  (\bibinfo{year}{2000}) \bibinfo{pages}{783--787}.
+%Type = Article
+\bibitem[{Beitel et~al.(1974)Beitel, Vohs, and Jr.}]{Beitel:1974}
+\bibinfo{author}{S.~E. Beitel, R. J. an~Knapp}, \bibinfo{author}{P.~A. Vohs},
+  \bibinfo{author}{Jr.},
+\newblock \bibinfo{title}{Prevalence of eyeworm in three populations of
+  columbian black-tailed deer in northwestern oregon},
+\newblock \bibinfo{journal}{The J. of Parasitology} \bibinfo{volume}{60}
+  (\bibinfo{year}{1974}) \bibinfo{pages}{972--975}.
+%Type = Article
+\bibitem[{Khedri et~al.(2016)Khedri, Radfar, Borji, and
+  Azizzadeh}]{Khedri:2016}
+\bibinfo{author}{J.~Khedri}, \bibinfo{author}{M.~H. Radfar},
+  \bibinfo{author}{H.~Borji}, \bibinfo{author}{M.~Azizzadeh},
+\newblock \bibinfo{title}{Epidemiological survey of bovine thelaziosis in
+  southeastern of iran},
+\newblock \bibinfo{journal}{Iran J. Parasitol.} \bibinfo{volume}{11}
+  (\bibinfo{year}{2016}) \bibinfo{pages}{221--225}.
+%Type = Article
+\bibitem[{O'hara and Murray(1989)}]{Ohara:1989}
+\bibinfo{author}{J.~E. O'hara}, \bibinfo{author}{J.~K. Murray},
+\newblock \bibinfo{title}{Prevalence and intensity of thelazia spp. (nematoda:
+  Thelazioidea) in a musca autumnalis (diptera:muscidae) population from
+  central alberta},
+\newblock \bibinfo{journal}{J. Parasit.} \bibinfo{volume}{75}
+  (\bibinfo{year}{1989}) \bibinfo{pages}{803--806}.
+%Type = Article
+\bibitem[{Sanchez-Arroyo and Capinera(1998)}]{sanchez:1998}
+\bibinfo{author}{H.~Sanchez-Arroyo}, \bibinfo{author}{J.~L. Capinera},
+\newblock \bibinfo{title}{House fly, \textit{Musca domestica} linnaeus
+  (insecta: Diptera: Muscidae)},
+\newblock \bibinfo{journal}{UF/IFAS Extension}  (\bibinfo{year}{1998})
+  \bibinfo{pages}{1--8}.
+%Type = Article
+\bibitem[{Chanie and Bogale(2014)}]{Chanie:2014}
+\bibinfo{author}{M.~Chanie}, \bibinfo{author}{B.~Bogale},
+\newblock \bibinfo{title}{Thelaziasis: Biology, species affected and pathology
+  (conjunctivitis): A review},
+\newblock \bibinfo{journal}{Acta Parasitologica Globalis} \bibinfo{volume}{5}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{65--68}.
+%Type = Article
+\bibitem[{Devenish-Nelson et~al.(2014)Devenish-Nelson, Richards, Harris,
+  Soulsbury, and A.}]{Devenish:2014}
+\bibinfo{author}{E.~S. Devenish-Nelson}, \bibinfo{author}{S.~A. Richards},
+  \bibinfo{author}{S.~Harris}, \bibinfo{author}{C.~Soulsbury},
+  \bibinfo{author}{S.~P. A.},
+\newblock \bibinfo{title}{Demonstrating frequency-dependent transmission of
+  sarcoptic mange in red foxes},
+\newblock \bibinfo{journal}{Biol. Lett.} \bibinfo{volume}{10}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{1--5}.
+%Type = Article
+\bibitem[{Stanley and Jones(2003)}]{stanley:2003}
+\bibinfo{author}{K.~Stanley}, \bibinfo{author}{K.~Jones},
+\newblock \bibinfo{title}{Cattle and sheep farms as reservoirs of
+  campylobacter},
+\newblock \bibinfo{journal}{J. Appl. Microbiol.} \bibinfo{volume}{94}
+  (\bibinfo{year}{2003}) \bibinfo{pages}{104S--113S}.
+%Type = Article
+\bibitem[{Esteva and Vargas(1998)}]{Esteva:1998}
+\bibinfo{author}{L.~Esteva}, \bibinfo{author}{C.~Vargas},
+\newblock \bibinfo{title}{Analysis of a dengue disease transmission model},
+\newblock \bibinfo{journal}{Math. Biosci.} \bibinfo{volume}{150}
+  (\bibinfo{year}{1998}) \bibinfo{pages}{131--151}.
+%Type = Incollection
+\bibitem[{Otranto and Dantas-Torres(2017)}]{Otranto:bookchapter}
+\bibinfo{author}{D.~Otranto}, \bibinfo{author}{F.~Dantas-Torres},
+\newblock \bibinfo{title}{Thelaziosis},
+\newblock in: \bibinfo{editor}{C.~Brisola-Marcondes} (Ed.),
+  \bibinfo{booktitle}{Arthropod borne diseases}, \bibinfo{publisher}{Springer},
+  \bibinfo{address}{Cham, Switzerland}, \bibinfo{year}{2017}, pp.
+  \bibinfo{pages}{457--464}.
+%Type = Misc
+\bibitem[{FAO(1991)}]{FAOweb}
+FAO, \bibinfo{title}{Guidelines for slaughtering, meat cutting and further
+  processing},
+  \bibinfo{howpublished}{\url{http://www.fao.org/3/T0279E/T0279E00.htm}},
+  \bibinfo{year}{1991}.
+
+\end{thebibliography}

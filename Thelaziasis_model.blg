@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Thelaziasis_model.aux
+The style file: model1-num-names.bst
+Database file #1: thelazbiblio.bib.bib
+You've used 18 entries,
+            2616 wiz_defined-function locations,
+            715 strings with 7893 characters,
+and the built_in function-call counts, 11331 in all, are:
+= -- 864
+> -- 510
+< -- 10
++ -- 190
+- -- 172
+* -- 1451
+:= -- 1706
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 150
+chr.to.int$ -- 18
+cite$ -- 18
+duplicate$ -- 697
+empty$ -- 710
+format.name$ -- 237
+if$ -- 2061
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 163
+newline$ -- 94
+num.names$ -- 70
+pop$ -- 132
+preamble$ -- 1
+purify$ -- 148
+quote$ -- 0
+skip$ -- 188
+stack$ -- 0
+substring$ -- 562
+swap$ -- 669
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 162
+warning$ -- 0
+while$ -- 70
+width$ -- 0
+write$ -- 239
