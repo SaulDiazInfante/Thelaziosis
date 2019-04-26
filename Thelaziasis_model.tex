@@ -1,20 +1,23 @@
-
 \documentclass[preprint,12pt]{elsarticle}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{lineno}
+\usepackage{booktabs}
 \journal{Journal Name}
+
 \begin{document}
 \begin{frontmatter}
 %% Title, authors and addresses
 
-\title{A Mathematical model for Thelaziasis in a multihost setting}
+\title{A Mathematical model for Thelaziasis}
 
 \author{Olmos Liceaga D., Diaz-Infante Velasco S., Acu\~na Zegarra M. A.}
 \address{Universidad de Sonora}
 \begin{abstract}
 %% Text of abstract
-In the present manuscript we present a mathematical model for thelaziasis. We consider outbreak studies and estimate the severity of the disease. We base our study on a multiple hosts ...
+In the present manuscript we present a mathematical model for thelaziasis. 
+We consider outbreak studies and estimate the severity of the disease. 
+We base our study on a multiple hosts ...
 \end{abstract}
 
 \begin{keyword}
@@ -37,9 +40,13 @@ Thelaziasis \sep Mathematical Model \sep Parameter Estimation \sep Basic Reprodu
 \section{Introduction}
 \label{Section:Intro}
 
-\noindent The disease. Hosts. What are the effects on the infected individuals. Where has been found. What is the vector in each case. Case studies. The use of a mathematical model to study a particular place.
+\noindent The disease. Hosts. What are the effects on the infected individuals. 
+Where has been found. What is the vector in each case. Case studies. 
+The use of a mathematical model to study a particular place.
 
-\noindent Thelaziasis is a vector neglected disease that affects mainly mammals, including humans and in a minor scales, birds. The transmission takes place due to the presence of a vector which is the face fly \textit{Musca autumnalis}. Depending on the region this vector might vary as well as the host species.
+\noindent Thelaziasis is a vector neglected disease that affects mainly mammals, including humans and in a minor scales, 
+birds. The transmission takes place due to the presence of a vector which is the face fly \textit{Musca autumnalis}. 
+Depending on the region this vector might vary as well as the host species.
 
 \noindent The transmission depends upon the presence of vectors and therefore thelaziasis has a seasonal occurrence \cite{Asrat:2016}
 
@@ -107,48 +114,53 @@ where $N_c=S_c+L_c+I_c$. For this model, the basic reproductive number is given 
 
 \begin{table*}[htb]\label{Table:Parameters}
 	\begin{center}
-       
-		\begin{tabular}{|c|l|l|l|}
+        \begin{tabular}{cllc}
 	%		\toprule
 			\hline
 			Parameter		&	Meaning & Interval & Reference
 			\\
-			\hline
-			$N_c$,& Total number of individuals at time $t$ &1000&This study
+			\midrule
+			$N_c$& Total number of &&\\
+			&individuals at time $t$ &1000&This study
 			\\
-			$\Lambda_f$,& Fly recruitment rate & & This study
+			$\Lambda_f$& Fly recruitment rate & & This study
 			\\
-			$\Lambda_c$,& Cattle recruitment rate & & This study
+			$\Lambda_c$& Cattle recruitment rate & & This study
 			\\			
-			$\beta_c$& Number of successful contacts of a fly &&
+			$\beta_c$& Number of successful &&\\
+			&contacts of a fly &&
 				\\
 			& that infects a cattle host &&This study
 				\\
-			$\beta_f$& Number of successful contacts in which &&
+			$\beta_f$& Number of successful&&\\
+			&contacts in which &&
 				\\
-			& a fly gets infected by a cattle host &&This study
+			& a fly gets infected by a &&\\
+			&cattle host &&This study
 				\\
-			$k_v^{-1}$	& average latency time for vectors & 14-21 days &\cite{Otranto:bookchapter}
+			$k_v^{-1}$	& average latency time &&\\
+			&for vectors & 14-21 days &\cite{Otranto:bookchapter}
 			\\
-				& & 12-15 days (\textit{T. Lacrymalis}) &\cite{Chanie:2014}
+				& & 12-15 days &\\
+				&&(\textit{T. Lacrymalis}) &\cite{Chanie:2014}
 			\\
-				& & 28-32 days (\textit{T. Gulosa}) &\cite{Chanie:2014}
+				& & 28-32 days&\\ 
+				&&(\textit{T. Gulosa}) &\cite{Chanie:2014}
 			\\
 			$k_{i}^{-1}$
 			&
-				average latency time for hosts $i=1,2$ & $\approx$ 35 days& \cite{Otranto:bookchapter}
+				average latency time &&\\
+				&for hosts $i=1,2$ & $\approx$ 35 days& \cite{Otranto:bookchapter}
 			\\
 			& & 21-42 days& \cite{Chanie:2014}
 			\\			
-			 $\mu_v^{-1}$	& vector average lifespan &1-2 months&\cite{sanchez:1998}
+			 $\mu_v^{-1}$	& vector average lifespan & 30-60 months&\cite{sanchez:1998}
 			\\
 			$\mu_c^{-1}$
 			&
-				cows average lifespan & 36 months& \cite{FAOweb}
+				cows average lifespan & 1080 days& \cite{FAOweb}
 			\\
-			
-			\hline
-%		\bottomrule
+    		\bottomrule
 		\end{tabular}
 	\end{center}
 	\caption{
@@ -157,16 +169,27 @@ where $N_c=S_c+L_c+I_c$. For this model, the basic reproductive number is given 
 
 
 \section{Local and global stability analysis}
-\noindent In the present section,
+\noindent System \ref{Eq:SIvectorhostmodel} has two equilibrium points. The disease free equilibrium $S_1$ = $(S_{f1}^*,L_{f1}^*,I_{f1}^*,S_{c1}^*,L_{c1}^*,I_{c1}^*)$ = $(\frac{\Lambda_f}{\mu_f},0,0,\frac{\Lambda_c}{\mu_c},0,0)$ and the endemic equilibrium $S_2$ = $(S_{f2}^*,L_{f2}^*,I_{f2}^*,S_{c2}^*,L_{c2}^*,I_{c2}^*)$ = . 
 
-\noindent The free disease equilibrium is Globally asymptotically stable.
+\noindent Theorem. The disease free equilibrium point $S_1$ is globally asymptotically stable if $R_0<1$.
 Consider the Lyapunov function
 $$V(L_f,I_f,L_c,I_c)=a_1L_f+a_2I_f+a_3L_c+a_4I_c$$
-Then
-$$\dot{V(t)}=$$
+$$
+\begin{array}{lll}
+\dot{V}(t)&=&a_1\left[\frac{\beta_f}{N_c}S_cI_c-(\mu_f+k_f)L_f\right]+a_2\left[k_fL_f-\mu_fI_f\right]\\
+&&+a_3\left[ \beta_c\frac{S_cI_f}{N_c}-(k_c+\mu_c)L_c\right]+a_4\left[k_cL_c-\mu_cI_c\right]\\
+&\leq& \left[\frac{a_1\beta_fN_f}{N_c}-a_4\mu_c\right]I_c+\left[a_2k_f-a_1(\mu_f+k_f)\right]L_f+\\
+&&\left[a_3\beta_c-a_2\mu_f\right]I_f+\left[a_4k_c-a_3(k_c+\mu_c)\right]L_c
+\end{array}
+$$
+Then, by taking $a_1=\frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}\frac{\beta_c}{\mu_f}\frac{k_f}{k_f+\mu_f}$, $a_2=\frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}\frac{\beta_c}{\mu_f}$, $a_3=\frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}$ and $a_4=\frac{1}{\mu_c}$, we arrive to
+$$
+\begin{array}{lll}
+\dot{V}(t)&\leq& R_0-1,\\
+\end{array}
+$$
+which completes the proof.
 
-
-\noindent This part is practically done
 \subsection{Persistance}
 
 \section{Discussion}
