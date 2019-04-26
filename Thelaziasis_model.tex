@@ -1,8 +1,11 @@
 \documentclass[preprint,12pt]{elsarticle}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{lineno}
 \usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cleveref}
 \journal{Journal Name}
 
 \begin{document}
@@ -89,22 +92,49 @@ In this work we consider that the sample used to observe the proportion of infec
 
 \section{Mathematical Model}
 
-\noindent Our model is based on the interaction of flies and cattle. Following the formulation in Esteva \cite{Esteva:1998} we obtain the following SI vector host model for cattle and flies.
+\noindent Our model is based on the interaction of flies and cattle. 
+Following the formulation in Esteva \cite{Esteva:1998} we obtain the 
+following SI vector host model for cattle and flies.
 \begin{equation}\label{Eq:SIvectorhostmodel}
-\begin{array}{lcl}
-\dot{S}_f&=&\Lambda_f-\frac{\beta_f}{N_c}I_cS_f-\mu_fS_f\\
-\dot{L}_f&=&\frac{\beta_f}{N_c}I_cS_f-\kappa_fL_f-\mu_fL_f\\
-\dot{I}_f&=&\kappa_fL_f-\mu_fI_f\\
-\dot{S}_c&=&\Lambda_c-\frac{\beta_c}{N_c}I_fS_c-\mu_cS_c\\
-\dot{L}_c&=&\frac{\beta_c}{N_c}I_fS_c-\kappa_cL_c-\mu_cL_c\\
-\dot{I}_c&=&\kappa_cL_c-\mu_cI_c\\
-\end{array}
+\begin{aligned}
+    \dot{S}_f&= 
+        \Lambda_f-\frac{\beta_f}{N_c}I_cS_f-\mu_fS_f
+    \\
+    \dot{L}_f&= 
+        \frac{\beta_f}{N_c}I_cS_f-\kappa_fL_f-\mu_fL_f
+    \\
+    \dot{I}_f&= 
+        \kappa_fL_f-\mu_fI_f
+    \\
+    \dot{S}_c&= 
+        \Lambda_c-\frac{\beta_c}{N_c}I_fS_c-\mu_cS_c
+    \\
+    \dot{L}_c&= 
+        \frac{\beta_c}{N_c}I_fS_c-\kappa_cL_c-\mu_cL_c
+    \\
+    \dot{I}_c&= \kappa_cL_c-\mu_cI_c
+    \\
+\end{aligned}
 \end{equation}
 where $N_c=S_c+L_c+I_c$. For this model, the basic reproductive number is given by
  \begin{equation}
      R_0=\left(\left(\frac{k_f}{\mu_f+k_f}\right)\left(\frac{\beta_c}{\mu_f}\right)\left(\frac{k_c}{k_c+\mu_c}\right)\left(\frac{F_c\beta_f}{\mu_c} \right) \right)^{1/4}
  \end{equation}
- where $F_c=\frac{N_f^{\infty}}{N_c^{\infty}}$, $N_f^{\infty}=\frac{\Lambda_f}{\mu_f}$ and $N_c^{\infty}=\frac{\Lambda_c}{\mu_c}$. Table \ref{Table:Parameters} show the meaning and the values of the parameters considered in this study.
+ where 
+ $
+    \displaystyle
+    F_c=\frac{N_f^{\infty}}{N_c^{\infty}}
+$, 
+$
+    \displaystyle
+    N_f^{\infty}=\frac{\Lambda_f}{\mu_f}
+$ 
+ and 
+$
+    \displaystyle
+    N_c^{\infty} = \frac{\Lambda_c}{\mu_c}
+$. Table \ref{Table:Parameters} show 
+ the meaning and values of the parameters considered in this study.
  
 %Clearly, the root is due to the presence of the four-cycle as shown in figure (Z)
 %which is the contribution of the infection cycles fox-flies and dogs-flies.\\
@@ -112,7 +142,7 @@ where $N_c=S_c+L_c+I_c$. For this model, the basic reproductive number is given 
 %About the number of cattle in a farm
 %http://www.agr.gc.ca/eng/industry-markets-and-trade/canadian-agri-food-sector-intelligence/red-meat-and-livestock/red-meat-and-livestock-market-information/inventories/cattle-inventory-by-farm-type-ontario/?id=1415860000081
 
-\begin{table*}[htb]\label{Table:Parameters}
+\begin{table}[htb]
 	\begin{center}
         \begin{tabular}{cllc}
 	%		\toprule
@@ -164,12 +194,24 @@ where $N_c=S_c+L_c+I_c$. For this model, the basic reproductive number is given 
 		\end{tabular}
 	\end{center}
 	\caption{
-		Parameter meaning and values.	}
-\end{table*}
+		Parameter meaning and values.}
+    \label{Table:Parameters}
+\end{table}
 
 
 \section{Local and global stability analysis}
-\noindent System \ref{Eq:SIvectorhostmodel} has two equilibrium points. The disease free equilibrium $S_1$ = $(S_{f1}^*,L_{f1}^*,I_{f1}^*,S_{c1}^*,L_{c1}^*,I_{c1}^*)$ = $(\frac{\Lambda_f}{\mu_f},0,0,\frac{\Lambda_c}{\mu_c},0,0)$ and the endemic equilibrium $S_2$ = $(S_{f2}^*,L_{f2}^*,I_{f2}^*,S_{c2}^*,L_{c2}^*,I_{c2}^*)$ = . 
+\noindent System \ref{Eq:SIvectorhostmodel} has two equilibrium points. 
+The disease free equilibrium 
+$$
+    S_1 = (S_{f1}^*,L_{f1}^*,I_{f1}^*,S_{c1}^*,L_{c1}^*,I_{c1}^*) = 
+    (\frac{\Lambda_f}{\mu_f},0,0,\frac{\Lambda_c}{\mu_c},0,0)
+$$ 
+and the endemic 
+equilibrium 
+$$
+    S_2 = (S_{f2}^*,L_{f2}^*,I_{f2}^*,S_{c2}^*,L_{c2}^*,I_{c2}^*) = 
+    .
+$$
 
 \noindent Theorem. The disease free equilibrium point $S_1$ is globally asymptotically stable if $R_0<1$.
 Consider the Lyapunov function
@@ -182,12 +224,26 @@ $$
 &&\left[a_3\beta_c-a_2\mu_f\right]I_f+\left[a_4k_c-a_3(k_c+\mu_c)\right]L_c
 \end{array}
 $$
-Then, by taking $a_1=\frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}\frac{\beta_c}{\mu_f}\frac{k_f}{k_f+\mu_f}$, $a_2=\frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}\frac{\beta_c}{\mu_f}$, $a_3=\frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}$ and $a_4=\frac{1}{\mu_c}$, we arrive to
-$$
-\begin{array}{lll}
-\dot{V}(t)&\leq& R_0-1,\\
-\end{array}
-$$
+Then, taking 
+\begin{align*}
+    & a_1=
+        \frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}
+        \frac{\beta_c}{\mu_f}\frac{k_f}{k_f+\mu_f},
+    %
+    & a_2=
+        \frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}\frac{\beta_c}{\mu_f},
+    &
+    & a_3=
+        \frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c},
+    &
+    & a_4=
+        \frac{1}{\mu_c}, 
+\end{align*}
+we arrive at
+\begin{equation}
+    \dot{V}(t) 
+        \leq  R_0 - 1,
+\end{equation}
 which completes the proof.
 
 \subsection{Persistance}
