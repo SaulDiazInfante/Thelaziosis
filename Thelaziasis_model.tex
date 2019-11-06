@@ -14,7 +14,7 @@
 
 \title{A Mathematical model for Thelaziasis}
 
-\author{Olmos Liceaga D., Diaz-Infante Velasco S., Acu\~na Zegarra M. A.}
+\author{Acu\~na Zegarra M. A., Diaz-Infante Velasco S., Olmos Liceaga D.}
 \address{Universidad de Sonora}
 \begin{abstract}
 %% Text of abstract
@@ -92,48 +92,99 @@ In this work we consider that the sample used to observe the proportion of infec
 
 \section{Mathematical Model}
 
-\noindent Our model is based on the interaction of flies and cattle. 
+\noindent Our model is based on the interaction of flies and cattle. For the model, we consider that infected cattle shows visual presence of worms. A sample of the herd is taken per time unit and the animals are revised if there is presence of worms. Then vaccination proceeds.  
 Following the formulation in Esteva \cite{Esteva:1998} we obtain the 
 following SI vector host model for cattle and flies.
 \begin{equation}\label{Eq:SIvectorhostmodel}
 \begin{aligned}
     \dot{S}_f&= 
-        \Lambda_f-\frac{\beta_f}{N_c}I_cS_f-\mu_fS_f
+        \Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_cS_f-\mu_fS_f
     \\
     \dot{L}_f&= 
-        \frac{\beta_f}{N_c}I_cS_f-\kappa_fL_f-\mu_fL_f
+        \frac{\beta_f}{N_c^{\infty}}I_cS_f-\left(k_f+\mu_f\right)L_f
     \\
     \dot{I}_f&= 
-        \kappa_fL_f-\mu_fI_f
+        k_f L_f-\mu_fI_f
     \\
     \dot{S}_c&= 
-        \Lambda_c-\frac{\beta_c}{N_c}I_fS_c-\mu_cS_c
+        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+\rho T_c
     \\
     \dot{L}_c&= 
-        \frac{\beta_c}{N_c}I_fS_c-\kappa_cL_c-\mu_cL_c
+        \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
     \\
-    \dot{I}_c&= \kappa_cL_c-\mu_cI_c
+    \dot{I}_c&= k_c L_c-\left(\mu_c +\delta\right)I_c
+    \\
+    \dot{T}_c&= \delta I_c-\left(\rho +\mu_c\right) T_c 
     \\
 \end{aligned}
 \end{equation}
-where $N_c=S_c+L_c+I_c$. For this model, the basic reproductive number is given by
- \begin{equation}
-     R_0=\left(\left(\frac{k_f}{\mu_f+k_f}\right)\left(\frac{\beta_c}{\mu_f}\right)\left(\frac{k_c}{k_c+\mu_c}\right)\left(\frac{F_c\beta_f}{\mu_c} \right) \right)^{1/4}
+
+\noindent The model, after control is applied becomes
+
+\begin{equation}\label{Eq:SIvectorhostmodelcontrol}
+\begin{aligned}
+    \dot{S}_f&= 
+        \Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_c S_f-(\mu_f+w(t))S_f
+    \\
+    \dot{L}_f&= 
+        \frac{\beta_f}{N_c^{\infty}} I_c S_f-
+        \left(
+            k_f + w(t) + \mu_f
+        \right) L_f
+    \\
+    \dot{I}_f&= 
+        k_f L_f-(w(t)+\mu_f)I_f
+    \\
+    \dot{S}_c&= 
+        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_f S_c-
+        \left(
+            \mu_c + v(t)
+        \right)
+        S_c + \rho T_c
+    \\
+    \dot{L}_c&= 
+        \frac{\beta_c}{N_c^{\infty}} I_f S_c - 
+        \left(
+            \mu_c + v(t) + 
+            k_c
+        \right)L_c
+    \\
+    \dot{I}_c&= 
+        k_c L_c - 
+        (\mu_c + v(t) + \delta u(t))I_c
+    \\
+    \dot{T}_c&= 
+        \delta u(t) I_c - 
+        \left(
+            \rho  + \mu_c
+        \right) T_c
+    \\
+\end{aligned}
+\end{equation}
+where $v(t)$, $u(t)$ and $w(t)$ represent culling, treatment and fumigation, respectively.
+%where $N_c=S_c+L_c+I_c$. 
+For the uncontrolled model, the basic reproductive number is given by
+ %\begin{equation}
+ %    R_0=\left(\left(\frac{k_f}{\mu_f+k_f}\right)\left(%\frac{\beta_c}{\mu_f}\right)\left(\frac{k_c}{k_c+\mu_c%}\right)\left(\frac{F_c\beta_f}{\mu_c} \right) %\right)^{1/4}
+ %\end{equation}
+  \begin{equation}\label{eq:R0}
+     R_0=\left(\frac{\beta_c\beta_f k_c k_fN_f^{\infty}}{\mu_f(\mu_c+k_c)(\mu_c+\delta_c)(\mu_f+k_f)N_c^{\infty}} \right)^{1/4}
  \end{equation}
- where 
- $
-    \displaystyle
-    F_c=\frac{N_f^{\infty}}{N_c^{\infty}}
-$, 
-$
+ 
+% where 
+% $
+%    \displaystyle
+%    F_c=\frac{N_f^{\infty}}{N_c^{\infty}}
+%$, 
+\noindent where $
     \displaystyle
     N_f^{\infty}=\frac{\Lambda_f}{\mu_f}
-$ 
+    $ 
  and 
 $
     \displaystyle
     N_c^{\infty} = \frac{\Lambda_c}{\mu_c}
-$. Table \ref{Table:Parameters} show 
+$. Table \ref{Table:Parameters} shows 
  the meaning and values of the parameters considered in this study.
  
 %Clearly, the root is due to the presence of the four-cycle as shown in figure (Z)
@@ -200,51 +251,120 @@ $. Table \ref{Table:Parameters} show
 
 
 \section{Local and global stability analysis}
-\noindent System \ref{Eq:SIvectorhostmodel} has two equilibrium points. 
-The disease free equilibrium 
+\noindent In system~\ref{Eq:SIvectorhostmodel}, we observe that the equations for the total cow and fly populations are given by:
+\begin{equation*}
+    \begin{aligned}
+        \dot{N}_{f} &= \Lambda_{f} - \mu_{f}N_{f}\\
+        \dot{N}_{c} &= \Lambda_{c} - \mu_{c}N_{c},
+    \end{aligned}
+\end{equation*}
+so it implies that, for a sufficiently large time, the fly and cow populations will tend to $\displaystyle N_f^{\infty}=\frac{\Lambda_f}{\mu_f}$ and $\displaystyle N_c^{\infty}=\frac{\Lambda_c}{\mu_c}$, respectively. In consequence, we can reduce system~\ref{Eq:SIvectorhostmodel},obtaining:
+\begin{equation}\label{Eq:ReduceSIvectorhostmodel}
+\begin{aligned}
+    \dot{L}_f&= 
+        \frac{\beta_f}{N_c^{\infty}}I_c\left(N_f^{\infty} - L_f - I_f\right)-\left(k_f+\mu_f\right)L_f
+    \\
+    \dot{I}_f&= 
+        k_f L_f-\mu_f I_f
+    \\
+    \dot{S}_c&= 
+        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+\rho \left(N_c^{\infty} - S_c - L_c - I_c\right)
+    \\
+    \dot{L}_c&= 
+        \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
+    \\
+    \dot{I}_c&= k_c L_c-\left(\mu_c +\delta\right)I_c
+\end{aligned}
+\end{equation}
+
+\noindent System~\ref{Eq:ReduceSIvectorhostmodel} has two equilibrium points in $\Omega = \{\left(L_{f},I_{f},S_{c},L_{c},I_{c}\right)\in \mathbb{R}^{5}: 0\leq L_{f} + I_{f}\leq N_{f}^{\infty}, 0\leq S_{c} + L_{c} + I_{c}\leq N_{c}^{\infty}\}$. The disease free equilibrium 
 $$
-    S_1 = (S_{f1}^*,L_{f1}^*,I_{f1}^*,S_{c1}^*,L_{c1}^*,I_{c1}^*) = 
-    (\frac{\Lambda_f}{\mu_f},0,0,\frac{\Lambda_c}{\mu_c},0,0)
+    S_1 = \left(L_{f1}^*,I_{f1}^*,S_{c1}^*,L_{c1}^*,I_{c1}^*\right) = 
+    \left(0,0,\frac{\Lambda_c}{\mu_c},0,0\right)
 $$ 
-and the endemic 
-equilibrium 
+and the endemic equilibrium 
 $$
-    S_2 = (S_{f2}^*,L_{f2}^*,I_{f2}^*,S_{c2}^*,L_{c2}^*,I_{c2}^*) = 
+    S_2 = (L_{f2}^*,I_{f2}^*,S_{c2}^*,L_{c2}^*,I_{c2}^*) = 
     .
 $$
 
-\noindent Theorem. The disease free equilibrium point $S_1$ is globally asymptotically stable if $R_0<1$.
-Consider the Lyapunov function
-$$V(L_f,I_f,L_c,I_c)=a_1L_f+a_2I_f+a_3L_c+a_4I_c$$
+\noindent Theorem. The disease free equilibrium point $S_1$ is globally asymptotically stable in $\Omega$, if $R_0<1$.\\
+Proof: Consider the Lyapunov function
+$$V(L_f,I_f,S_c,L_c,I_c) = a_1\left(S_c - N_{c}^{\infty} - N_{c}^{\infty}\ln{\frac{S_c}{N_{c}^{\infty}}}\right) + a_2 L_f + I_f + a_3 L_c + a_4 I_c~,$$
+with
 $$
-\begin{array}{lll}
-\dot{V}(t)&=&a_1\left[\frac{\beta_f}{N_c}S_cI_c-(\mu_f+k_f)L_f\right]+a_2\left[k_fL_f-\mu_fI_f\right]\\
-&&+a_3\left[ \beta_c\frac{S_cI_f}{N_c}-(k_c+\mu_c)L_c\right]+a_4\left[k_cL_c-\mu_cI_c\right]\\
-&\leq& \left[\frac{a_1\beta_fN_f}{N_c}-a_4\mu_c\right]I_c+\left[a_2k_f-a_1(\mu_f+k_f)\right]L_f+\\
-&&\left[a_3\beta_c-a_2\mu_f\right]I_f+\left[a_4k_c-a_3(k_c+\mu_c)\right]L_c
-\end{array}
+a_1 = a_2 = \frac{k_c}{\mu_c + k_c},\ a_3 = \left(\frac{k_f}{\mu_f + k_f}\right)\left(\frac{k_c}{\mu_c + k_c}\right)\frac{\beta_c}{\mu_f},\ a_4 = \left(\frac{k_c}{\mu_c + k_c}\right)\frac{\beta_c}{\mu_f}~.
 $$
-Then, taking 
-\begin{align*}
-    & a_1=
-        \frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}
-        \frac{\beta_c}{\mu_f}\frac{k_f}{k_f+\mu_f},
-    %
-    & a_2=
-        \frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c}\frac{\beta_c}{\mu_f},
-    &
-    & a_3=
-        \frac{1}{\mu_c}\frac{k_c}{k_c+\mu_c},
-    &
-    & a_4=
-        \frac{1}{\mu_c}, 
-\end{align*}
-we arrive at
-\begin{equation}
-    \dot{V}(t) 
-        \leq  R_0 - 1,
+The derivative of $V$ is as follows:
+\begin{equation}\label{Eq:DFE_Lyapunov}
+    \begin{aligned}
+    \dot{V} &= a_1\left(1 - \frac{N_{c}^{\infty}}{S_c}\right)\left[\Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+\rho \left(N_c^{\infty} - S_c - L_c - I_c\right)\right]\\
+    &\quad + a_2 \left[\frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c\right] + \left[k_c L_c-\left(\mu_c +\delta\right)I_c\right]\\
+    &\quad + a_3\left[\frac{\beta_f}{N_c^{\infty}}I_c\left(N_f^{\infty} - L_f - I_f\right)-\left(k_f+\mu_f\right)L_f\right] + a_4 \left[k_f L_f-\mu_f I_f \right]
+    \end{aligned}
 \end{equation}
-which completes the proof.
+Substituting the values of $a_1$, $a_2$, $a_3$ and $a_4$, we simplify equation~\ref{Eq:DFE_Lyapunov},
+\begin{equation*}
+    \begin{aligned}
+    \dot{V} &= -a_1\frac{\left(S_c - N_{c}^{\infty}\right)^{2}}{S_c} - a_1\rho\left(N_{c}^{\infty} - S_c - I_c - L_c\right)\left(\frac{N_{c}^{\infty} - S_c}{S_c}\right)\\
+    &\quad\ - a_3\beta_f\frac{I_c}{N_{c}^{\infty}}\left(L_f + I_f\right) - \left(\mu_c + k_c\right)\left[1 - \frac{\beta_c\beta_f k_c k_fN_f^{\infty}}{\mu_f(\mu_c+k_c)(\mu_c+\delta_c)(\mu_f+k_f)N_c^{\infty}}\right]I_c
+    \end{aligned}
+\end{equation*}
+Replacing the expression for $\mathcal{R}_{0}$ given in~\eqref{eq:R0}, we conclude that $\dot{V} < 0$ for $\mathcal{R}_{0} < 1$. Finally, as $S_{1}$ is the only invariant set in $\Omega$ such that $\dot{V}=0$, from the La Salle-Lyapunov theorem, it follows that if $\mathcal{R}_{0} < 1$, then $S_{1}$ is globally asymptotically stable in $\Omega$.
+
+\noindent Theorem. A unique endemic equilibrium exists when $R_0>1$.\\
+Proof: Solving the equations for the state variables, we end up with the following relationships\\
+$S_f=\frac{\Lambda_f}{\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}$;
+$L_f=\left(\frac{\beta_f}{N_c^{\infty}(\lambda_f+\mu_f)}\right)\left(\frac{\Lambda_f}{\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}\right)I_c$;\\
+$I_f=\left(\frac{\lambda_f}{\mu_f}\right)\left(\frac{\beta_f}{N_c^{\infty}(\lambda_f+\mu_f)}\right)\left(\frac{\Lambda_f}{\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}\right)I_c$;
+$S_c=\frac{(\mu_c+\lambda_c)(\mu_c+\delta)(\lambda_f+\mu_f)\mu_fN_c^{\infty}^2\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}{\lambda_c\beta_c\lambda_f\beta_f\Lambda_f}$;\\
+$T_c=\frac{\delta T_c}{\rho+\mu_c}$;
+$L_c=\frac{(\mu_c+\delta)I_c}{\lambda_c}$ and
+$I_c=\frac{A}{B}\left(R_0^4-1\right)$,
+with\\
+$A=\frac{\mu_c\mu_f^2(\mu_c+\lambda_c)(\mu_c+\delta)(\lambda_f+\mu_f)N_c^{\infty}^2}{\lambda_c\beta_c\lambda_f\beta_f\Lambda_f}$ and $B=\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}\left[1+{\frac{\mu_c(\lambda_f+\mu_f)\mu_cN_c^{\infty}}{\beta_c}}\right]-\frac{\rho\delta}{\rho+\mu_c}$.\\
+Clearly, $\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}>\delta$, $1+{\frac{\mu_c(\lambda_f+\mu_f)\mu_c N_c^{\infty}}{\beta_c}}>1$ and $\frac{\rho\delta}{\rho+\mu_c}<\delta$. Therefore, $I_c>0$ if and only if $R_0>1$.\\
+
+\noindent Observe that the endemic equilibrium is preserved when no control is applied into the model ($\rho=\delta=0$). For this particular case it is possible to show global stability for the endemic equilibrium\\
+
+\noindent Theorem. The endemic equilibrium for the model with no control ($\rho=\delta=0$) is asymptotically globally stable.\\
+Proof: Following the ideas in \cite{Zhou:2014}, we consider the Lyapunov function
+$$V=\sum_{i=1}^6a_i\left(X_i-\overline{X}_i\ln{\frac{X_i}{\overline{X}_i}}\right),$$ where $X_i$ are the components of the vector $(S_f,L_f,I_f,S_c,L_c,I_c)$ and $\overline{X}=(\overline{S}_f,\overline{L}_f,\overline{I}_f,\overline{S}_c,\overline{L}_c,\overline{I}_c)$ are the coordinates of the endemic equilibrium. 
+
+\noindent At the endemic equilibrium point, the following equalities hold
+$$\Lambda_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+\mu_f\overline{S}_f \qquad \Lambda_c=\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+\mu_c\overline{S}_c \qquad \mu_f+k_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}\overline{L}_f}$$
+\begin{equation}\label{endemic_equalities}
+\mu_c+k_c=\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}\overline{L}_c} \qquad \mu_f=k_f\frac{\overline{L}_f}{\overline{I}_f} \qquad \mu_c= k_c\frac{\overline{L}_c}{\overline{I}_c}
+\end{equation}
+
+\noindent From this information, we obtain 
+$$\dot{V}(t)=a_1\left(\Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_cS_f-\mu_fS_f\right)\left(1-\frac{\overline{S}_f}{S_f}\right)+a_2\left(\frac{\beta_f}{N_c^{\infty}}I_cS_f-\left(k_f+\mu_f\right)L_f\right)\left(1-\frac{\overline{L}_f}{L_f}\right)$$
+$$+a_3\left(k_f L_f-\mu_fI_f\right)\left(1-\frac{\overline{I}_f}{I_f}\right)+a_4\left(\Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c\right)\left(1-\frac{\overline{S}_c}{S_c}\right)$$
+$$+a_5\left(\frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c\right)\left(1-\frac{\overline{L}_c}{L_c}\right)+a_6\left(k_c L_c-\mu_cI_c\right)\left(1-\frac{\overline{I}_c}{I_c}\right).$$
+
+\noindent Then, by taking the scaled variables
+$$
+s_f^*=\frac{S_f}{\overline{S}_f};\quad l_f^*=\frac{L_f}{\overline{L}_f};\quad i_f^*=\frac{I_f}{\overline{I}_f};\quad
+s_c^*=\frac{S_c}{\overline{S}_c};\quad l_c^*=\frac{L_c}{\overline{L}_c};\quad i_c^*=\frac{I_c}{\overline{I}_c}
+$$
+and the use of the equalities in \ref{endemic_equalities}, our last expression becomes
+$$\dot{V}(t)=-a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}(1-s_f^*i_c^*)-a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{s_f^*N_c^{\infty}}(1-s_f^*i_c^*)$$
+$$+a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(s_f^*i_c^*-l_f^*\right)\left(1-\frac{1}{l_f^*}\right)+a_3k_f\overline{L}_f\left(1-\frac{1}{i_f^*}\right)\left(l_f^*-i_f^*\right)$$
+$$+a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(1-\frac{1}{s_c^*}\right)\left(1-i_f^*s_c^*\right)+a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(1-\frac{1}{l_c^*}\right)\left(i_f^*s_c^*-l_c^*\right)$$
+$$+a_6k_c\overline{L}_c\left(1-\frac{1}{i_c^*}\right)\left(l_c^*-i_c^*\right).$$
+After rearranging terms we end up with
+$$\dot{V}(t)=-a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+\left(a_3k_f\overline{L}_f-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\right)l_f^*$$ 
+$$+\left(a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}-a_3k_f\overline{L}_f\right)i_f^*+\left(a_6k_c\overline{L}_c-a_5\frac{\beta_c\overline{I}_f\overline{S}_c}{N_c^{\infty}}\right)l_c^*+\left(a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}-a_6k_c\overline{L}_c\right)i_c^*$$
+$$+\left(a_2-a_1\right)\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}s_f^*i_c^*+\left(a_5-a_4\right)\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}i_f^*s_c^*+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}$$
+$$+a_3k_f\overline{L}_f+a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+a_6k_c\overline{L}_c-a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(\frac{1}{s_f^*}\right)-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(\frac{s_f^*i_c^*}{l_f^*}\right)$$
+$$-a_3k_f\overline{L}_f\left(\frac{l_f^*}{i_f^*}\right)-a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(\frac{1}{s_c^*}\right)-a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(\frac{s_c^*i_f^*}{l_c^*}\right)-a_6k_c\overline{L}_c\left(\frac{l_c^*}{i_c^*}\right) $$
+
+\noindent By taking the constant values as
+$$a_2=a_1;\quad a_3=\frac{\beta_f\overline{I}_c\overline{S}_f}{k_f\overline{L}_f N_c^{\infty}}a_1;\quad a_4=\frac{\beta_f\overline{I}_c\overline{S}_f}{\beta_c\overline{I}_f\overline{S}_c}a_1;\quad a_5=a_4;\quad a_6=\frac{\beta_f\overline{I}_c\overline{S}_f}{k_c\overline{L}_c N_c^{\infty}}a_1 $$,
+we obtain
+$$\dot{V}= -a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left[6-\left(\frac{1}{s_f^*}+\frac{s_f^*i_c^*}{l_f^*}+\frac{l_f^*}{i_f^*}+\frac{1}{s_c^*}+\frac{i_f^*s_c^*}{l_c^*}+\frac{l_c^*}{i_c^*}\right)\right]$$
+Now, because the arithmetic mean is larger than the geometric mean, implies that  $\frac{1}{6}\left(\frac{1}{s_f^*}+\frac{s_f^*i_c^*}{l_f^*}+\frac{l_f^*}{i_f^*}+\frac{1}{s_c^*}+\frac{i_f^*s_c^*}{l_c^*}+\frac{l_c^*}{i_c^*}\right)\geq 1$, and therefore $\dot{V}\leq 0$. Clearly, $\dot{V} = 0$ only at the endemic equilibrium.
+
 
 \subsection{Persistance}
 
