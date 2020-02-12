@@ -1,4 +1,4 @@
-\documentclass[preprint,12pt]{elsarticle}
+S\documentclass[preprint,12pt]{elsarticle}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -18,9 +18,8 @@
 \address{Universidad de Sonora}
 \begin{abstract}
 %% Text of abstract
-In the present manuscript we present a mathematical model for thelaziasis. 
-We consider outbreak studies and estimate the severity of the disease. 
-We base our study on a multiple hosts ...
+In the present manuscript we present a mathematical model for thelaziasis in cattle. 
+By appliyng different type of controls, we find optimal strategies to reduce the endemic levels.
 \end{abstract}
 
 \begin{keyword}
@@ -43,20 +42,28 @@ Thelaziasis \sep Mathematical Model \sep Parameter Estimation \sep Basic Reprodu
 \section{Introduction}
 \label{Section:Intro}
 
-\noindent The disease. Hosts. What are the effects on the infected individuals. 
-Where has been found. What is the vector in each case. Case studies. 
-The use of a mathematical model to study a particular place.
+\noindent Thelaziasis is a vector neglected disease that affects mainly mammals, including humans and in a minor scales, birds. In humans, even it has been found in rare cases through the world, it has a higher presence in several areas of Asia, where it occurs in rural areas with high levels of poverty, and where the main hosts are children and the elderly \cite{Wang:2014,Zhang:2017,Krishnachary:2014}. The presence of these worms in its final hosts might result in excesive lacrimation, conjuntivitis, keratitis, epiphora and corneal ulcers \cite{Asrat:2016}, but in humans also can be cause of ocular morbidity \cite{Krishnachary:2014}.
 
-\noindent Thelaziasis is a vector neglected disease that affects mainly mammals, including humans and in a minor scales, 
-birds. The transmission takes place due to the presence of a vector which is the face fly \textit{Musca autumnalis}. 
-Depending on the region this vector might vary as well as the host species.
+\noindent Transmission takes place due to the presence of a vector, which are usually flies and they act as intermediate hosts \cite{Otranto:2003_2}. Flies have a life expectancy of about 28 days, but it might live up to two months (\cite{sanchez:1998}). The first larval stage (L1) of the worm is ingested by the fly when it feeds from lachrymal secretions, where in the internal organs, the worm develops into its second (L2) and third (L3) larval stages within 21 days post infection \cite{Otranto:2003}. Other studies \cite{Chanie:2014}, show that flies infected with \textit{Thelazia lacrymalis} can reach the infective stage in 12-15 days, while this takes 28-32 days for flies infected with \textit{T. gulosa} \cite{Chanie:2014}. Once in the infective stage, the fly releases L3 larvae into the definite host. Finally, once in the definite host, the L3 larvae matures within 3 to 6 weeks, where the new worm deposits new eggs into the definite host becoming infective \cite{Chanie:2014}. Foxes lifespan is 2 years \cite{Devenish:2014}.
 
-\noindent The transmission depends upon the presence of vectors and therefore thelaziasis has a seasonal occurrence \cite{Asrat:2016}
 
-\noindent The transmitted by the face fly \cite{Otranto:2003}. The disease has spread in animals but in humans it has been reported but in a very isolated cases \cite{Wang:2014}, \cite{Otranto:2008}, \cite{shen:2006}.\\
+\noindent The transmission depends upon the presence of vectors and therefore thelaziasis has a seasonal occurrence \cite{Asrat:2016}. In this work we focus on the control of the disease which occurs in one year season only.
 
-\noindent In \cite{Moolenbeek:1980} it was found the presence of \textit{Thelazia gulosa} and \textit{Thelazia lacrymalis} in cattle where the main responsible vector is the face fly (\textit{Musca autumnalis}) in which of larvae of \textit{Thelaszia spp} were found. Data from slaugtered cattle was collected from April to October
-1978. In \cite{Lyons:2000} the authors present a survey for different diseases in equids in Kentucky USA. In their study, they found the presence \textit{Thelazia Lacrymalis} in which it is pressumed that the face fly (\textit{Musca autumnalis}) is the vector responsible for transmission. Otranto et. al. \cite{Otranto:2003} made a survey in different regions in Italy to observe the current status on dogs, cats and foxes. In their work they present the proportion of infected animals (by \textit{Thelazia Callipaeda}) in each of the regions they studied. In \cite{Dubay:2000} data about the proportions of mule deer from Wyoming and Utah by \textit{T. californiensis} was reported. Asrat \cite{Asrat:2016} sudy the prevalence of Thelaziasis in Ethiopia whereas Beitel \cite{Beitel:1974} studied the prevalence of eyeworms in the columbian black tailed deer in Oregon, USA by \textit{Thelazia californiensis}. Khedri et. al. \cite{Khedri:2016} present a one year data about infected bovine in Southeast Iran (puede ser útil).
+\noindent A proper understanding in the control of thelaziasis in animals can be of great interest so to prevent possible future outbreaks in animals or humans. Control strategies for thelaziasis include treatment of infected individuals. Dog thelaziasis has been treated with a topical formulation of $10\%$ imidacloprid and $2.5\%$ moxidectin \cite{Bianciardi:2005},
+
+..
+vaccination? In humans?
+
+In \cite{shen:2006}, the authors comment control strategies to treat human thelaziosis.
+
+
+
+
+%which may vary depending on the regions where thelaziasis is present. For example, in Europe \textit{Thelazia Callipaeda} is transmitted by male fruitflies \textit{Phortica variegata} \cite{Palfreyman:2018}. 
+
+%\noindent The transmitted by the face fly \cite{Otranto:2003}. The disease has spread in animals but in humans it has been reported but in a very isolated cases \cite{Wang:2014}, \cite{Otranto:2008}, \cite{shen:2006}.\\
+
+\noindent In \cite{Moolenbeek:1980} it was found the presence of \textit{Thelazia gulosa} and \textit{Thelazia lacrymalis} in cattle where the main responsible vector is the face fly (\textit{Musca autumnalis}) in which of larvae of \textit{Thelaszia spp} were found. Data from slaugtered cattle was collected from April to October 1978. In \cite{Lyons:2000} the authors present a survey for different diseases in equids in Kentucky USA. In their study, they found the presence \textit{Thelazia Lacrymalis} in which it is pressumed that the face fly (\textit{Musca autumnalis}) is the vector responsible for transmission. Otranto et. al. \cite{Otranto:2003} made a survey in different regions in Italy to observe the current status on dogs, cats and foxes. In their work they present the proportion of infected animals (by \textit{Thelazia Callipaeda}) in each of the regions they studied. In \cite{Dubay:2000} data about the proportions of mule deer from Wyoming and Utah by \textit{T. californiensis} was reported. Asrat \cite{Asrat:2016} sudy the prevalence of Thelaziasis in Ethiopia whereas Beitel \cite{Beitel:1974} studied the prevalence of eyeworms in the columbian black tailed deer in Oregon, USA by \textit{Thelazia californiensis}. Khedri et. al. \cite{Khedri:2016} present a one year data about infected bovine in Southeast Iran (puede ser útil).
 
 \noindent In \cite{Ohara:1989}, the authors present a study about the prevalence and intensity of \textit{Thelazia spp} in a flies population in Alberta, Canada.
 
@@ -74,8 +81,7 @@ with thelazia, must reach a final steady level.
 \noindent In the mathematical side, analyse the model about stability, persistance, what would happen if stochasticity gets implemented? how?
 
 \subsection{Model parameters}
-\noindent Flies have a life expectancy of about 28 days, but it might live up to two months (\cite{sanchez:1998}). The first larval stage (L1) of the worm is ingested by the fly when it feeds from lachrymal secretions, where in the internal organs, the worm develops into its second (L2) and third (L3) larval stages within 21 days post infection \cite{Otranto:2003}. Other studies
-\cite{Chanie:2014}, show that flies infected with \textit{Thelazia lacrymalis} can reach the infective stage in 12-15 days, while this takes 28-32 days for flies infected with \textit{T. gulosa} \cite{Chanie:2014}. Once in the infective stage, the fly releases L3 larvae into the definite host. Finally, once in the definite host, the L3 larvae matures within 3 to 6 weeks, where the new worm deposits new eggs into the definite host becoming infective \cite{Chanie:2014}. Foxes lifespan is 2 years \cite{Devenish:2014}.
+
 
 \noindent We will use the model to fit two data sets. One referring to a multi-host case given by dogs and foxes and the second in a one host study, particularly the case of cattle.
 %\subsubsection{Dogs and foxes}
@@ -107,19 +113,17 @@ following SI vector host model for cattle and flies.
         k_f L_f-\mu_fI_f
     \\
     \dot{S}_c&= 
-        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+\rho T_c
+        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c
     \\
     \dot{L}_c&= 
         \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
     \\
-    \dot{I}_c&= k_c L_c-\left(\mu_c +\delta\right)I_c
-    \\
-    \dot{T}_c&= \delta I_c-\left(\rho +\mu_c\right) T_c 
+    \dot{I}_c&= k_c L_c-\mu_c +\delta I_c
     \\
 \end{aligned}
 \end{equation}
 
-\noindent The model, after control is applied becomes
+\noindent After control is applied (need to find out the models we will apply)
 
 \begin{equation}\label{Eq:SIvectorhostmodelcontrol}
 \begin{aligned}
