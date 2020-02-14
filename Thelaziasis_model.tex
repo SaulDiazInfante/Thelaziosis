@@ -51,8 +51,6 @@ Thelaziasis \sep Mathematical Model \sep Parameter Estimation \sep Basic Reprodu
 
 \noindent A proper understanding in the control of thelaziasis in animals can be of great interest so to prevent possible future outbreaks in animals or humans. Control strategies for thelaziasis include treatment of infected individuals. Dog thelaziasis has been treated with a topical formulation of $10\%$ imidacloprid and $2.5\%$ moxidectin \cite{Bianciardi:2005},
 
-..
-vaccination? In humans?
 
 In \cite{shen:2006}, the authors comment control strategies to treat human thelaziosis.
 
@@ -165,9 +163,61 @@ following SI vector host model for cattle and flies.
     \\
 \end{aligned}
 \end{equation}
-where $v(t)$, $u(t)$ and $w(t)$ represent culling, treatment and fumigation, respectively.
+where $v(t)$, $u(t)$ and $w(t)$ represent culling, treatment and fumigation, respectively.\\
 %where $N_c=S_c+L_c+I_c$. 
-For the uncontrolled model, the basic reproductive number is given by
+\noindent A second version of the model takes into account two different disease stages for the definite host (cows). Such stages refer to the severity of the worms parasitism. The main idea is to have different control measures depending on the severity of the disease. Therefore, we define two 
+different infected classes for infected cows, $I_{cl}$ and $I_{ch}$ which refer infected cows with light and heavy worm burden, respectively. Once a vector has transmitted some larvae into some susceptible individuals they become infected and depending on the amount of deposited larvae, a fraction $\theta$ of the susceptible hosts move to the $I_{cl}$ class and the complement $1-\theta$, move to the $I_{ch}$ class. An individual in the $I_{cl}$ class might move to the $I_{ch}$ class as it keep continuously in contact with vectors which remain depositing larvae into the eyes in such way that eventually the light worm burden becomes high and then a change to the class $I_{ch}$. Our model in this case becomes
+\begin{equation}\label{Eq:SIvectorhostmodel_v2}
+\begin{aligned}
+    \dot{S}_f&= 
+        \Lambda_f-\frac{S_f}{N_c^{\infty}}\left(\beta_fI_{cl}+\tilde{\beta}_fI_{ch} \right)-\mu_fS_f
+    \\
+    \dot{L}_f&= 
+        \frac{S_f}{N_c^{\infty}}\left(\beta_fI_{cl}+\tilde{\beta}_fI_{ch}\right)-\left(k_f+\mu_f\right)L_f
+    \\
+    \dot{I}_f&= 
+        k_f L_f-\mu_fI_f
+    \\
+    \dot{S}_c&= 
+        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c
+    \\
+    \dot{L}_c&= 
+        \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
+    \\
+    \dot{I}_{cl}&=  \theta k_c L_c- \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f-\mu_c I_{cl} 
+    \\
+    \dot{I}_{ch}&= (1-\theta) k_c L_c + \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f- \mu_c I_{ch}
+    \\
+\end{aligned}
+\end{equation}
+\noindent In order to control the presence of eyeworms we focus our strategy based on \cite{Manjunath:2016}, in which there are considered three levels of worm burden. For those scenarios, the two less severe are treated with medication, whereas the most severe consist on direct removal. In our model, we focus on two generic strategies. The use of medication, which is applied for light to medium levels as one single class $(I_{cl})$ and removal for the heavy worm burden $(I_{ch})$. Under these hyphothesis our model with applied control becomes,  
+\begin{equation}\label{Eq:SIvectorhostmodel_v2controlled}
+\begin{aligned}
+    \dot{S}_f&= 
+        \Lambda_f-\frac{S_f}{N_c^{\infty}}\left(\beta_fI_{cl}+\tilde{\beta}_fI_{ch} \right)-\left(\mu_f+w_f(t)\right)S_f
+    \\
+    \dot{L}_f&= 
+        \frac{S_f}{N_c^{\infty}}\left(\beta_fI_{cl}+\tilde{\beta}_fI_{ch}\right)-\left(k_f+\mu_f+w_f(t)\right)L_f
+    \\
+    \dot{I}_f&= 
+        k_f L_f-\left(w_f(t)+\mu_f\right)I_f
+    \\
+    \dot{S}_c&= 
+        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+v_h(t)I_{ch}+\rho T_c
+    \\
+    \dot{L}_c&= 
+        \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
+    \\
+    \dot{I}_{cl}&=  \theta k_c L_c- \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f-(\mu_c+v_l(t)) I_{cl} 
+    \\
+    \dot{I}_{ch}&= (1-\theta) k_c L_c + \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f- (\mu_c+v_h(t)) I_{ch}
+    \\
+    \dot{T}_c&= v_l(t)I_{cl}-\left(\mu_c+\rho\right)T_c
+\end{aligned}
+\end{equation}
+where $w_f(t)$ represents fly fumigation, $v_l(t)$ is cow treatment by medication and $v_h(t)$ consists on worm removal.\\
+
+\noindent For the uncontrolled model (System \ref{Eq:SIvectorhostmodel}), the basic reproductive number is given by
  %\begin{equation}
  %    R_0=\left(\left(\frac{k_f}{\mu_f+k_f}\right)\left(%\frac{\beta_c}{\mu_f}\right)\left(\frac{k_c}{k_c+\mu_c%}\right)\left(\frac{F_c\beta_f}{\mu_c} \right) %\right)^{1/4}
  %\end{equation}
