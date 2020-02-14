@@ -136,22 +136,35 @@
     multi-host case given by dogs and foxes and the second in a one host study, 
     particularly the case of cattle.
 %\subsubsection{Dogs and foxes}
-%\noindent Foxes lifespan is about 2 years \cite{Devenish:2014}. Dogs lifespan is approximately 7 to 14 years \cite{selman:2013}.
+%\noindent Foxes lifespan is about 2 years \cite{Devenish:2014}. Dogs lifespan 
+%is approximately 7 to 14 years \cite{selman:2013}.
 
 \subsubsection{Cattle only.}
-\noindent The problem can be seen as a simple host or multi-host when considering beef and milk cattle.
-\noindent Some considerations about the life expectancy of the individuals. A common technique 
-to detect thelazia in farming animals is done by sacrificing the animal. In this case, the infected individual is no longer part of the infection cycle and basically out of the dynamics.
-In this work we consider that the sample used to observe the proportion of infected individuals is of little to neglected significance respect to the total population.
+    The problem can be seen as a simple host or multi-host when considering 
+beef and milk cattle.
 
-\noindent The life expectancy of beef cattle is approximately 16 to 24 months (and can be up to 30 months \cite{stanley:2003}), whereas for diary cattle is 5 to 6 years. The natural cattle life expectancy is 18 to 22 years.
+    Some considerations about the life expectancy of the individuals. A common 
+technique to detect thelazia in farming animals is done by sacrificing the 
+animal. In this case, the infected individual is no longer part of the 
+infection cycle and basically out of the dynamics.
+In this work we consider that the sample used to observe the proportion of 
+infected individuals is of little to neglected significance respect to the 
+total population.
 
+The life expectancy of beef cattle is approximately 16 to 24 months (and can be 
+up to 30 months \cite{stanley:2003}), whereas for diary cattle is 5 to 6 years. 
+The natural cattle life expectancy is 18 to 22 years.
 
 \section{Mathematical Model}
 
-\noindent Our model is based on the interaction of flies and cattle. For the model, we consider that infected cattle shows visual presence of worms. A sample of the herd is taken per time unit and the animals are revised if there is presence of worms. Then vaccination proceeds.  
-Following the formulation in Esteva \cite{Esteva:1998} we obtain the 
-following SI vector host model for cattle and flies.
+        Our model is based on the interaction of flies and cattle. For the 
+    model, we consider that infected cattle shows visual presence of worms. A 
+    sample of the herd is taken per time unit and the animals are revised if 
+    there is presence of worms. Then vaccination proceeds.  
+    Following the formulation in Esteva \cite{Esteva:1998} we obtain the 
+    following SI vector host model for cattle and flies.
+%
+%
 \begin{equation}\label{Eq:SIvectorhostmodel}
 \begin{aligned}
     \dot{S}_f&= 
@@ -174,7 +187,7 @@ following SI vector host model for cattle and flies.
 \end{aligned}
 \end{equation}
 
-\noindent After control is applied (need to find out the models we will apply)
+    After control is applied (need to find out the models we will apply)
 \cite{manjunath2016prevalence}.
 \todo{
     comment about the medicament and control strategies respect to the
@@ -221,40 +234,28 @@ following SI vector host model for cattle and flies.
     \\
 \end{aligned}
 \end{equation}
-where $v(t)$, $u(t)$ and $w(t)$ represent culling, treatment and fumigation, respectively.
-%where $N_c=S_c+L_c+I_c$. 
-For the uncontrolled model, the basic reproductive number is given by
- %\begin{equation}
- %    R_0=\left(\left(\frac{k_f}{\mu_f+k_f}\right)\left(%\frac{\beta_c}{\mu_f}\right)\left(\frac{k_c}{k_c+\mu_c%}\right)\left(\frac{F_c\beta_f}{\mu_c} \right) %\right)^{1/4}
- %\end{equation}
+where $v(t)$, $u(t)$ and $w(t)$ represent culling, treatment and fumigation, 
+respectively. For the uncontrolled model, the basic reproductive number is 
+given by
+
   \begin{equation}\label{eq:R0}
      R_0=\left(\frac{\beta_c\beta_f k_c k_fN_f^{\infty}}{\mu_f(\mu_c+k_c)(\mu_c+\delta_c)(\mu_f+k_f)N_c^{\infty}} \right)^{1/4}
  \end{equation}
- 
-% where 
-% $
-%    \displaystyle
-%    F_c=\frac{N_f^{\infty}}{N_c^{\infty}}
-%$, 
-\noindent where $
+
+where 
+$
     \displaystyle
     N_f^{\infty}=\frac{\Lambda_f}{\mu_f}
-    $ 
- and 
+$ 
+and 
 $
     \displaystyle
     N_c^{\infty} = \frac{\Lambda_c}{\mu_c}
 $. Table \ref{Table:Parameters} shows 
  the meaning and values of the parameters considered in this study.
  
-%Clearly, the root is due to the presence of the four-cycle as shown in figure (Z)
-%which is the contribution of the infection cycles fox-flies and dogs-flies.\\
-
-%About the number of cattle in a farm
-%http://www.agr.gc.ca/eng/industry-markets-and-trade/canadian-agri-food-sector-intelligence/red-meat-and-livestock/red-meat-and-livestock-market-information/inventories/cattle-inventory-by-farm-type-ontario/?id=1415860000081
-
 \begin{table}[htb]
-	\begin{center}
+    \begin{center}
         \begin{tabular}{cllc}
 	%		\toprule
 			\hline
@@ -291,11 +292,13 @@ $. Table \ref{Table:Parameters} shows
 			$k_{i}^{-1}$
 			&
 				average latency time &&\\
-				&for hosts $i=1,2$ & $\approx$ 35 days& \cite{Otranto:bookchapter}
+				&for hosts $i=1,2$ & $\approx$ 35 days& 
+                \cite{Otranto:bookchapter}
 			\\
 			& & 21-42 days& \cite{Chanie:2014}
 			\\			
-			 $\mu_v^{-1}$	& vector average lifespan & 30-60 months&\cite{sanchez:1998}
+			 $\mu_v^{-1}$	& vector average lifespan & 30-60 
+             months&\cite{sanchez:1998}
 			\\
 			$\mu_c^{-1}$
 			&
@@ -311,24 +314,30 @@ $. Table \ref{Table:Parameters} shows
 
 
 \section{Local and global stability analysis}
-\noindent In system~\ref{Eq:SIvectorhostmodel}, we observe that the equations for the total cow and fly populations are given by:
+    In system~\ref{Eq:SIvectorhostmodel}, we observe that the equations for the 
+    total cow and fly populations are given by:
 \begin{equation*}
     \begin{aligned}
         \dot{N}_{f} &= \Lambda_{f} - \mu_{f}N_{f}\\
         \dot{N}_{c} &= \Lambda_{c} - \mu_{c}N_{c},
     \end{aligned}
 \end{equation*}
-so it implies that, for a sufficiently large time, the fly and cow populations will tend to $\displaystyle N_f^{\infty}=\frac{\Lambda_f}{\mu_f}$ and $\displaystyle N_c^{\infty}=\frac{\Lambda_c}{\mu_c}$, respectively. In consequence, we can reduce system~\ref{Eq:SIvectorhostmodel},obtaining:
+so it implies that, for a sufficiently large time, the fly and cow populations 
+will tend to $\displaystyle N_f^{\infty}=\frac{\Lambda_f}{\mu_f}$ and 
+$\displaystyle N_c^{\infty}=\frac{\Lambda_c}{\mu_c}$, respectively. In 
+consequence, we can reduce system~\ref{Eq:SIvectorhostmodel},obtaining:
 \begin{equation}\label{Eq:ReduceSIvectorhostmodel}
 \begin{aligned}
     \dot{L}_f&= 
-        \frac{\beta_f}{N_c^{\infty}}I_c\left(N_f^{\infty} - L_f - I_f\right)-\left(k_f+\mu_f\right)L_f
+        \frac{\beta_f}{N_c^{\infty}}I_c\left(N_f^{\infty} - L_f - 
+        I_f\right)-\left(k_f+\mu_f\right)L_f
     \\
     \dot{I}_f&= 
         k_f L_f-\mu_f I_f
     \\
     \dot{S}_c&= 
-        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+\rho \left(N_c^{\infty} - S_c - L_c - I_c\right)
+        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+\rho 
+        \left(N_c^{\infty} - S_c - L_c - I_c\right)
     \\
     \dot{L}_c&= 
         \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
@@ -337,23 +346,45 @@ so it implies that, for a sufficiently large time, the fly and cow populations w
 \end{aligned}
 \end{equation}
 
-\noindent System~\ref{Eq:ReduceSIvectorhostmodel} has two equilibrium points in $\Omega = \{\left(L_{f},I_{f},S_{c},L_{c},I_{c}\right)\in \mathbb{R}^{5}: 0\leq L_{f} + I_{f}\leq N_{f}^{\infty}, 0\leq S_{c} + L_{c} + I_{c}\leq N_{c}^{\infty}\}$. The disease free equilibrium 
+System \ref{Eq:ReduceSIvectorhostmodel} has two equilibrium points in 
+$
+    \Omega = 
+        \{
+            \left(
+                L_{f}, I_{f}, S_{c}, L_{c}, I_{c}
+            \right)
+            \in 
+            \mathbb{R}^{5}: 0\leq L_{f} + I_{f}
+            \leq N_{f}^{\infty}, 
+            0\leq S_{c} + L_{c} + I_{c}\leq N_{c}^{\infty}
+        \}$. 
+        The disease free equilibrium 
 $$
-    S_1 = \left(L_{f1}^*,I_{f1}^*,S_{c1}^*,L_{c1}^*,I_{c1}^*\right) = 
-    \left(0,0,\frac{\Lambda_c}{\mu_c},0,0\right)
+    S_1 = 
+        \left(
+            L_{f1} ^ *, I_{f1} ^ *, S_{c1} ^ *, L_{c1} ^ *, I_{c1} ^ *
+        \right) = 
+    \left(0, 0, \frac{\Lambda_c}{\mu_c}, 0, 0\right)
 $$ 
 and the endemic equilibrium 
 $$
-    S_2 = (L_{f2}^*,I_{f2}^*,S_{c2}^*,L_{c2}^*,I_{c2}^*) = 
+    S_2 = (L_{f2} ^ *, I_{f2} ^ *, S_{c2} ^ *, L_{c2} ^ *, I_{c2} ^ *) = 
     .
 $$
 
-\noindent Theorem. The disease free equilibrium point $S_1$ is globally asymptotically stable in $\Omega$, if $R_0<1$.\\
+Theorem. The disease free equilibrium point $S_1$ is globally asymptotically 
+stable in $\Omega$, if $R_0<1$.\\
 Proof: Consider the Lyapunov function
-$$V(L_f,I_f,S_c,L_c,I_c) = a_1\left(S_c - N_{c}^{\infty} - N_{c}^{\infty}\ln{\frac{S_c}{N_{c}^{\infty}}}\right) + a_2 L_f + I_f + a_3 L_c + a_4 I_c~,$$
+$$
+    V(L_f,I_f,S_c,L_c,I_c) = a_1\left(S_c - N_{c}^{\infty} - 
+    N_{c}^{\infty}\ln{\frac{S_c}{N_{c}^{\infty}}}\right) + a_2 L_f + I_f + a_3 
+    L_c + a_4 I_c~,
+$$
 with
 $$
-a_1 = a_2 = \frac{k_c}{\mu_c + k_c},\ a_3 = \left(\frac{k_f}{\mu_f + k_f}\right)\left(\frac{k_c}{\mu_c + k_c}\right)\frac{\beta_c}{\mu_f},\ a_4 = \left(\frac{k_c}{\mu_c + k_c}\right)\frac{\beta_c}{\mu_f}~.
+    a_1 = a_2 = \frac{k_c}{\mu_c + k_c},\ a_3 = \left(\frac{k_f}{\mu_f + 
+    k_f}\right)\left(\frac{k_c}{\mu_c + k_c}\right)\frac{\beta_c}{\mu_f},\ a_4 
+    = \left(\frac{k_c}{\mu_c + k_c}\right)\frac{\beta_c}{\mu_f}~.
 $$
 The derivative of $V$ is as follows:
 \begin{equation}\label{Eq:DFE_Lyapunov}
