@@ -23,9 +23,10 @@ using DataFrames
 #
 function compute_r_zero(p)
     n_c = p[1]; lambda_f = p[2]; lambda_c = p[3];
-    beta_c = p[4]; beta_f = p[5]; k_f = p[6];
-    k_c = p[7]; mu_f = p[8]; mu_c = p[9];
-    n_f = lambda_f / mu_f
+    beta_c = p[4]; beta_c_tilde = p[5];
+    beta_f = p[6]; beta_f_tilde = p[7];
+    k_f = p[8]; k_c = p[9]; mu_f = p[10];
+    mu_c = p[11]; n_f = lambda_f / mu_f
     #
     frac_1 = k_f / (mu_f + k_f)
     frac_2 = k_c / (mu_c + k_c)
@@ -38,64 +39,97 @@ end
 
 function rhs(du, u, p, t)
     n_c = p[1]; lambda_f = p[2]; lambda_c = p[3];
-    beta_c = p[4]; beta_f = p[5]; k_f = p[6];
-    k_c = p[7]; mu_f = p[8]; mu_c = p[9];
-    rho = p[10]; delta = p[11];
+    beta_c = p[4]; beta_c_tilde = p[4];
+    beta_f = p[5];  beta_f_tilde = p[6];
+    k_f = p[7]; k_c = p[8]; mu_f = p[9];
+    mu_c = p[10]; rho = p[11]; theta = p[12];
+    #
+    w_f = 0.0; u_l = 0.0; v_h = 0.0;
     #
     s_f = u[1]; l_f = u[2]; i_f = u[3];
-    s_c = u[4]; l_c = u[5]; i_c = u[6];
-    t_c = u[7];
+    s_c = u[4]; l_c = u[5];
+    i_c_l = u[6]; i_c_h = u[7];
+    t_c = u[8];
 
-    new_s_f = lambda_f - beta_f / n_c * s_f * i_c - mu_f * s_f
-    new_l_f = beta_f / n_c * s_f * i_c - (k_f + mu_f) * l_f
-    new_i_f = k_f * l_f - mu_f * i_f
+    new_s_f = (
+                lambda_f
+                    - beta_f / n_c * s_f * i_c_l
+                    - beta_f_tilde / n_c * s_f * i_c_h
+                    - mu_f * s_f
+                    - w_f * s_f
+            )
+    new_l_f = (
+                beta_f / n_c * s_f * i_c_l
+                + beta_f_tilde / n_c * s_f * i_c_h
+                - (k_f + mu_f) * l_f - w_f * l_f
+            )
+    new_i_f = k_f * l_f - mu_f * i_f - w_f * i_f
     #
-    new_s_c = lambda_c - beta_c / n_c * s_c * i_f - mu_c * s_c + rho * t_c
+    new_s_c = (lambda_c
+                - beta_c / n_c * s_c * i_f
+                - mu_c * s_c
+                + rho * t_c
+                + u_l * i_c_h
+                )
     new_l_c = beta_c / n_c * s_c * i_f - (k_c + mu_c) * l_c
-    new_i_c = k_c * l_c - (mu_c + delta) * i_c
-    new_t_c = delta * i_c - (rho + mu_c) * t_c
+    new_i_c_l  = ( theta * k_c * l_c
+                    - (mu_c + delta) * i_c_l
+                    - beta_c_tilde / n_c * i_c_l * i_f
+                    - u_l * i_c_h
+                )
+    new_i_c_h = ( (1.0 - theta ) * k_c * l_c
+                    - mu_c * i_c_h
+                    + beta_c_tilde / n_c * i_c_l * i_f
+                    - v_h * i_c_h
+    )
+    new_t_c = - (rho + mu_c) * t_c + v_h * i_c_h
     #
     du[1] = new_s_f
     du[2] = new_l_f
     du[3] = new_i_f
     du[4] = new_s_c
     du[5] = new_l_c
-    du[6] = new_i_c
-    du[7] = new_t_c
+    du[6] = new_i_c_l
+    du[7] = new_i_c_h
+    du[8] = new_t_c
 end
 
 function load_parameters(file_name)
     n_c = 1000
     lambda_f = 500
     beta_c = .001
+    beta_c_tilde = .001
     beta_f = .001
+    beta_f_tilde = .001
     k_f = 0.07142857142857142 # 1/14
     k_c = 0.02857142857142857
     mu_f = 0.022222222222222223
     mu_c = 0.000925925925925926
     lambda_c = n_c * mu_c
     rho = 0.025
-    delta = 0.001
+    theta = 0.001
     parameterJSON = JSON.parse("""{
         "n_c": 1000,
         "lambda_f": 500,
         "lambda_c": 0.9259259259259259,
         "beta_c": 0.001,
+        "beta_c_tilde": 0.001,
         "beta_f": 0.001,
+        "beta_f_tilde": 0.001,
         "k_f": 0.07142857142857142,
         "k_c": 0.02857142857142857,
         "mu_f": 0.022222222222222223,
         "mu_c": 0.000925925925925926,
         "rho": 0.025,
-        "delta": 0.001
+        "theta": 0.7
         }""");
 
     parameterDict = Dict(#
         "n_c" => 1000.0, "lambda_f" => 500.0, "lambda_c" => 0.9259259259259259,
-        "beta_c" => 0.001, "beta_f" => 0.001, "k_f" => 0.07142857142857142,
+        "beta_c" => 0.001, "beta_c_tilde" => 0.001, "beta_f" => 0.001,
+        "beta_f_tilde" => 0.001, "k_f" => 0.07142857142857142,
         "k_c" => 0.02857142857142857, "mu_f" => 0.022222222222222223,
-        "mu_c" => 0.000925925925925926,
-        "rho" => .025, "delta" => .001);
+        "mu_c" => 0.000925925925925926, "rho" => .025, "theta" => .001);
     string_data = JSON.json(parameterDict)
     #JSON.print(parameterJSON)
     f = open(file_name, "w") do j
@@ -113,32 +147,35 @@ function load_parameters(file_name)
             parameterDict["lambda_f"];
             parameterDict["lambda_c"];
             parameterDict["beta_c"];
+            parameterDict["beta_c_tilde"];
             parameterDict["beta_f"];
+            parameterDict["beta_f_tilde"];
             parameterDict["k_f"];
             parameterDict["k_c"];
             parameterDict["mu_f"];
             parameterDict["mu_c"];
             parameterDict["rho"];
-            parameterDict["delta"]
+            parameterDict["theta"]
     ]
     return p;
 end
-path = string(pwd(),"/default_parameters.json")
+path = string(pwd(), "/default_parameters.json")
 p = load_parameters(path);
 n_c = p[1]; lambda_f = p[2]; lambda_c = p[3];
-beta_c = p[4]; beta_f = p[5]; k_f = p[6];
-k_c = p[7]; mu_f = p[8]; mu_c = p[9];
-rho = p[10]; delta = p[11];
+beta_c = p[4]; beta_c_tilde = p[5];
+beta_f = p[6]; beta_f_tilde = p[7];
+k_f = p[8]; k_c = p[9]; mu_f = p[10]; mu_c = p[11];
+rho = p[12]; theta = p[13];
 u_zero = [ #
             lambda_f / mu_f - 100.0; 40.0; 60.0;
-            n_c - 10.0; 2.0; 8.0; 0.0
+            n_c - 10.0; 2.0; 8.0; 0.0; 0.0
         ];
 t_span = (0.0, 2000);
 ode_problem = ODEProblem(rhs, u_zero, t_span, p)
 sol = solve(ode_problem)
 t = sol.t
 solDataFrame=[sol.t, sol[1, :], sol[2, :], sol[3, :],
-                sol[4, :], sol[5, :], sol[6, :], sol[7,:]]
+                sol[4, :], sol[5, :], sol[6, :], sol[7,:], sol[8,:]]
 
 using CSV
 solDataFrame = DataFrame(solDataFrame)
@@ -151,6 +188,7 @@ p2 = plot(solDataFrame, x=:x1, y=:x3,
 p3 = plot(solDataFrame, x=:x1, y=:x4,
     Guide.xlabel("time (days)"),
     Guide.ylabel("Infected Flyes"))
+#
 p4 = plot(solDataFrame, x=:x1, y=:x5,
     Guide.xlabel("time (days)"),
     Guide.ylabel("Suceptibles Cows"))
@@ -159,10 +197,13 @@ p5 = plot(solDataFrame, x=:x1, y=:x6,
     Guide.ylabel("Latent Cows"))
 p6 = plot(solDataFrame, x=:x1, y=:x7,
     Guide.xlabel("time (days)"),
-    Guide.ylabel("Infected Cows"))
+    Guide.ylabel("Low parasitic load Infected Cows"))
 p7 = plot(solDataFrame, x=:x1, y=:x8,
         Guide.xlabel("time (days)"),
-        Guide.ylabel("Treated Cows"))
+        Guide.ylabel("High parasitic load Infected Cows"))
+p8 = plot(solDataFrame, x=:x1, y=:x8,
+                Guide.xlabel("time (days)"),
+                Guide.ylabel("Treated Cows"))
 #
 n_flyes = solDataFrame[:, 2 : 4]
 n_cows = solDataFrame[:, 5 : 7]
@@ -187,7 +228,7 @@ plt0 = vstack(
         )
 plt1 = vstack(
         # hstack(p1, p2, p3),
-        hstack(p4, p5, p6),
+        hstack(p4, p5, p6, p7),
         hstack(p8)
         )
 img0 = SVG("flyes_disease_dynamics.svg", 19cm, 11.74289cm)

@@ -1,7 +1,34 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{23}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Wang et~al.(2014)Wang, Guo, Wang, Ma, Wang, and An}]{Wang:2014}
+\bibinfo{author}{X.-L. Wang}, \bibinfo{author}{J.-L. Guo},
+  \bibinfo{author}{X.-L. Wang}, \bibinfo{author}{X.-L. Ma},
+  \bibinfo{author}{Y.~Wang}, \bibinfo{author}{C.-L. An},
+\newblock \bibinfo{title}{Two cases of human thelaziasis as confirmed by
+  mitochondrial \textit{cox1} sequencing in china},
+\newblock \bibinfo{journal}{Path. and Global Health} \bibinfo{volume}{108}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{298--301}.
+%Type = Article
+\bibitem[{Zhang et~al.(2017)Zhang, Shi, Wang, Duan, Jiang, Liu, and
+  Cui}]{Zhang:2017}
+\bibinfo{author}{X.~Zhang}, \bibinfo{author}{Y.~L. Shi}, \bibinfo{author}{Z.~Q.
+  Wang}, \bibinfo{author}{J.~Y. Duan}, \bibinfo{author}{P.~Jiang},
+  \bibinfo{author}{R.~Liu}, \bibinfo{author}{J.~Cui},
+\newblock \bibinfo{title}{Morphological and mitochondrial genomic
+  characterization of eyeworms (thelazia callipaeda) from clinical cases in
+  central china},
+\newblock \bibinfo{journal}{Frontiers in Microbiol.} \bibinfo{volume}{8}
+  (\bibinfo{year}{2017}) \bibinfo{pages}{1335(1--9)}.
+%Type = Article
+\bibitem[{S. et~al.(2014)S., G., R., and M.}]{Krishnachary:2014}
+\bibinfo{author}{K.~P. S.}, \bibinfo{author}{S.~V. G.},
+  \bibinfo{author}{R.~R.}, \bibinfo{author}{S.~M.},
+\newblock \bibinfo{title}{Human ocular thelaziasis in karnataka},
+\newblock \bibinfo{journal}{Indian J Ophthalmol.} \bibinfo{volume}{62}
+  (\bibinfo{year}{2014}).
 %Type = Article
 \bibitem[{Asrat(2016)}]{Asrat:2016}
 \bibinfo{author}{M.~Asrat},
@@ -9,6 +36,24 @@
   mersa town of south wollo zone, amhara regional state, ethiopia},
 \newblock \bibinfo{journal}{J. Ecosys. Ecograph.} \bibinfo{volume}{6}
   (\bibinfo{year}{2016}) \bibinfo{pages}{1000212 (1--4)}.
+%Type = Article
+\bibitem[{Otranto et~al.(2003)Otranto, Tarsitano, Traversa, De~Luca, and
+  Giangaspero}]{Otranto:2003_2}
+\bibinfo{author}{D.~Otranto}, \bibinfo{author}{E.~Tarsitano},
+  \bibinfo{author}{D.~Traversa}, \bibinfo{author}{F.~De~Luca},
+  \bibinfo{author}{A.~Giangaspero},
+\newblock \bibinfo{title}{Molecular epidemiological survey on the vectors of
+  \textit{Thelazia gulosa}, \textit{Thelazia rhodesi} and \textit{Thelazia
+  skrjabini} (spirurida: Thelaziidae)},
+\newblock \bibinfo{journal}{Parasitology} \bibinfo{volume}{127}
+  (\bibinfo{year}{2003}) \bibinfo{pages}{365--373}.
+%Type = Article
+\bibitem[{Sanchez-Arroyo and Capinera(1998)}]{sanchez:1998}
+\bibinfo{author}{H.~Sanchez-Arroyo}, \bibinfo{author}{J.~L. Capinera},
+\newblock \bibinfo{title}{House fly, \textit{Musca domestica} linnaeus
+  (insecta: Diptera: Muscidae)},
+\newblock \bibinfo{journal}{UF/IFAS Extension}  (\bibinfo{year}{1998})
+  \bibinfo{pages}{1--8}.
 %Type = Article
 \bibitem[{Otranto et~al.(2003)Otranto, Ferroglio, Lia, Traversa, and
   Rossi}]{Otranto:2003}
@@ -21,20 +66,30 @@
 \newblock \bibinfo{journal}{Vet. Parasit.} \bibinfo{volume}{116}
   (\bibinfo{year}{2003}) \bibinfo{pages}{315--325}.
 %Type = Article
-\bibitem[{Wang et~al.(2014)Wang, Guo, Wang, Ma, Wang, and An}]{Wang:2014}
-\bibinfo{author}{X.-L. Wang}, \bibinfo{author}{J.-L. Guo},
-  \bibinfo{author}{X.-L. Wang}, \bibinfo{author}{X.-L. Ma},
-  \bibinfo{author}{Y.~Wang}, \bibinfo{author}{C.-L. An},
-\newblock \bibinfo{title}{Two cases of human thelaziasis as confirmed by
-  mitochondrial \textit{cox1} sequencing in china},
-\newblock \bibinfo{journal}{Path. and Global Health} \bibinfo{volume}{108}
-  (\bibinfo{year}{2014}) \bibinfo{pages}{298--301}.
+\bibitem[{Chanie and Bogale(2014)}]{Chanie:2014}
+\bibinfo{author}{M.~Chanie}, \bibinfo{author}{B.~Bogale},
+\newblock \bibinfo{title}{Thelaziasis: Biology, species affected and pathology
+  (conjunctivitis): A review},
+\newblock \bibinfo{journal}{Acta Parasitologica Globalis} \bibinfo{volume}{5}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{65--68}.
 %Type = Article
-\bibitem[{Otranto and Dutto(2008)}]{Otranto:2008}
-\bibinfo{author}{D.~Otranto}, \bibinfo{author}{M.~Dutto},
-\newblock \bibinfo{title}{Human thelaziasis,europe},
-\newblock \bibinfo{journal}{Emerg. Inf. diseas.} \bibinfo{volume}{14}
-  (\bibinfo{year}{2008}) \bibinfo{pages}{647--649}.
+\bibitem[{Devenish-Nelson et~al.(2014)Devenish-Nelson, Richards, Harris,
+  Soulsbury, and A.}]{Devenish:2014}
+\bibinfo{author}{E.~S. Devenish-Nelson}, \bibinfo{author}{S.~A. Richards},
+  \bibinfo{author}{S.~Harris}, \bibinfo{author}{C.~Soulsbury},
+  \bibinfo{author}{S.~P. A.},
+\newblock \bibinfo{title}{Demonstrating frequency-dependent transmission of
+  sarcoptic mange in red foxes},
+\newblock \bibinfo{journal}{Biol. Lett.} \bibinfo{volume}{10}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{1--5}.
+%Type = Article
+\bibitem[{Bianciardi and Otranto(2005)}]{Bianciardi:2005}
+\bibinfo{author}{P.~Bianciardi}, \bibinfo{author}{D.~Otranto},
+\newblock \bibinfo{title}{Treatment of dog thelaziosis caused by
+  \textit{Thelazia callipaeda} (spirurida, thelaziidae) using a topical
+  formulation of imidacloprid 10\% and moxidectin 2.5\%},
+\newblock \bibinfo{journal}{veterinary parasitology} \bibinfo{volume}{129}
+  (\bibinfo{year}{2005}) \bibinfo{pages}{89--93}.
 %Type = Article
 \bibitem[{Shen et~al.(2006)Shen, Gasser, Chu, Wang, Yuan, Cantacessi, and
   D.}]{shen:2006}
@@ -99,30 +154,6 @@
 \newblock \bibinfo{journal}{J. Parasit.} \bibinfo{volume}{75}
   (\bibinfo{year}{1989}) \bibinfo{pages}{803--806}.
 %Type = Article
-\bibitem[{Sanchez-Arroyo and Capinera(1998)}]{sanchez:1998}
-\bibinfo{author}{H.~Sanchez-Arroyo}, \bibinfo{author}{J.~L. Capinera},
-\newblock \bibinfo{title}{House fly, \textit{Musca domestica} linnaeus
-  (insecta: Diptera: Muscidae)},
-\newblock \bibinfo{journal}{UF/IFAS Extension}  (\bibinfo{year}{1998})
-  \bibinfo{pages}{1--8}.
-%Type = Article
-\bibitem[{Chanie and Bogale(2014)}]{Chanie:2014}
-\bibinfo{author}{M.~Chanie}, \bibinfo{author}{B.~Bogale},
-\newblock \bibinfo{title}{Thelaziasis: Biology, species affected and pathology
-  (conjunctivitis): A review},
-\newblock \bibinfo{journal}{Acta Parasitologica Globalis} \bibinfo{volume}{5}
-  (\bibinfo{year}{2014}) \bibinfo{pages}{65--68}.
-%Type = Article
-\bibitem[{Devenish-Nelson et~al.(2014)Devenish-Nelson, Richards, Harris,
-  Soulsbury, and A.}]{Devenish:2014}
-\bibinfo{author}{E.~S. Devenish-Nelson}, \bibinfo{author}{S.~A. Richards},
-  \bibinfo{author}{S.~Harris}, \bibinfo{author}{C.~Soulsbury},
-  \bibinfo{author}{S.~P. A.},
-\newblock \bibinfo{title}{Demonstrating frequency-dependent transmission of
-  sarcoptic mange in red foxes},
-\newblock \bibinfo{journal}{Biol. Lett.} \bibinfo{volume}{10}
-  (\bibinfo{year}{2014}) \bibinfo{pages}{1--5}.
-%Type = Article
 \bibitem[{Stanley and Jones(2003)}]{stanley:2003}
 \bibinfo{author}{K.~Stanley}, \bibinfo{author}{K.~Jones},
 \newblock \bibinfo{title}{Cattle and sheep farms as reservoirs of
@@ -135,6 +166,15 @@
 \newblock \bibinfo{title}{Analysis of a dengue disease transmission model},
 \newblock \bibinfo{journal}{Math. Biosci.} \bibinfo{volume}{150}
   (\bibinfo{year}{1998}) \bibinfo{pages}{131--151}.
+%Type = Article
+\bibitem[{Manjunath et~al.(2016)Manjunath, Dhanalakshmi, D'Souza, Chandregowda,
+  and Veena}]{manjunath2016prevalence}
+\bibinfo{author}{S.~Manjunath}, \bibinfo{author}{H.~Dhanalakshmi},
+  \bibinfo{author}{P.~E. D'Souza}, \bibinfo{author}{C.~Chandregowda},
+  \bibinfo{author}{M.~Veena},
+\newblock \bibinfo{title}{Prevalence and management of eyeworms in cattle.},
+\newblock \bibinfo{journal}{Intas Polivet} \bibinfo{volume}{17}
+  (\bibinfo{year}{2016}).
 %Type = Incollection
 \bibitem[{Otranto and Dantas-Torres(2017)}]{Otranto:bookchapter}
 \bibinfo{author}{D.~Otranto}, \bibinfo{author}{F.~Dantas-Torres},
@@ -149,5 +189,12 @@ FAO, \bibinfo{title}{Guidelines for slaughtering, meat cutting and further
   processing},
   \bibinfo{howpublished}{\url{http://www.fao.org/3/T0279E/T0279E00.htm}},
   \bibinfo{year}{1991}.
+%Type = Article
+\bibitem[{Zhou and Yao(2014)}]{Zhou:2014}
+\bibinfo{author}{F.~Zhou}, \bibinfo{author}{H.~Yao},
+\newblock \bibinfo{title}{Global dynamics of a host-vector-predator
+  mathematical model},
+\newblock \bibinfo{journal}{J. Appl. Math.} \bibinfo{volume}{2014}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{245650(1--11)}.
 
 \end{thebibliography}

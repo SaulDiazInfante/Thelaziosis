@@ -1,46 +1,52 @@
-This is BibTeX, Version 0.99d (TeX Live 2018)
+This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Thelaziasis_model.aux
 The style file: model1-num-names.bst
 Database file #1: thelazbiblio.bib
-You've used 18 entries,
+I was expecting a `,' or a `}'---line 95 of file thelazbiblio.bib
+ :  
+ :  pages = {822-824},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 23 entries,
             2616 wiz_defined-function locations,
-            715 strings with 7893 characters,
-and the built_in function-call counts, 11331 in all, are:
-= -- 864
-> -- 510
-< -- 10
-+ -- 190
-- -- 172
-* -- 1451
-:= -- 1706
-add.period$ -- 18
-call.type$ -- 18
-change.case$ -- 150
-chr.to.int$ -- 18
-cite$ -- 18
-duplicate$ -- 697
-empty$ -- 710
-format.name$ -- 237
-if$ -- 2061
+            747 strings with 9080 characters,
+and the built_in function-call counts, 14758 in all, are:
+= -- 1110
+> -- 709
+< -- 11
++ -- 264
+- -- 241
+* -- 1910
+:= -- 2237
+add.period$ -- 23
+call.type$ -- 23
+change.case$ -- 198
+chr.to.int$ -- 23
+cite$ -- 23
+duplicate$ -- 897
+empty$ -- 898
+format.name$ -- 323
+if$ -- 2665
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 163
-newline$ -- 94
-num.names$ -- 70
-pop$ -- 132
+missing$ -- 214
+newline$ -- 119
+num.names$ -- 90
+pop$ -- 177
 preamble$ -- 1
-purify$ -- 148
+purify$ -- 196
 quote$ -- 0
-skip$ -- 188
+skip$ -- 234
 stack$ -- 0
-substring$ -- 562
-swap$ -- 669
+substring$ -- 700
+swap$ -- 870
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 207
 warning$ -- 0
-while$ -- 70
+while$ -- 88
 width$ -- 0
-write$ -- 239
+write$ -- 304
+(There was 1 error message)
