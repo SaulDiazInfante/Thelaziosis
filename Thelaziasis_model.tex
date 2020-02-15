@@ -1,11 +1,13 @@
 \documentclass[preprint, 12pt]{elsarticle}
 \usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{amsmath}
+\usepackage{amssymb, amsmath, amsthm, amsfonts}
+%
 \usepackage{lineno}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{cleveref}
+\newtheorem{theorem}{Theorem}
+
 \journal{Journal Name}
 
 \begin{document}
@@ -383,43 +385,116 @@ Clearly, $\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}>\delta$, $1+{\frac{\
 
 \noindent Observe that the endemic equilibrium is preserved when no control is applied into the model ($\rho=\delta=0$). For this particular case it is possible to show global stability for the endemic equilibrium\\
 
-\noindent Theorem. The endemic equilibrium for the model with no control ($\rho=\delta=0$) is asymptotically globally stable.\\
-Proof: Following the ideas in \cite{Zhou:2014}, we consider the Lyapunov function
-$$V=\sum_{i=1}^6a_i\left(X_i-\overline{X}_i\ln{\frac{X_i}{\overline{X}_i}}\right),$$ where $X_i$ are the components of the vector $(S_f,L_f,I_f,S_c,L_c,I_c)$ and $\overline{X}=(\overline{S}_f,\overline{L}_f,\overline{I}_f,\overline{S}_c,\overline{L}_c,\overline{I}_c)$ are the coordinates of the endemic equilibrium.
+\begin{theorem}
+        The endemic equilibrium for the model with no control ($\rho=\delta=0$)
+    is asymptotically globally stable.
+\end{theorem}
 
-\noindent At the endemic equilibrium point, the following equalities hold
-$$\Lambda_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+\mu_f\overline{S}_f \qquad \Lambda_c=\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+\mu_c\overline{S}_c \qquad \mu_f+k_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}\overline{L}_f}$$
-\begin{equation}\label{endemic_equalities}
-\mu_c+k_c=\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}\overline{L}_c} \qquad \mu_f=k_f\frac{\overline{L}_f}{\overline{I}_f} \qquad \mu_c= k_c\frac{\overline{L}_c}{\overline{I}_c}
-\end{equation}
+\begin{proof}
+    Following the ideas in \cite{Zhou:2014}, we consider the Lyapunov function
+    $$V=\sum_{i=1}^6a_i\left(X_i-\overline{X}_i\ln{\frac{X_i}{\overline{X}_i}}\right),$$
+     where $X_i$ are the components of the vector $(S_f,L_f,I_f,S_c,L_c,I_c)$
+     and
+     $\overline{X}=(\overline{S}_f,\overline{L}_f,\overline{I}_f,\overline{S}_c,\overline{L}_c,\overline{I}_c)$
+     are the coordinates of the endemic equilibrium.
 
-\noindent From this information, we obtain
-$$\dot{V}(t)=a_1\left(\Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_cS_f-\mu_fS_f\right)\left(1-\frac{\overline{S}_f}{S_f}\right)+a_2\left(\frac{\beta_f}{N_c^{\infty}}I_cS_f-\left(k_f+\mu_f\right)L_f\right)\left(1-\frac{\overline{L}_f}{L_f}\right)$$
-$$+a_3\left(k_f L_f-\mu_fI_f\right)\left(1-\frac{\overline{I}_f}{I_f}\right)+a_4\left(\Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c\right)\left(1-\frac{\overline{S}_c}{S_c}\right)$$
-$$+a_5\left(\frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c\right)\left(1-\frac{\overline{L}_c}{L_c}\right)+a_6\left(k_c L_c-\mu_cI_c\right)\left(1-\frac{\overline{I}_c}{I_c}\right).$$
+    \noindent At the endemic equilibrium point, the following equalities hold
+    $$\Lambda_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+\mu_f\overline{S}_f
+     \qquad
+    \Lambda_c=\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+\mu_c\overline{S}_c
+     \qquad
+    \mu_f+k_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}\overline{L}_f}$$
+    \begin{equation}\label{endemic_equalities}
+    \mu_c+k_c=\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}\overline{L}_c}
+     \qquad \mu_f=k_f\frac{\overline{L}_f}{\overline{I}_f} \qquad \mu_c=
+    k_c\frac{\overline{L}_c}{\overline{I}_c}
+    \end{equation}
 
-\noindent Then, by taking the scaled variables
-$$
-s_f^*=\frac{S_f}{\overline{S}_f};\quad l_f^*=\frac{L_f}{\overline{L}_f};\quad i_f^*=\frac{I_f}{\overline{I}_f};\quad
-s_c^*=\frac{S_c}{\overline{S}_c};\quad l_c^*=\frac{L_c}{\overline{L}_c};\quad i_c^*=\frac{I_c}{\overline{I}_c}
-$$
-and the use of the equalities in \ref{endemic_equalities}, our last expression becomes
-$$\dot{V}(t)=-a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}(1-s_f^*i_c^*)-a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{s_f^*N_c^{\infty}}(1-s_f^*i_c^*)$$
-$$+a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(s_f^*i_c^*-l_f^*\right)\left(1-\frac{1}{l_f^*}\right)+a_3k_f\overline{L}_f\left(1-\frac{1}{i_f^*}\right)\left(l_f^*-i_f^*\right)$$
-$$+a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(1-\frac{1}{s_c^*}\right)\left(1-i_f^*s_c^*\right)+a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(1-\frac{1}{l_c^*}\right)\left(i_f^*s_c^*-l_c^*\right)$$
-$$+a_6k_c\overline{L}_c\left(1-\frac{1}{i_c^*}\right)\left(l_c^*-i_c^*\right).$$
-After rearranging terms we end up with
-$$\dot{V}(t)=-a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+\left(a_3k_f\overline{L}_f-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\right)l_f^*$$
-$$+\left(a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}-a_3k_f\overline{L}_f\right)i_f^*+\left(a_6k_c\overline{L}_c-a_5\frac{\beta_c\overline{I}_f\overline{S}_c}{N_c^{\infty}}\right)l_c^*+\left(a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}-a_6k_c\overline{L}_c\right)i_c^*$$
-$$+\left(a_2-a_1\right)\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}s_f^*i_c^*+\left(a_5-a_4\right)\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}i_f^*s_c^*+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}$$
-$$+a_3k_f\overline{L}_f+a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+a_6k_c\overline{L}_c-a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(\frac{1}{s_f^*}\right)-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(\frac{s_f^*i_c^*}{l_f^*}\right)$$
-$$-a_3k_f\overline{L}_f\left(\frac{l_f^*}{i_f^*}\right)-a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(\frac{1}{s_c^*}\right)-a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(\frac{s_c^*i_f^*}{l_c^*}\right)-a_6k_c\overline{L}_c\left(\frac{l_c^*}{i_c^*}\right) $$
+    \noindent From this information, we obtain
+    $$\dot{V}(t)=a_1\left(\Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_cS_f-\mu_fS_f\right)\left(1-\frac{\overline{S}_f}{S_f}\right)+a_2\left(\frac{\beta_f}{N_c^{\infty}}I_cS_f-\left(k_f+\mu_f\right)L_f\right)\left(1-\frac{\overline{L}_f}{L_f}\right)$$
+    $$+a_3\left(k_f
+    L_f-\mu_fI_f\right)\left(1-\frac{\overline{I}_f}{I_f}\right)+a_4\left(\Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c\right)\left(1-\frac{\overline{S}_c}{S_c}\right)$$
+    $$+a_5\left(\frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c\right)\left(1-\frac{\overline{L}_c}{L_c}\right)+a_6\left(k_c
+     L_c-\mu_cI_c\right)\left(1-\frac{\overline{I}_c}{I_c}\right).$$
 
-\noindent By taking the constant values as
-$$a_2=a_1;\quad a_3=\frac{\beta_f\overline{I}_c\overline{S}_f}{k_f\overline{L}_f N_c^{\infty}}a_1;\quad a_4=\frac{\beta_f\overline{I}_c\overline{S}_f}{\beta_c\overline{I}_f\overline{S}_c}a_1;\quad a_5=a_4;\quad a_6=\frac{\beta_f\overline{I}_c\overline{S}_f}{k_c\overline{L}_c N_c^{\infty}}a_1 $$,
-we obtain
-$$\dot{V}= -a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left[6-\left(\frac{1}{s_f^*}+\frac{s_f^*i_c^*}{l_f^*}+\frac{l_f^*}{i_f^*}+\frac{1}{s_c^*}+\frac{i_f^*s_c^*}{l_c^*}+\frac{l_c^*}{i_c^*}\right)\right]$$
-Now, because the arithmetic mean is larger than the geometric mean, implies that  $\frac{1}{6}\left(\frac{1}{s_f^*}+\frac{s_f^*i_c^*}{l_f^*}+\frac{l_f^*}{i_f^*}+\frac{1}{s_c^*}+\frac{i_f^*s_c^*}{l_c^*}+\frac{l_c^*}{i_c^*}\right)\geq 1$, and therefore $\dot{V}\leq 0$. Clearly, $\dot{V} = 0$ only at the endemic equilibrium.
+    \noindent Then, by taking the scaled variables
+    $$
+    s_f^*=\frac{S_f}{\overline{S}_f};\quad
+    l_f^*=\frac{L_f}{\overline{L}_f};\quad
+    i_f^*=\frac{I_f}{\overline{I}_f};\quad
+    s_c^*=\frac{S_c}{\overline{S}_c};\quad
+    l_c^*=\frac{L_c}{\overline{L}_c};\quad i_c^*=\frac{I_c}{\overline{I}_c}
+    $$
+    and the use of the equalities in \ref{endemic_equalities}, our last
+    expression becomes
+    $$\dot{V}(t)=-a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}(1-s_f^*i_c^*)-a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{s_f^*N_c^{\infty}}(1-s_f^*i_c^*)$$
+    $$+a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(s_f^*i_c^*-l_f^*\right)\left(1-\frac{1}{l_f^*}\right)+a_3k_f\overline{L}_f\left(1-\frac{1}{i_f^*}\right)\left(l_f^*-i_f^*\right)$$
+    $$+a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(1-\frac{1}{s_c^*}\right)\left(1-i_f^*s_c^*\right)+a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(1-\frac{1}{l_c^*}\right)\left(i_f^*s_c^*-l_c^*\right)$$
+    $$+a_6k_c\overline{L}_c\left(1-\frac{1}{i_c^*}\right)\left(l_c^*-i_c^*\right).$$
+    After rearranging terms we end up with
+    $$\dot{V}(t)=-a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+\left(a_3k_f\overline{L}_f-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\right)l_f^*$$
+    $$+\left(a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}-a_3k_f\overline{L}_f\right)i_f^*+\left(a_6k_c\overline{L}_c-a_5\frac{\beta_c\overline{I}_f\overline{S}_c}{N_c^{\infty}}\right)l_c^*+\left(a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}-a_6k_c\overline{L}_c\right)i_c^*$$
+    $$+\left(a_2-a_1\right)\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}s_f^*i_c^*+\left(a_5-a_4\right)\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}i_f^*s_c^*+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}$$
+    $$+a_3k_f\overline{L}_f+a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+a_6k_c\overline{L}_c-a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(\frac{1}{s_f^*}\right)-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(\frac{s_f^*i_c^*}{l_f^*}\right)$$
+    $$-a_3k_f\overline{L}_f\left(\frac{l_f^*}{i_f^*}\right)-a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(\frac{1}{s_c^*}\right)-a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(\frac{s_c^*i_f^*}{l_c^*}\right)-a_6k_c\overline{L}_c\left(\frac{l_c^*}{i_c^*}\right)
+     $$
+
+    \noindent By taking the constant values as
+    $$
+        a_2 = a_1; \quad
+        a_3 =
+            \frac{
+                \beta_f \overline{I}_c
+                \overline{S}_f
+            }{
+                k_f\overline{L}_f
+                N_c^{\infty}
+           } a_1; \quad
+        a_4 =
+        \frac{
+            \beta_f
+            \overline{I}_c
+            \overline{S}_f
+        }{
+            \beta_c
+            \overline{I}_f
+            \overline{S}_c
+        }
+        a_1;
+        \quad
+        a_5=a_4;
+        \quad
+        a_6=\frac{\beta_f\overline{I}_c\overline{S}_f}{k_c\overline{L}_c
+        N_c^{\infty}}a_1
+    $$,
+    we obtain
+    $$
+        \dot{V}=
+        -a_1\frac{\mu_f\overline{S}_f}{s_f^*}
+            \left(s_f^*-1\right)^2
+            -a_4
+            \frac{\mu_c\overline{S}_c}{s_c^*}
+            \left(s_c^*-1\right)^2
+            +
+            a_1
+            \frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}
+            \left[
+                6-
+                \left(
+                    \frac{1}{s_f^*}+\frac{s_f^*i_c^*}{l_f^*}
+                    +\frac{l_f^*}{i_f^*}+\frac{1}{s_c^*}
+                    +\frac{i_f^*s_c^*}{l_c^*}+\frac{l_c^*}{i_c^*}
+                \right)
+            \right]
+    $$
+    Now, because the arithmetic mean is larger than the geometric mean, implies
+    that
+    $\frac{1}{6}\left(\frac{1}{s_f^*}+\frac{s_f^*i_c^*}{l_f^*}+\frac{l_f^*}{i_f^*}+\frac{1}{s_c^*}+\frac{i_f^*s_c^*}{l_c^*}+\frac{l_c^*}{i_c^*}\right)\geq
+     1$, and therefore $\dot{V}\leq 0$. Clearly, $\dot{V} = 0$ only at the
+    endemic equilibrium.
+
+\end{proof}
+
 
 
 \subsection{Persistance}
@@ -440,35 +515,14 @@ Now, because the arithmetic mean is larger than the geometric mean, implies that
         We consider this practices to obtain a optimal controlled model.
     Let $w_f(t)$ denotes the race of mortality of flies due to fumigation.
     Denote by $v_l(t)$ the use of medicament treatment in cattle with light and
-    medium worm burden and let $v_h(t)$ the manual removal of worms.
+    medium worm burden and let $v_h(t)$ the manual removal of worms. By
+    convenience we  assume that $w_f$, $v_l$ and $v_h$ lies in the space of
+    measurable functions $\mathcal{U}[0, T]$ and are bounded.
 
         Applying the above strategies implies economic cost and profit, in
     order to optimize this balance, we define the functional
     \begin{equation}\label{eqn:cost_functional}
-        J(x, u):=
-            \int_0 ^T
-                A_{l_c} L_c
-                + A_{cl} I_{cl}
-                + A_{ch} I_{ch}
-                + B_{wf}  w_f ^ 2
-                + B_{vl}  v_l ^ 2
-                + B_{vh}  v_h ^ 2
-            ds.
-    \end{equation}
-
-    In other words, $J$ describe the cost of manage the cattle infected
-    classes $L_c$, $I_{cl}$, $I_{ch}$ by fumigation, medical treatment and
-    manual removal or worms. The positive constants
-    $A_{l_c}$, $A_{cl}$, $B_{wf}$, $B_{vl}$, $B_{vh}$ adjust the cost
-    contribution due to the respective class or strategy.
-
-        Then, our problem will be minimize $J$ subject to the controlled
-    dynamics governed by \cref{Eq:SIvectorhostmodel_v2controlled}, that is, we
-    want to solve the following optimization problem.
-
-    \begin{equation}{\label{eqn:optimal_problem}}
         \begin{aligned}
-            \min_{u \in \mathcal{U}[0, T]}
             J(x, u) &:=
                 \int_0 ^T
                     A_{l_c} L_c
@@ -477,41 +531,80 @@ Now, because the arithmetic mean is larger than the geometric mean, implies that
                     + B_{wf}  w_f ^ 2
                     + B_{vl}  v_l ^ 2
                     + B_{vh}  v_h ^ 2
-                ds
+                ds,
             \\
-            \text{subject to} &
+            x &:= (S_f, L_f, I_f, S_c, L_c, I_{cl}, I_{ch}, T_c)^{\top},
             \\
-        \dot{S}_f &=
-            \Lambda_f
-            -\frac{
-                S_f
-             }{
-                N_c^{\infty}}
-                \left(
-                    \beta_fI_{cl} + \tilde{ \beta }_f I_{ch}
-                \right)
-                -\left(
-                    \mu_f + w_f(t)
-                 \right) S_f
-            \\
-        \dot{L}_f &=
-            \frac{
-                S_f
-            }{
-                N_c^{\infty}}
-                \left(
-                    \beta_f I_{cl}
-                    +
-                     \tilde{\beta}_f I_{ch}
-                \right)
-                -\left(
-                    k_f + \mu_f + w_f(t)
-                 \right) L_f
-        \\
+            u &:= (w_f, v_l, v_h)^{\top} .
+        \end{aligned}
+    \end{equation}
+%
+    In other words, $J$ describe the cost of manage the cattle infected
+    classes $L_c$, $I_{cl}$, $I_{ch}$ by fumigation, medical treatment and
+    manual removal or worms. The positive constants
+    $A_{l_c}$, $A_{cl}$, $B_{wf}$, $B_{vl}$, $B_{vh}$ adjust the cost
+    contribution due to the respective class or strategy.
+
+        Then, our problem will be minimize $J$ in the space $\mathcal{U}[0,T]$
+    and subject to the controlled dynamics governed by
+    \Cref{Eq:SIvectorhostmodel_v2controlled}, that is, we
+    want to solve the following optimization problem.
+
+\begin{equation}
+    \label{eqn:optimal_problem}
+    \begin{aligned}
+        \min_{u \in \mathcal{U}[0, T]}
+            J(x, u) :=
+                \int_0 ^T
+                    &
+                    \left(
+                        A_{l_c} L_c
+                        + A_{cl} I_{cl}
+                        + A_{ch} I_{ch}
+                    \right.
+           \\
+            &
+            \left.
+                + B_{wf}  w_f ^ 2
+                + B_{vl}  v_l ^ 2
+                + B_{vh}  v_h ^ 2
+            \right)
+            ds
+%
+    \\
+    \text{subject to} &
+    \\
+    \dot{S}_f &=
+        \Lambda_f
+        -\frac{
+            S_f
+         }{
+            N_c^{\infty}}
+            \left(
+                \beta_fI_{cl} + \tilde{ \beta }_f I_{ch}
+            \right)
+            -\left(
+                \mu_f + w_f
+             \right) S_f
+    \\
+    \dot{L}_f &=
+        \frac{
+            S_f
+        }{
+            N_c^{\infty}}
+            \left(
+                \beta_f I_{cl}
+                +
+                 \tilde{\beta}_f I_{ch}
+            \right)
+            -\left(
+                k_f + \mu_f + w_f
+             \right) L_f
+    \\
     \dot{I}_f &=
         k_f L_f
         -\left(
-            w_f(t) + \mu_f
+            w_f + \mu_f
         \right) I_f
     \\
     \dot{S}_c&=
@@ -521,7 +614,7 @@ Now, because the arithmetic mean is larger than the geometric mean, implies that
          }{
             N_c^{\infty}
         } I_fS_c
-        -\mu_cS_c + v_h(t) I_{ch} + \rho T_c
+        -\mu_cS_c + v_h I_{ch} + \rho T_c
     \\
     \dot{L}_c &=
         \frac{
@@ -540,7 +633,7 @@ Now, because the arithmetic mean is larger than the geometric mean, implies that
          }{
             N_c^{\infty}
          } I_{cl} I_f
-         -( \mu_c + v_l(t) ) I_{cl}
+         -( \mu_c + v_l ) I_{cl}
     \\
     \dot{I}_{ch}&=
         (1-\theta) k_c L_c
@@ -551,31 +644,49 @@ Now, because the arithmetic mean is larger than the geometric mean, implies that
             N_c^{\infty}
         } I_{cl}I_f
         - (
-            \mu_c + v_h(t)
+            \mu_c + v_h
           ) I_{ch}
     \\
     \dot{T}_c&=
-        v_l(t) I_{cl}
+        v_l I_{cl}
         -\left(
             \mu_c + \rho
          \right) T_c .
-        \end{aligned}
-    \end{equation}
+    \\
+        S_f(0) &= S_{f_0}, \qquad
+        L_{f} = L_{f_0}, \qquad
+        I_f(0) = I_{f_0}, \qquad
+    \\
+        %
+        S_c(0) &= S_{c_0}, \qquad
+        L_{c} = L_{c_0}, \qquad
+        I_{cl}(0) = I_{{cl}_0}, \qquad
+    \\
+        I_ch(0) &= I_{ch_0}, \qquad
+        T_c(0) = T_{c_0},
+    \\
+        w_f(t) &\in (0, 1],
+        \
+        v_{l}(t) \in (0, 1],
+        \
+        v_{h}(t) \in (0, 1], \  \forall t \in [0, T].
+    \end{aligned}
+\end{equation}
 
-        We solve this optimization by an indirect method. To this end first we
-    have to existence of a control
-   $
-        u(t):= (w_f(t), v_l(t), v_h(t))^{\top}
-   $, that satisfies \cref{eqn:optimal_problem}. This is the statement of
-   the following result.
+        We solve this optimization by an indirect method. To this end, first we
+    have to assure existence of a optimal pair $(x^*, u^*)$,
+    that satisfies \cref{eqn:optimal_problem}. This is the statement of
+    the following result.
 
-%    \begin{theorem}
-%        There exist at least a measurable function
-%        %$u: \mathbb{R} ^ 3 \to \mathbb{R}$ that solves problem
-%        \eqref{eqn:optimal_problem}.
-%    \end{theorem}
-%   \begin{proof}
-%   \end{proof}
+    \begin{theorem}
+        There exist at least a measurable function
+        $u: \mathbb{R} ^ 3 \to \mathbb{R}$ that solves problem
+        \eqref{eqn:optimal_problem}.
+    \end{theorem}
+   \begin{proof}
+        According to \cite{} we just to verify that:
+
+   \end{proof}
 
 \section{Discussion}
 
