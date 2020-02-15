@@ -1,4 +1,4 @@
-S\documentclass[preprint,12pt]{elsarticle}
+\documentclass[preprint,12pt]{elsarticle}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -18,7 +18,7 @@ S\documentclass[preprint,12pt]{elsarticle}
 \address{Universidad de Sonora}
 \begin{abstract}
 %% Text of abstract
-In the present manuscript we present a mathematical model for thelaziasis in cattle. 
+In the present manuscript we present a mathematical model for thelaziasis in cattle.
 By appliyng different type of controls, we find optimal strategies to reduce the endemic levels.
 \end{abstract}
 
@@ -57,7 +57,7 @@ In \cite{shen:2006}, the authors comment control strategies to treat human thela
 
 
 
-%which may vary depending on the regions where thelaziasis is present. For example, in Europe \textit{Thelazia Callipaeda} is transmitted by male fruitflies \textit{Phortica variegata} \cite{Palfreyman:2018}. 
+%which may vary depending on the regions where thelaziasis is present. For example, in Europe \textit{Thelazia Callipaeda} is transmitted by male fruitflies \textit{Phortica variegata} \cite{Palfreyman:2018}.
 
 %\noindent The transmitted by the face fly \cite{Otranto:2003}. The disease has spread in animals but in humans it has been reported but in a very isolated cases \cite{Wang:2014}, \cite{Otranto:2008}, \cite{shen:2006}.\\
 
@@ -66,14 +66,14 @@ In \cite{shen:2006}, the authors comment control strategies to treat human thela
 \noindent In \cite{Ohara:1989}, the authors present a study about the prevalence and intensity of \textit{Thelazia spp} in a flies population in Alberta, Canada.
 
 
-In \cite{Beitel:1974} studied the prevalence of eyeworms in the Columbian Black-Tailed Deer in Oregon. 
+In \cite{Beitel:1974} studied the prevalence of eyeworms in the Columbian Black-Tailed Deer in Oregon.
 
 A special work was done in \cite{Moolenbeek:1980} were it was estimated the proportion of infected animals as well as the proportion of infected vectors.
 
 \subsection{Some questions to explore.}
 \noindent An important issue in this disease is that the propagation coincides with the presence of flies that carry the disease. If the life expectancy of the fly is reduced, then
-the complete cycle of the thelazia within the vector does not complete and therefore, the 
-disease no longer can be transmitted. Therefore, it might be expected that as soon as the temperature of a place of study is reduced, then the levels of the infected individuals 
+the complete cycle of the thelazia within the vector does not complete and therefore, the
+disease no longer can be transmitted. Therefore, it might be expected that as soon as the temperature of a place of study is reduced, then the levels of the infected individuals
 with thelazia, must reach a final steady level.
 
 \noindent In the mathematical side, analyse the model about stability, persistance, what would happen if stochasticity gets implemented? how?
@@ -87,7 +87,7 @@ with thelazia, must reach a final steady level.
 
 \subsubsection{Cattle only.}
 \noindent The problem can be seen as a simple host or multi-host when considering beef and milk cattle.
-\noindent Some considerations about the life expectancy of the individuals. A common technique 
+\noindent Some considerations about the life expectancy of the individuals. A common technique
 to detect thelazia in farming animals is done by sacrificing the animal. In this case, the infected individual is no longer part of the infection cycle and basically out of the dynamics.
 In this work we consider that the sample used to observe the proportion of infected individuals is of little to neglected significance respect to the total population.
 
@@ -96,24 +96,24 @@ In this work we consider that the sample used to observe the proportion of infec
 
 \section{Mathematical Model}
 
-\noindent Our model is based on the interaction of flies and cattle. For the model, we consider that infected cattle shows visual presence of worms. A sample of the herd is taken per time unit and the animals are revised if there is presence of worms. Then vaccination proceeds.  
-Following the formulation in Esteva \cite{Esteva:1998} we obtain the 
+\noindent Our model is based on the interaction of flies and cattle. For the model, we consider that infected cattle shows visual presence of worms. A sample of the herd is taken per time unit and the animals are revised if there is presence of worms. Then vaccination proceeds.
+Following the formulation in Esteva \cite{Esteva:1998} we obtain the
 following SI vector host model for cattle and flies.
 \begin{equation}\label{Eq:SIvectorhostmodel}
 \begin{aligned}
-    \dot{S}_f&= 
+    \dot{S}_f&=
         \Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_cS_f-\mu_fS_f
     \\
-    \dot{L}_f&= 
+    \dot{L}_f&=
         \frac{\beta_f}{N_c^{\infty}}I_cS_f-\left(k_f+\mu_f\right)L_f
     \\
-    \dot{I}_f&= 
+    \dot{I}_f&=
         k_f L_f-\mu_fI_f
     \\
-    \dot{S}_c&= 
+    \dot{S}_c&=
         \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c
     \\
-    \dot{L}_c&= 
+    \dot{L}_c&=
         \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
     \\
     \dot{I}_c&= k_c L_c-\mu_c +\delta I_c
@@ -125,38 +125,38 @@ following SI vector host model for cattle and flies.
 
 \begin{equation}\label{Eq:SIvectorhostmodelcontrol}
 \begin{aligned}
-    \dot{S}_f&= 
+    \dot{S}_f&=
         \Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_c S_f-(\mu_f+w(t))S_f
     \\
-    \dot{L}_f&= 
+    \dot{L}_f&=
         \frac{\beta_f}{N_c^{\infty}} I_c S_f-
         \left(
             k_f + w(t) + \mu_f
         \right) L_f
     \\
-    \dot{I}_f&= 
+    \dot{I}_f&=
         k_f L_f-(w(t)+\mu_f)I_f
     \\
-    \dot{S}_c&= 
+    \dot{S}_c&=
         \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_f S_c-
         \left(
             \mu_c + v(t)
         \right)
         S_c + \rho T_c
     \\
-    \dot{L}_c&= 
-        \frac{\beta_c}{N_c^{\infty}} I_f S_c - 
+    \dot{L}_c&=
+        \frac{\beta_c}{N_c^{\infty}} I_f S_c -
         \left(
-            \mu_c + v(t) + 
+            \mu_c + v(t) +
             k_c
         \right)L_c
     \\
-    \dot{I}_c&= 
-        k_c L_c - 
+    \dot{I}_c&=
+        k_c L_c -
         (\mu_c + v(t) + \delta u(t))I_c
     \\
-    \dot{T}_c&= 
-        \delta u(t) I_c - 
+    \dot{T}_c&=
+        \delta u(t) I_c -
         \left(
             \rho  + \mu_c
         \right) T_c
@@ -164,51 +164,51 @@ following SI vector host model for cattle and flies.
 \end{aligned}
 \end{equation}
 where $v(t)$, $u(t)$ and $w(t)$ represent culling, treatment and fumigation, respectively.\\
-%where $N_c=S_c+L_c+I_c$. 
-\noindent A second version of the model takes into account two different disease stages for the definite host (cows). Such stages refer to the severity of the worms parasitism. The main idea is to have different control measures depending on the severity of the disease. Therefore, we define two 
+%where $N_c=S_c+L_c+I_c$.
+\noindent A second version of the model takes into account two different disease stages for the definite host (cows). Such stages refer to the severity of the worms parasitism. The main idea is to have different control measures depending on the severity of the disease. Therefore, we define two
 different infected classes for infected cows, $I_{cl}$ and $I_{ch}$ which refer infected cows with light and heavy worm burden, respectively. Once a vector has transmitted some larvae into some susceptible individuals they become infected and depending on the amount of deposited larvae, a fraction $\theta$ of the susceptible hosts move to the $I_{cl}$ class and the complement $1-\theta$, move to the $I_{ch}$ class. An individual in the $I_{cl}$ class might move to the $I_{ch}$ class as it keep continuously in contact with vectors which remain depositing larvae into the eyes in such way that eventually the light worm burden becomes high and then a change to the class $I_{ch}$. Our model in this case becomes
 \begin{equation}\label{Eq:SIvectorhostmodel_v2}
 \begin{aligned}
-    \dot{S}_f&= 
+    \dot{S}_f&=
         \Lambda_f-\frac{S_f}{N_c^{\infty}}\left(\beta_fI_{cl}+\tilde{\beta}_fI_{ch} \right)-\mu_fS_f
     \\
-    \dot{L}_f&= 
+    \dot{L}_f&=
         \frac{S_f}{N_c^{\infty}}\left(\beta_fI_{cl}+\tilde{\beta}_fI_{ch}\right)-\left(k_f+\mu_f\right)L_f
     \\
-    \dot{I}_f&= 
+    \dot{I}_f&=
         k_f L_f-\mu_fI_f
     \\
-    \dot{S}_c&= 
+    \dot{S}_c&=
         \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c
     \\
-    \dot{L}_c&= 
+    \dot{L}_c&=
         \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
     \\
-    \dot{I}_{cl}&=  \theta k_c L_c- \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f-\mu_c I_{cl} 
+    \dot{I}_{cl}&=  \theta k_c L_c- \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f-\mu_c I_{cl}
     \\
     \dot{I}_{ch}&= (1-\theta) k_c L_c + \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f- \mu_c I_{ch}
     \\
 \end{aligned}
 \end{equation}
-\noindent In order to control the presence of eyeworms we focus our strategy based on \cite{Manjunath:2016}, in which there are considered three levels of worm burden. For those scenarios, the two less severe are treated with medication, whereas the most severe consist on direct removal. In our model, we focus on two generic strategies. The use of medicationine, which is applied for light to medium levels as one single class $(I_{cl})$ and removal for the heavy worm burden $(I_{ch})$. Under these hyphothesis our model with applied control becomes,  
+\noindent In order to control the presence of eyeworms we focus our strategy based on \cite{Manjunath:2016}, in which there are considered three levels of worm burden. For those scenarios, the two less severe are treated with medication, whereas the most severe consist on direct removal. In our model, we focus on two generic strategies. The use of medicationine, which is applied for light to medium levels as one single class $(I_{cl})$ and removal for the heavy worm burden $(I_{ch})$. Under these hyphothesis our model with applied control becomes,
 \begin{equation}\label{Eq:SIvectorhostmodel_v2controlled}
 \begin{aligned}
-    \dot{S}_f&= 
+    \dot{S}_f&=
         \Lambda_f-\frac{S_f}{N_c^{\infty}}\left(\beta_fI_{cl}+\tilde{\beta}_fI_{ch} \right)-\left(\mu_f+w_f(t)\right)S_f
     \\
-    \dot{L}_f&= 
+    \dot{L}_f&=
         \frac{S_f}{N_c^{\infty}}\left(\beta_fI_{cl}+\tilde{\beta}_fI_{ch}\right)-\left(k_f+\mu_f+w_f(t)\right)L_f
     \\
-    \dot{I}_f&= 
+    \dot{I}_f&=
         k_f L_f-\left(w_f(t)+\mu_f\right)I_f
     \\
-    \dot{S}_c&= 
+    \dot{S}_c&=
         \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+v_h(t)I_{ch}+\rho T_c
     \\
-    \dot{L}_c&= 
+    \dot{L}_c&=
         \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
     \\
-    \dot{I}_{cl}&=  \theta k_c L_c- \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f-(\mu_c+v_l(t)) I_{cl} 
+    \dot{I}_{cl}&=  \theta k_c L_c- \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f-(\mu_c+v_l(t)) I_{cl}
     \\
     \dot{I}_{ch}&= (1-\theta) k_c L_c + \frac{\tilde{\beta}_c}{N_c^{\infty}}I_{cl}I_f- (\mu_c+v_h(t)) I_{ch}
     \\
@@ -224,23 +224,23 @@ where $w_f(t)$ represents fly fumigation, $v_l(t)$ is cow treatment by medicatio
   \begin{equation}\label{eq:R0}
      R_0=\left(\frac{\beta_c\beta_f k_c k_fN_f^{\infty}}{\mu_f(\mu_c+k_c)(\mu_c+\delta_c)(\mu_f+k_f)N_c^{\infty}} \right)^{1/4}
  \end{equation}
- 
-% where 
+
+% where
 % $
 %    \displaystyle
 %    F_c=\frac{N_f^{\infty}}{N_c^{\infty}}
-%$, 
+%$,
 \noindent where $
     \displaystyle
     N_f^{\infty}=\frac{\Lambda_f}{\mu_f}
-    $ 
- and 
+    $
+ and
 $
     \displaystyle
     N_c^{\infty} = \frac{\Lambda_c}{\mu_c}
-$. Table \ref{Table:Parameters} shows 
+$. Table \ref{Table:Parameters} shows
  the meaning and values of the parameters considered in this study.
- 
+
 %Clearly, the root is due to the presence of the four-cycle as shown in figure (Z)
 %which is the contribution of the infection cycles fox-flies and dogs-flies.\\
 
@@ -261,7 +261,7 @@ $. Table \ref{Table:Parameters} shows
 			$\Lambda_f$& Fly recruitment rate & & This study
 			\\
 			$\Lambda_c$& Cattle recruitment rate & & This study
-			\\			
+			\\
 			$\beta_c$& Number of successful &&\\
 			&contacts of a fly &&
 				\\
@@ -279,7 +279,7 @@ $. Table \ref{Table:Parameters} shows
 				& & 12-15 days &\\
 				&&(\textit{T. Lacrymalis}) &\cite{Chanie:2014}
 			\\
-				& & 28-32 days&\\ 
+				& & 28-32 days&\\
 				&&(\textit{T. Gulosa}) &\cite{Chanie:2014}
 			\\
 			$k_{i}^{-1}$
@@ -288,7 +288,7 @@ $. Table \ref{Table:Parameters} shows
 				&for hosts $i=1,2$ & $\approx$ 35 days& \cite{Otranto:bookchapter}
 			\\
 			& & 21-42 days& \cite{Chanie:2014}
-			\\			
+			\\
 			 $\mu_v^{-1}$	& vector average lifespan & 30-60 months&\cite{sanchez:1998}
 			\\
 			$\mu_c^{-1}$
@@ -315,30 +315,30 @@ $. Table \ref{Table:Parameters} shows
 so it implies that, for a sufficiently large time, the fly and cow populations will tend to $\displaystyle N_f^{\infty}=\frac{\Lambda_f}{\mu_f}$ and $\displaystyle N_c^{\infty}=\frac{\Lambda_c}{\mu_c}$, respectively. In consequence, we can reduce system~\ref{Eq:SIvectorhostmodel},obtaining:
 \begin{equation}\label{Eq:ReduceSIvectorhostmodel}
 \begin{aligned}
-    \dot{L}_f&= 
+    \dot{L}_f&=
         \frac{\beta_f}{N_c^{\infty}}I_c\left(N_f^{\infty} - L_f - I_f\right)-\left(k_f+\mu_f\right)L_f
     \\
-    \dot{I}_f&= 
+    \dot{I}_f&=
         k_f L_f-\mu_f I_f
     \\
-    \dot{S}_c&= 
+    \dot{S}_c&=
         \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c+\rho \left(N_c^{\infty} - S_c - L_c - I_c\right)
     \\
-    \dot{L}_c&= 
+    \dot{L}_c&=
         \frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c
     \\
     \dot{I}_c&= k_c L_c-\left(\mu_c +\delta\right)I_c
 \end{aligned}
 \end{equation}
 
-\noindent System~\ref{Eq:ReduceSIvectorhostmodel} has two equilibrium points in $\Omega = \{\left(L_{f},I_{f},S_{c},L_{c},I_{c}\right)\in \mathbb{R}^{5}: 0\leq L_{f} + I_{f}\leq N_{f}^{\infty}, 0\leq S_{c} + L_{c} + I_{c}\leq N_{c}^{\infty}\}$. The disease free equilibrium 
+\noindent System~\ref{Eq:ReduceSIvectorhostmodel} has two equilibrium points in $\Omega = \{\left(L_{f},I_{f},S_{c},L_{c},I_{c}\right)\in \mathbb{R}^{5}: 0\leq L_{f} + I_{f}\leq N_{f}^{\infty}, 0\leq S_{c} + L_{c} + I_{c}\leq N_{c}^{\infty}\}$. The disease free equilibrium
 $$
-    S_1 = \left(L_{f1}^*,I_{f1}^*,S_{c1}^*,L_{c1}^*,I_{c1}^*\right) = 
+    S_1 = \left(L_{f1}^*,I_{f1}^*,S_{c1}^*,L_{c1}^*,I_{c1}^*\right) =
     \left(0,0,\frac{\Lambda_c}{\mu_c},0,0\right)
-$$ 
-and the endemic equilibrium 
 $$
-    S_2 = (L_{f2}^*,I_{f2}^*,S_{c2}^*,L_{c2}^*,I_{c2}^*) = 
+and the endemic equilibrium
+$$
+    S_2 = (L_{f2}^*,I_{f2}^*,S_{c2}^*,L_{c2}^*,I_{c2}^*) =
     .
 $$
 
@@ -371,19 +371,23 @@ Proof: Solving the equations for the state variables, we end up with the followi
 $S_f=\frac{\Lambda_f}{\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}$;
 $L_f=\left(\frac{\beta_f}{N_c^{\infty}(\lambda_f+\mu_f)}\right)\left(\frac{\Lambda_f}{\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}\right)I_c$;\\
 $I_f=\left(\frac{\lambda_f}{\mu_f}\right)\left(\frac{\beta_f}{N_c^{\infty}(\lambda_f+\mu_f)}\right)\left(\frac{\Lambda_f}{\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}\right)I_c$;
-$S_c=\frac{(\mu_c+\lambda_c)(\mu_c+\delta)(\lambda_f+\mu_f)\mu_fN_c^{\infty}^2\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}{\lambda_c\beta_c\lambda_f\beta_f\Lambda_f}$;\\
+$S_c=\frac{(\mu_c+\lambda_c)(\mu_c+\delta)(\lambda_f+\mu_f)
+    \mu_f
+    (N_c^{\infty})^2\left(\frac{\beta_f}{N_c^{\infty}}I_c+\mu_f\right)}{\lambda_c\beta_c\lambda_f\beta_f\Lambda_f}$;\\
 $T_c=\frac{\delta T_c}{\rho+\mu_c}$;
 $L_c=\frac{(\mu_c+\delta)I_c}{\lambda_c}$ and
 $I_c=\frac{A}{B}\left(R_0^4-1\right)$,
 with\\
-$A=\frac{\mu_c\mu_f^2(\mu_c+\lambda_c)(\mu_c+\delta)(\lambda_f+\mu_f)N_c^{\infty}^2}{\lambda_c\beta_c\lambda_f\beta_f\Lambda_f}$ and $B=\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}\left[1+{\frac{\mu_c(\lambda_f+\mu_f)\mu_cN_c^{\infty}}{\beta_c}}\right]-\frac{\rho\delta}{\rho+\mu_c}$.\\
+$A=\frac{\mu_c\mu_f^2(\mu_c+\lambda_c)(\mu_c+\delta)(\lambda_f+\mu_f)
+    (N_c^{\infty})^2}{\lambda_c\beta_c\lambda_f\beta_f\Lambda_f}$ and
+    $B=\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}\left[1+{\frac{\mu_c(\lambda_f+\mu_f)\mu_cN_c^{\infty}}{\beta_c}}\right]-\frac{\rho\delta}{\rho+\mu_c}$.\\
 Clearly, $\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}>\delta$, $1+{\frac{\mu_c(\lambda_f+\mu_f)\mu_c N_c^{\infty}}{\beta_c}}>1$ and $\frac{\rho\delta}{\rho+\mu_c}<\delta$. Therefore, $I_c>0$ if and only if $R_0>1$.\\
 
 \noindent Observe that the endemic equilibrium is preserved when no control is applied into the model ($\rho=\delta=0$). For this particular case it is possible to show global stability for the endemic equilibrium\\
 
 \noindent Theorem. The endemic equilibrium for the model with no control ($\rho=\delta=0$) is asymptotically globally stable.\\
 Proof: Following the ideas in \cite{Zhou:2014}, we consider the Lyapunov function
-$$V=\sum_{i=1}^6a_i\left(X_i-\overline{X}_i\ln{\frac{X_i}{\overline{X}_i}}\right),$$ where $X_i$ are the components of the vector $(S_f,L_f,I_f,S_c,L_c,I_c)$ and $\overline{X}=(\overline{S}_f,\overline{L}_f,\overline{I}_f,\overline{S}_c,\overline{L}_c,\overline{I}_c)$ are the coordinates of the endemic equilibrium. 
+$$V=\sum_{i=1}^6a_i\left(X_i-\overline{X}_i\ln{\frac{X_i}{\overline{X}_i}}\right),$$ where $X_i$ are the components of the vector $(S_f,L_f,I_f,S_c,L_c,I_c)$ and $\overline{X}=(\overline{S}_f,\overline{L}_f,\overline{I}_f,\overline{S}_c,\overline{L}_c,\overline{I}_c)$ are the coordinates of the endemic equilibrium.
 
 \noindent At the endemic equilibrium point, the following equalities hold
 $$\Lambda_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+\mu_f\overline{S}_f \qquad \Lambda_c=\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+\mu_c\overline{S}_c \qquad \mu_f+k_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}\overline{L}_f}$$
@@ -391,7 +395,7 @@ $$\Lambda_f=\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+\mu_f\overl
 \mu_c+k_c=\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}\overline{L}_c} \qquad \mu_f=k_f\frac{\overline{L}_f}{\overline{I}_f} \qquad \mu_c= k_c\frac{\overline{L}_c}{\overline{I}_c}
 \end{equation}
 
-\noindent From this information, we obtain 
+\noindent From this information, we obtain
 $$\dot{V}(t)=a_1\left(\Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_cS_f-\mu_fS_f\right)\left(1-\frac{\overline{S}_f}{S_f}\right)+a_2\left(\frac{\beta_f}{N_c^{\infty}}I_cS_f-\left(k_f+\mu_f\right)L_f\right)\left(1-\frac{\overline{L}_f}{L_f}\right)$$
 $$+a_3\left(k_f L_f-\mu_fI_f\right)\left(1-\frac{\overline{I}_f}{I_f}\right)+a_4\left(\Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_fS_c-\mu_cS_c\right)\left(1-\frac{\overline{S}_c}{S_c}\right)$$
 $$+a_5\left(\frac{\beta_c}{N_c^{\infty}}I_fS_c-\left(\mu_c+k_c\right)L_c\right)\left(1-\frac{\overline{L}_c}{L_c}\right)+a_6\left(k_c L_c-\mu_cI_c\right)\left(1-\frac{\overline{I}_c}{I_c}\right).$$
@@ -407,7 +411,7 @@ $$+a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(s_f^*i_c^*-l
 $$+a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(1-\frac{1}{s_c^*}\right)\left(1-i_f^*s_c^*\right)+a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}\left(1-\frac{1}{l_c^*}\right)\left(i_f^*s_c^*-l_c^*\right)$$
 $$+a_6k_c\overline{L}_c\left(1-\frac{1}{i_c^*}\right)\left(l_c^*-i_c^*\right).$$
 After rearranging terms we end up with
-$$\dot{V}(t)=-a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+\left(a_3k_f\overline{L}_f-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\right)l_f^*$$ 
+$$\dot{V}(t)=-a_1\frac{\mu_f\overline{S}_f}{s_f^*}\left(s_f^*-1\right)^2-a_4\frac{\mu_c\overline{S}_c}{s_c^*}\left(s_c^*-1\right)^2+\left(a_3k_f\overline{L}_f-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\right)l_f^*$$
 $$+\left(a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}-a_3k_f\overline{L}_f\right)i_f^*+\left(a_6k_c\overline{L}_c-a_5\frac{\beta_c\overline{I}_f\overline{S}_c}{N_c^{\infty}}\right)l_c^*+\left(a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}-a_6k_c\overline{L}_c\right)i_c^*$$
 $$+\left(a_2-a_1\right)\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}s_f^*i_c^*+\left(a_5-a_4\right)\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}i_f^*s_c^*+a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}+a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}$$
 $$+a_3k_f\overline{L}_f+a_4\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+a_5\frac{\beta_c\overline{S}_c\overline{I}_f}{N_c^{\infty}}+a_6k_c\overline{L}_c-a_1\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(\frac{1}{s_f^*}\right)-a_2\frac{\beta_f\overline{S}_f\overline{I}_c}{N_c^{\infty}}\left(\frac{s_f^*i_c^*}{l_f^*}\right)$$

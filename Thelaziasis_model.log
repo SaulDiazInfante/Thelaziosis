@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  14 FEB 2020 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  14 FEB 2020 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,381 +314,37 @@ LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/todonotes/todonotes.sty
-Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
-Package: todonotes 2018/11/22
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks24
-\XKV@tempa@toks=\toks25
-)
-\XKV@depth=\count128
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
-x
-\pgfutil@everybye=\toks26
-\pgfutil@tempdima=\dimen141
-\pgfutil@tempdimb=\dimen142
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
-sts.tex))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box36
-(/usr/local/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2019/02/02 v3.1.1 (3.1.1)
-))
-Package: pgf 2019/02/02 v3.1.1 (3.1.1)
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2019/02/02 v3.1.1 (3.1.1)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks27
-\pgfkeys@temptoks=\toks28
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
-ode.tex
-\pgfkeys@tmptoks=\toks29
-))
-\pgf@x=\dimen143
-\pgf@y=\dimen144
-\pgf@xa=\dimen145
-\pgf@ya=\dimen146
-\pgf@xb=\dimen147
-\pgf@yb=\dimen148
-\pgf@xc=\dimen149
-\pgf@yc=\dimen150
-\w@pgf@writea=\write4
-\r@pgf@reada=\read1
-\c@pgf@counta=\count129
-\c@pgf@countb=\count130
-\c@pgf@countc=\count131
-\c@pgf@countd=\count132
-\t@pgf@toka=\toks30
-\t@pgf@tokb=\toks31
-\t@pgf@tokc=\toks32
-\pgf@sys@id@count=\count133
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2019/02/02 v3.1.1 (3.1.1)
-)
-Driver file for pgf: pgfsys-pdftex.def
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
-ef
-File: pgfsys-pdftex.def 2019/02/02 v3.1.1 (3.1.1)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-df.def
-File: pgfsys-common-pdf.def 2019/02/02 v3.1.1 (3.1.1)
-)))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
-code.tex
-File: pgfsyssoftpath.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgfsyssoftpath@smallbuffer@items=\count134
-\pgfsyssoftpath@bigbuffer@items=\count135
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
-code.tex
-File: pgfsysprotocol.code.tex 2019/02/02 v3.1.1 (3.1.1)
-))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2019/02/02 v3.1.1 (3.1.1)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen151
-\pgfmath@count=\count136
-\pgfmath@box=\box37
-\pgfmath@toks=\toks33
-\pgfmath@stack@operand=\toks34
-\pgfmath@stack@operation=\toks35
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
-tex
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
-.code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
-nometric.code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
-m.code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
-rison.code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
-code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
-.code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
-code.tex)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
-erarithmetics.code.tex)))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count137
-))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
-de.tex
-File: pgfcorepoints.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgf@picminx=\dimen152
-\pgf@picmaxx=\dimen153
-\pgf@picminy=\dimen154
-\pgf@picmaxy=\dimen155
-\pgf@pathminx=\dimen156
-\pgf@pathmaxx=\dimen157
-\pgf@pathminy=\dimen158
-\pgf@pathmaxy=\dimen159
-\pgf@xx=\dimen160
-\pgf@xy=\dimen161
-\pgf@yx=\dimen162
-\pgf@yy=\dimen163
-\pgf@zx=\dimen164
-\pgf@zy=\dimen165
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
-ruct.code.tex
-File: pgfcorepathconstruct.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgf@path@lastx=\dimen166
-\pgf@path@lasty=\dimen167
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
-.code.tex
-File: pgfcorepathusage.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgf@shorten@end@additional=\dimen168
-\pgf@shorten@start@additional=\dimen169
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
-de.tex
-File: pgfcorescopes.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgfpic=\box38
-\pgf@hbox=\box39
-\pgf@layerbox@main=\box40
-\pgf@picture@serial@count=\count138
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
-ate.code.tex
-File: pgfcoregraphicstate.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgflinewidth=\dimen170
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
-ations.code.tex
-File: pgfcoretransformations.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgf@pt@x=\dimen171
-\pgf@pt@y=\dimen172
-\pgf@pt@temp=\dimen173
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
-e.tex
-File: pgfcorequick.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
-ode.tex
-File: pgfcoreobjects.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
-ssing.code.tex
-File: pgfcorepathprocessing.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
-de.tex
-File: pgfcorearrows.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgfarrowsep=\dimen174
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
-e.tex
-File: pgfcoreshade.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgf@max=\dimen175
-\pgf@sys@shading@range@num=\count139
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
-e.tex
-File: pgfcoreimage.code.tex 2019/02/02 v3.1.1 (3.1.1)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
-code.tex
-File: pgfcoreexternal.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgfexternal@startupbox=\box41
-))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
-de.tex
-File: pgfcorelayers.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
-ncy.code.tex
-File: pgfcoretransparency.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
-code.tex
-File: pgfcorepatterns.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
-tex
-File: pgfcorerdf.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
-e.tex
-File: pgfmoduleshapes.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgfnodeparttextbox=\box42
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
-tex
-File: pgfmoduleplot.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--0-65.sty
-Package: pgfcomp-version-0-65 2019/02/02 v3.1.1 (3.1.1)
-\pgf@nodesepstart=\dimen176
-\pgf@nodesepend=\dimen177
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--1-18.sty
-Package: pgfcomp-version-1-18 2019/02/02 v3.1.1 (3.1.1)
-))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2019/02/02 v3.1.1 (3.1.1)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen178
-\pgffor@skip=\dimen179
-\pgffor@stack=\toks36
-\pgffor@toks=\toks37
-))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
-e.tex
-Package: tikz 2019/02/02 v3.1.1 (3.1.1)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
-dlers.code.tex
-File: pgflibraryplothandlers.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgf@plot@mark@count=\count140
-\pgfplotmarksize=\dimen180
-)
-\tikz@lastx=\dimen181
-\tikz@lasty=\dimen182
-\tikz@lastxsaved=\dimen183
-\tikz@lastysaved=\dimen184
-\tikzleveldistance=\dimen185
-\tikzsiblingdistance=\dimen186
-\tikz@figbox=\box43
-\tikz@figbox@bg=\box44
-\tikz@tempbox=\box45
-\tikz@tempbox@bg=\box46
-\tikztreelevel=\count141
-\tikznumberofchildren=\count142
-\tikznumberofcurrentchild=\count143
-\tikz@fig@count=\count144
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
-e.tex
-File: pgfmodulematrix.code.tex 2019/02/02 v3.1.1 (3.1.1)
-\pgfmatrixcurrentrow=\count145
-\pgfmatrixcurrentcolumn=\count146
-\pgf@matrix@numberofcolumns=\count147
-)
-\tikz@expandcount=\count148
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2019/02/02 v3.1.1 (3.1.1)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryshadows.code.tex
-File: tikzlibraryshadows.code.tex 2019/02/02 v3.1.1 (3.1.1)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryfadings.code.tex
-File: tikzlibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings
-.code.tex
-File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
-))) (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count149
-\calc@Bcount=\count150
-\calc@Adimen=\dimen187
-\calc@Bdimen=\dimen188
-\calc@Askip=\skip51
-\calc@Bskip=\skip52
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count151
-\calc@Cskip=\skip53
-)
-\c@@todonotes@numberoftodonotes=\count152
-)
 (./Thelaziasis_model.aux)
 \openout1 = `Thelaziasis_model.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count153
-\scratchdimen=\dimen189
-\scratchbox=\box47
-\nofMPsegments=\count154
-\nofMParguments=\count155
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count156
-\MPscratchDim=\dimen190
-\MPnumerator=\count157
-\makeMPintoPDFobject=\count158
-\everyMPtoPDFconversion=\toks39
+\scratchcounter=\count128
+\scratchdimen=\dimen141
+\scratchbox=\box36
+\nofMPsegments=\count129
+\nofMParguments=\count130
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count131
+\MPscratchDim=\dimen142
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
+\everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -706,8 +362,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 12.
+\AtBeginShipoutBox=\box37
+Package hyperref Info: Link coloring OFF on input line 11.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -715,29 +371,22 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count159
+\c@section@level=\count134
 )
-LaTeX Info: Redefining \ref on input line 12.
-LaTeX Info: Redefining \pageref on input line 12.
-LaTeX Info: Redefining \nameref on input line 12.
+LaTeX Info: Redefining \ref on input line 11.
+LaTeX Info: Redefining \pageref on input line 11.
+LaTeX Info: Redefining \nameref on input line 11.
 
 (./Thelaziasis_model.out) (./Thelaziasis_model.out)
-\@outlinefile=\write5
-\openout5 = `Thelaziasis_model.out'.
+\@outlinefile=\write4
+\openout4 = `Thelaziasis_model.out'.
 
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
 
-ABD: EveryShipout initializing macros
-
-Package todonotes Warning: The length marginparwidth is less than 2cm and will 
-most likely cause issues with the appearance of inserted todonotes. The issue c
-an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 12.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -750,58 +399,45 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 195.
+[2] [3] [4]
 
-Overfull \hbox (11.93982pt too wide) in paragraph at lines 195--195
-[][]\OT1/cmr/m/n/12 comment 
+Package natbib Warning: Citation `Manjunath:2016' on page 5 undefined on input 
+line 193.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+
  []
 
-
-Overfull \hbox (5.08572pt too wide) in paragraph at lines 195--195
-\OT1/cmr/m/n/12 medica- 
- []
-
-
-Overfull \hbox (11.93982pt too wide) in paragraph at lines 195--195
-[][]\OT1/cmr/m/n/12 comment 
- []
-
-
-Overfull \hbox (5.08572pt too wide) in paragraph at lines 195--195
-\OT1/cmr/m/n/12 medica- 
- []
-
-[4] [5]
-Overfull \hbox (22.70522pt too wide) detected at line 413
+[6] [7]
+Overfull \hbox (22.70522pt too wide) detected at line 366
 [][]
  []
 
-[6]
-Overfull \hbox (30.7863pt too wide) in paragraph at lines 421--501
+[8]
+Overfull \hbox (30.7863pt too wide) in paragraph at lines 369--385
 \OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = [] [] [] \OML/cmm/m/it/12 I[]$\OT1/cmr/m
 /n/12 ; $\OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = []$; 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--501
+Underfull \hbox (badness 10000) in paragraph at lines 369--385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
 
  []
 
-[7]
-Overfull \hbox (65.28748pt too wide) detected at line 515
+[9]
+Overfull \hbox (65.28748pt too wide) detected at line 399
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 a[] [
 ] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[] [] []
  []
 
 
-Overfull \hbox (44.15144pt too wide) detected at line 525
+Overfull \hbox (44.15144pt too wide) detected at line 409
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@\O
 ML/cmm/m/it/12 a[][] [][] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 a[][] [][] \OT1
 /cmr/m/n/12 + \OML/cmm/m/it/12 a[][]\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OM
@@ -811,21 +447,21 @@ L/cmm/m/it/12 s[]i[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 a[]
  []
 
 
-Overfull \hbox (16.66425pt too wide) detected at line 531
+Overfull \hbox (16.66425pt too wide) detected at line 415
 \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 i[] \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12
  l[] \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 i[]
  []
 
 
-Overfull \hbox (6.00972pt too wide) detected at line 533
+Overfull \hbox (6.00972pt too wide) detected at line 417
 \OT1/cmr/m/n/12 +\OML/cmm/m/it/12 a[]k[][][] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12
  a[][] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[][] \OT1/cmr/m/n/12 + \OML/cmm/m/it
 /12 a[]k[][][] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 a[][] [] \OMS/cmsy/m/n/12 
 ^^@ \OML/cmm/m/it/12 a[][] []
  []
 
-[8]
-Overfull \hbox (105.44681pt too wide) detected at line 539
+[10]
+Overfull \hbox (105.44681pt too wide) detected at line 423
 [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 a[][] [][] \OMS/cmsy/
 m/n/12 ^^@ \OML/cmm/m/it/12 a[][] [][] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[][]
  []
@@ -848,7 +484,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Figur
 es/flyes_disease_dynamics-eps-converted-to.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
-<Figures/flyes_disease_dynamics-eps-converted-to.pdf, id=194, 541.02126pt x 335
+<Figures/flyes_disease_dynamics-eps-converted-to.pdf, id=175, 541.02126pt x 335
 .2525pt>
 File: Figures/flyes_disease_dynamics-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -872,7 +508,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Figur
 es/cows_disease_dynamics-eps-converted-to.pdf): PDF inclusion: found PDF versio
 n <1.7>, but at most version <1.5> allowed
-<Figures/cows_disease_dynamics-eps-converted-to.pdf, id=195, 541.02126pt x 335.
+<Figures/cows_disease_dynamics-eps-converted-to.pdf, id=176, 541.02126pt x 335.
 2525pt>
 File: Figures/cows_disease_dynamics-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -880,26 +516,30 @@ File: Figures/cows_disease_dynamics-eps-converted-to.pdf Graphic file (type pdf
 Package pdftex.def Info: Figures/cows_disease_dynamics-eps-converted-to.pdf  us
 ed on input line 14.
 (pdftex.def)             Requested size: 390.0pt x 241.67831pt.
-) (./Thelaziasis_model.bbl [9] [10 <./Figures/flyes_disease_dynamics-eps-conver
-ted-to.pdf> <./Figures/cows_disease_dynamics-eps-converted-to.pdf>] [11]
-[12]) [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 554.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 554.
+) (./Thelaziasis_model.bbl [11] [12 <./Figures/flyes_disease_dynamics-eps-conve
+rted-to.pdf> <./Figures/cows_disease_dynamics-eps-converted-to.pdf>] [13]
+[14])
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
+[15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
  (./Thelaziasis_model.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 554.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 554.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 438.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
 Package rerunfilecheck Info: File `Thelaziasis_model.out' has not changed.
 (rerunfilecheck)             Checksum: 69A90AAAFCCA991EA043601E8D356669;538.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 554.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 438.
  ) 
 Here is how much of TeX's memory you used:
- 19325 strings out of 492623
- 368116 string characters out of 6129552
- 437613 words of memory out of 5000000
- 22840 multiletter control sequences out of 15000+600000
+ 8526 strings out of 492623
+ 135899 string characters out of 6129552
+ 257112 words of memory out of 5000000
+ 12286 multiletter control sequences out of 15000+600000
  11752 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,10n,81p,449b,953s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,9n,30p,1402b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.p
@@ -921,10 +561,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thelaziasis_model.pdf (13 pages, 892649 bytes).
+Output written on Thelaziasis_model.pdf (15 pages, 894662 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 253 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
