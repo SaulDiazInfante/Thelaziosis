@@ -1,4 +1,4 @@
-\documentclass[preprint,12pt]{elsarticle}
+\documentclass[preprint, 12pt]{elsarticle}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -121,50 +121,48 @@ following SI vector host model for cattle and flies.
 \end{aligned}
 \end{equation}
 
-\noindent After control is applied (need to find out the models we will apply)
 
-\begin{equation}\label{Eq:SIvectorhostmodelcontrol}
-\begin{aligned}
-    \dot{S}_f&=
-        \Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_c S_f-(\mu_f+w(t))S_f
-    \\
-    \dot{L}_f&=
-        \frac{\beta_f}{N_c^{\infty}} I_c S_f-
-        \left(
-            k_f + w(t) + \mu_f
-        \right) L_f
-    \\
-    \dot{I}_f&=
-        k_f L_f-(w(t)+\mu_f)I_f
-    \\
-    \dot{S}_c&=
-        \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_f S_c-
-        \left(
-            \mu_c + v(t)
-        \right)
-        S_c + \rho T_c
-    \\
-    \dot{L}_c&=
-        \frac{\beta_c}{N_c^{\infty}} I_f S_c -
-        \left(
-            \mu_c + v(t) +
-            k_c
-        \right)L_c
-    \\
-    \dot{I}_c&=
-        k_c L_c -
-        (\mu_c + v(t) + \delta u(t))I_c
-    \\
-    \dot{T}_c&=
-        \delta u(t) I_c -
-        \left(
-            \rho  + \mu_c
-        \right) T_c
-    \\
-\end{aligned}
-\end{equation}
-where $v(t)$, $u(t)$ and $w(t)$ represent culling, treatment and fumigation, respectively.\\
-%where $N_c=S_c+L_c+I_c$.
+    \begin{equation}\label{Eq:SIvectorhostmodelcontrol}
+        \begin{aligned}
+            \dot{S}_f&=
+                \Lambda_f-\frac{\beta_f}{N_c^{\infty}}I_c S_f-(\mu_f+w(t))S_f
+            \\
+            \dot{L}_f&=
+                \frac{\beta_f}{N_c^{\infty}} I_c S_f-
+                \left(
+                    k_f + w(t) + \mu_f
+                \right) L_f
+            \\
+            \dot{I}_f&=
+                k_f L_f-(w(t)+\mu_f)I_f
+            \\
+            \dot{S}_c&=
+                \Lambda_c-\frac{\beta_c}{N_c^{\infty}}I_f S_c-
+                \left(
+                    \mu_c + v(t)
+                \right)
+                S_c + \rho T_c
+            \\
+            \dot{L}_c&=
+                \frac{\beta_c}{N_c^{\infty}} I_f S_c -
+                \left(
+                    \mu_c + v(t) +
+                    k_c
+                \right)L_c
+            \\
+            \dot{I}_c&=
+                k_c L_c -
+                (\mu_c + v(t) + \delta u(t))I_c
+            \\
+            \dot{T}_c&=
+                \delta u(t) I_c -
+                \left(
+                    \rho  + \mu_c
+                \right) T_c
+            \\
+        \end{aligned}
+    \end{equation}
+
 \noindent A second version of the model takes into account two different disease stages for the definite host (cows). Such stages refer to the severity of the worms parasitism. The main idea is to have different control measures depending on the severity of the disease. Therefore, we define two
 different infected classes for infected cows, $I_{cl}$ and $I_{ch}$ which refer infected cows with light and heavy worm burden, respectively. Once a vector has transmitted some larvae into some susceptible individuals they become infected and depending on the amount of deposited larvae, a fraction $\theta$ of the susceptible hosts move to the $I_{cl}$ class and the complement $1-\theta$, move to the $I_{ch}$ class. An individual in the $I_{cl}$ class might move to the $I_{ch}$ class as it keep continuously in contact with vectors which remain depositing larvae into the eyes in such way that eventually the light worm burden becomes high and then a change to the class $I_{ch}$. Our model in this case becomes
 \begin{equation}\label{Eq:SIvectorhostmodel_v2}
@@ -425,6 +423,159 @@ Now, because the arithmetic mean is larger than the geometric mean, implies that
 
 
 \subsection{Persistance}
+
+\section{Optimal Controlled Model}
+        According to \cite{manjunath2016prevalence}, thelazia management is
+    closed related to animal husbandry practices, grazing management, barn
+    cleaning, anthelmintic treatment, among others. However, when cattle
+    show symptoms as excessive lacrimation, conjunctivitis, corneal opacity,
+    ulceration of the eyes, the authors in [2] report the
+    choice of a control strategy according to the number of worms detected
+    in the cattle eyes. Thus, if a cattle have between 1 and 100 worms, then
+    the control treatment is Ciplox eye drops and Neomec injection [2].
+    When the number of worms is between 11 and 20, the treatment consists in
+    to apply Levamisole, and if the number of worm eyes exceeds 21 worms
+    then proceeds by manual removal of worms with anesthesia.
+
+        We consider this practices to obtain a optimal controlled model.
+    Let $w_f(t)$ denotes the race of mortality of flies due to fumigation.
+    Denote by $v_l(t)$ the use of medicament treatment in cattle with light and
+    medium worm burden and let $v_h(t)$ the manual removal of worms.
+
+        Applying the above strategies implies economic cost and profit, in
+    order to optimize this balance, we define the functional
+    \begin{equation}\label{eqn:cost_functional}
+        J(x, u):=
+            \int_0 ^T
+                A_{l_c} L_c
+                + A_{cl} I_{cl}
+                + A_{ch} I_{ch}
+                + B_{wf}  w_f ^ 2
+                + B_{vl}  v_l ^ 2
+                + B_{vh}  v_h ^ 2
+            ds.
+    \end{equation}
+
+    In other words, $J$ describe the cost of manage the cattle infected
+    classes $L_c$, $I_{cl}$, $I_{ch}$ by fumigation, medical treatment and
+    manual removal or worms. The positive constants
+    $A_{l_c}$, $A_{cl}$, $B_{wf}$, $B_{vl}$, $B_{vh}$ adjust the cost
+    contribution due to the respective class or strategy.
+
+        Then, our problem will be minimize $J$ subject to the controlled
+    dynamics governed by \cref{Eq:SIvectorhostmodel_v2controlled}, that is, we
+    want to solve the following optimization problem.
+
+    \begin{equation}{\label{eqn:optimal_problem}}
+        \begin{aligned}
+            \min_{u \in \mathcal{U}[0, T]}
+            J(x, u) &:=
+                \int_0 ^T
+                    A_{l_c} L_c
+                    + A_{cl} I_{cl}
+                    + A_{ch} I_{ch}
+                    + B_{wf}  w_f ^ 2
+                    + B_{vl}  v_l ^ 2
+                    + B_{vh}  v_h ^ 2
+                ds
+            \\
+            \text{subject to} &
+            \\
+        \dot{S}_f &=
+            \Lambda_f
+            -\frac{
+                S_f
+             }{
+                N_c^{\infty}}
+                \left(
+                    \beta_fI_{cl} + \tilde{ \beta }_f I_{ch}
+                \right)
+                -\left(
+                    \mu_f + w_f(t)
+                 \right) S_f
+            \\
+        \dot{L}_f &=
+            \frac{
+                S_f
+            }{
+                N_c^{\infty}}
+                \left(
+                    \beta_f I_{cl}
+                    +
+                     \tilde{\beta}_f I_{ch}
+                \right)
+                -\left(
+                    k_f + \mu_f + w_f(t)
+                 \right) L_f
+        \\
+    \dot{I}_f &=
+        k_f L_f
+        -\left(
+            w_f(t) + \mu_f
+        \right) I_f
+    \\
+    \dot{S}_c&=
+        \Lambda_c
+        -\frac{
+            \beta_c
+         }{
+            N_c^{\infty}
+        } I_fS_c
+        -\mu_cS_c + v_h(t) I_{ch} + \rho T_c
+    \\
+    \dot{L}_c &=
+        \frac{
+            \beta_c
+        }{
+            N_c^{\infty}
+        } I_fS_c
+        -\left(
+            \mu_c + k_c
+        \right) L_c
+    \\
+    \dot{I}_{cl} &=
+        \theta k_c L_c
+        - \frac{
+            \tilde{\beta}_c
+         }{
+            N_c^{\infty}
+         } I_{cl} I_f
+         -( \mu_c + v_l(t) ) I_{cl}
+    \\
+    \dot{I}_{ch}&=
+        (1-\theta) k_c L_c
+        +
+        \frac{
+            \tilde{\beta}_c
+        }{
+            N_c^{\infty}
+        } I_{cl}I_f
+        - (
+            \mu_c + v_h(t)
+          ) I_{ch}
+    \\
+    \dot{T}_c&=
+        v_l(t) I_{cl}
+        -\left(
+            \mu_c + \rho
+         \right) T_c .
+        \end{aligned}
+    \end{equation}
+
+        We solve this optimization by an indirect method. To this end first we
+    have to existence of a control
+   $
+        u(t):= (w_f(t), v_l(t), v_h(t))^{\top}
+   $, that satisfies \cref{eqn:optimal_problem}. This is the statement of
+   the following result.
+
+%    \begin{theorem}
+%        There exist at least a measurable function
+%        %$u: \mathbb{R} ^ 3 \to \mathbb{R}$ that solves problem
+%        \eqref{eqn:optimal_problem}.
+%    \end{theorem}
+%   \begin{proof}
+%   \end{proof}
 
 \section{Discussion}
 

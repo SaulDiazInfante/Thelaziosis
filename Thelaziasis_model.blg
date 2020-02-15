@@ -3,50 +3,46 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Thelaziasis_model.aux
 The style file: model1-num-names.bst
 Database file #1: thelazbiblio.bib
-I was expecting a `,' or a `}'---line 95 of file thelazbiblio.bib
- :  
- :  pages = {822-824},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Manjunath:2016"
 You've used 23 entries,
             2616 wiz_defined-function locations,
-            747 strings with 9080 characters,
-and the built_in function-call counts, 14758 in all, are:
-= -- 1110
+            750 strings with 9115 characters,
+and the built_in function-call counts, 14848 in all, are:
+= -- 1118
 > -- 709
 < -- 11
 + -- 264
 - -- 241
-* -- 1910
-:= -- 2237
+* -- 1923
+:= -- 2245
 add.period$ -- 23
 call.type$ -- 23
 change.case$ -- 198
 chr.to.int$ -- 23
 cite$ -- 23
-duplicate$ -- 897
-empty$ -- 898
+duplicate$ -- 900
+empty$ -- 908
 format.name$ -- 323
-if$ -- 2665
+if$ -- 2685
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 214
+missing$ -- 215
 newline$ -- 119
 num.names$ -- 90
-pop$ -- 177
+pop$ -- 176
 preamble$ -- 1
 purify$ -- 196
 quote$ -- 0
 skip$ -- 234
 stack$ -- 0
-substring$ -- 700
-swap$ -- 870
+substring$ -- 721
+swap$ -- 876
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 207
 warning$ -- 0
-while$ -- 88
+while$ -- 89
 width$ -- 0
 write$ -- 304
-(There was 1 error message)
+(There was 1 warning)
