@@ -6,6 +6,7 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{cleveref}
+\usepackage{enumerate}
 \newtheorem{theorem}{Theorem}
 
 \journal{Journal Name}
@@ -679,13 +680,34 @@ Clearly, $\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}>\delta$, $1+{\frac{\
     the following result.
 
     \begin{theorem}
-        There exist at least a measurable function
-        $u: \mathbb{R} ^ 3 \to \mathbb{R}$ that solves problem
-        \eqref{eqn:optimal_problem}.
+        There exist at least a optimal measurable control
+        $
+            u ^ * (t ) =(w_f(t) ^ *, v_l(t) ^ *, v_h(t) ^ * ) ^{\top}
+        $ and a
+        corresponding
+        optimal path
+        $
+            x ^ *(t) =(
+                S_f ^ *,
+                L_f ^ *,
+                I_f ^ *,
+                S_c ^ *,
+                L_c ^ *,
+                I_{cl} ^ *,
+                I_{ch}
+            ) ^ {\top}
+        $
+        that solves problem\eqref{eqn:optimal_problem}.
     \end{theorem}
    \begin{proof}
-        According to \cite{} we just to verify that:
-
+        According to the Cesari existence result
+        \cite[][p. 69]{fleming2012}, we verify that
+        \begin{enumerate}[(i)]
+            \item
+            \item
+            \item
+            \item
+        \end{enumerate}
    \end{proof}
 
 \section{Discussion}

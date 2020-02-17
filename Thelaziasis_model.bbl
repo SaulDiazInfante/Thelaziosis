@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{24}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
@@ -166,15 +166,6 @@
 \newblock \bibinfo{title}{Analysis of a dengue disease transmission model},
 \newblock \bibinfo{journal}{Math. Biosci.} \bibinfo{volume}{150}
   (\bibinfo{year}{1998}) \bibinfo{pages}{131--151}.
-%Type = Article
-\bibitem[{Manjunath et~al.(2016)Manjunath, Dhanalakshmi, D'Souza, Chandregowda,
-  and Veena}]{manjunath2016prevalence}
-\bibinfo{author}{S.~Manjunath}, \bibinfo{author}{H.~Dhanalakshmi},
-  \bibinfo{author}{P.~E. D'Souza}, \bibinfo{author}{C.~Chandregowda},
-  \bibinfo{author}{M.~Veena},
-\newblock \bibinfo{title}{Prevalence and management of eyeworms in cattle.},
-\newblock \bibinfo{journal}{Intas Polivet} \bibinfo{volume}{17}
-  (\bibinfo{year}{2016}).
 %Type = Incollection
 \bibitem[{Otranto and Dantas-Torres(2017)}]{Otranto:bookchapter}
 \bibinfo{author}{D.~Otranto}, \bibinfo{author}{F.~Dantas-Torres},
@@ -196,5 +187,20 @@ FAO, \bibinfo{title}{Guidelines for slaughtering, meat cutting and further
   mathematical model},
 \newblock \bibinfo{journal}{J. Appl. Math.} \bibinfo{volume}{2014}
   (\bibinfo{year}{2014}) \bibinfo{pages}{245650(1--11)}.
+%Type = Article
+\bibitem[{Manjunath et~al.(2016)Manjunath, Dhanalakshmi, D'Souza, Chandregowda,
+  and Veena}]{manjunath2016prevalence}
+\bibinfo{author}{S.~Manjunath}, \bibinfo{author}{H.~Dhanalakshmi},
+  \bibinfo{author}{P.~E. D'Souza}, \bibinfo{author}{C.~Chandregowda},
+  \bibinfo{author}{M.~Veena},
+\newblock \bibinfo{title}{Prevalence and management of eyeworms in cattle.},
+\newblock \bibinfo{journal}{Intas Polivet} \bibinfo{volume}{17}
+  (\bibinfo{year}{2016}).
+%Type = Book
+\bibitem[{Fleming and Rishel(2012)}]{fleming2012}
+\bibinfo{author}{W.~Fleming}, \bibinfo{author}{R.~Rishel},
+  \bibinfo{title}{Deterministic and Stochastic Optimal Control}, Stochastic
+  Modelling and Applied Probability, \bibinfo{publisher}{Springer New York},
+  \bibinfo{year}{2012}.
 
 \end{thebibliography}
