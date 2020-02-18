@@ -518,7 +518,22 @@ Clearly, $\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}>\delta$, $1+{\frac{\
     Denote by $v_l(t)$ the use of medicament treatment in cattle with light and
     medium worm burden and let $v_h(t)$ the manual removal of worms. By
     convenience we  assume that $w_f$, $v_l$ and $v_h$ lies in the space of
-    measurable functions $\mathcal{U}[0, T]$ and are bounded.
+    measurable functions
+    \begin{multline}
+        \mathcal{U}[0, T]
+        :=
+        \left\{ \right.
+            (w_f(t),  v_l(t), v_h(t))^{\top}:
+                    \text{ measurable and }
+            \\
+%
+                w_{f_{min}} \leq w_f(t) \leq w_{f_{max}}, \
+                v_{l_{min}} \leq v_l(t) \leq v_{l_{max}},
+            \\
+%
+                v_{h_{min}} \leq v_h(t) \leq v_{h_{max}}
+            \left. \right\}
+    \end{multline}
 
         Applying the above strategies implies economic cost and profit, in
     order to optimize this balance, we define the functional
@@ -547,9 +562,9 @@ Clearly, $\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}>\delta$, $1+{\frac{\
     contribution due to the respective class or strategy.
 
         Then, our problem will be minimize $J$ in the space $\mathcal{U}[0,T]$
-    and subject to the controlled dynamics governed by
+    subject to the controlled dynamics governed by
     \Cref{Eq:SIvectorhostmodel_v2controlled}, that is, we
-    want to solve the following optimization problem.
+    have to solve the following optimization problem.
 
 \begin{equation}
     \label{eqn:optimal_problem}
@@ -674,10 +689,11 @@ Clearly, $\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}>\delta$, $1+{\frac{\
     \end{aligned}
 \end{equation}
 
-        We solve this optimization by an indirect method. To this end, first we
+        We solve this optimization problem applying an
+    indirect method. To this end, first we
     have to assure existence of a optimal pair $(x^*, u^*)$,
-    that satisfies \cref{eqn:optimal_problem}. This is the statement of
-    the following result.
+    that solves the problem \eqref{eqn:optimal_problem}. This is the statement
+    of the following result.
 
     \begin{theorem}
         There exist at least a optimal measurable control
@@ -701,9 +717,8 @@ Clearly, $\frac{(\mu_c+\lambda_c)(\mu_c+\delta)}{\lambda_c}>\delta$, $1+{\frac{\
     \end{theorem}
    \begin{proof}
         According to the Cesari existence result
-        \cite[][p. 69]{fleming2012}, we verify that
+        \cite[][p. 69 Col 4.2]{fleming2012}, we verify that
         \begin{enumerate}[(i)]
-            \item
             \item
             \item
             \item

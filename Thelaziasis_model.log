@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  17 FEB 2020 09:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  17 FEB 2020 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -488,7 +488,7 @@ m/n/12 ^^@ \OML/cmm/m/it/12 a[][] [][] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[][]
  []
 
 [11] [12]
-Overfull \hbox (79.22798pt too wide) in paragraph at lines 683--701
+Overfull \hbox (79.22798pt too wide) in paragraph at lines 699--717
 \OT1/cmr/bx/n/12 Theorem 2. \OT1/cmr/m/it/12 There ex-ist at least a op-ti-mal 
 mea-sur-able con-trol $\OML/cmm/m/it/12 u[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\
 OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 w[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1
@@ -551,19 +551,19 @@ to.pdf>] [15 <./Figures/cows_disease_dynamics-eps-converted-to.pdf>] [16])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 722.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 737.
 [17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 722.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 737.
  (./Thelaziasis_model.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 722.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 722.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 737.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 737.
 Package rerunfilecheck Info: File `Thelaziasis_model.out' has not changed.
 (rerunfilecheck)             Checksum: 7E75F810560902C5C92AD3F585A79ABD;598.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 722.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 737.
  ) 
 Here is how much of TeX's memory you used:
  8614 strings out of 492623
- 137162 string characters out of 6129552
+ 137169 string characters out of 6129552
  257308 words of memory out of 5000000
  12355 multiletter control sequences out of 15000+600000
  11752 words of font info for 46 fonts, out of 8000000 for 9000
@@ -590,7 +590,7 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thelaziasis_model.pdf (17 pages, 905299 bytes).
+Output written on Thelaziasis_model.pdf (17 pages, 906918 bytes).
 PDF statistics:
  322 PDF objects out of 1000 (max. 8388607)
  275 compressed objects within 3 object streams

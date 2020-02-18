@@ -20,7 +20,7 @@ using JLD, HDF5
 using Gadfly
 using Revise
 using DataFrames
-include("thelazia_model_solution.jl")
+include("thelazia_model.jl")
 #
 
 path = string(pwd(), "/default_parameters.json")
