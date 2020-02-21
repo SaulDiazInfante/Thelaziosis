@@ -74,6 +74,37 @@ function runge_kutta_backward(x)
     end
     return psi
 end
+function optimality_condition(x, u, psi)
+    s_f = x[1]; l_f = x[2]; i_f = x[3];
+    s_c = x[4]; l_c = x[5];
+    i_c_l = x[6]; i_c_h = x[7];
+    t_c = x[8];
+
+    psi_s_f = psi[1]; psi_l_f = psi[2]; psi_i_f = psi[3];
+    psi_s_c = psi[4]; psi_l_c = psi[5];
+    psi_i_c_l = psi[6]; psi_i_c_h = psi[7];
+    psi_t_c = psi[8];
+
+    w_f_t_aster = 0.5 * (i_f .* psi_i_f + l_f .* psi_l_f + psi_s_f .* s_f) / b_f
+    v_l_t_aster = 0.5 * i_c_l .* psi_i_c_l / b_c_l
+    v_h_t_aster = 0.5 * (i_c_h .* psi_i_c_h - i_c_h .* psi_t_c) / b_c_h
+
+    a_l_f = p[21]; a_i_f = p[22]; a_l_c = p[23];
+    a_i_c_l = p[24]; a_i_c_h = p[25];
+    b_f = p[26]; b_c_l = p[27]; b_c_h = p[28];
+
+    # Bouds of control signals
+
+    w_f_t_aster = min(max(w_f_min , w_f_t_aster), w_f_max)
+    v_l_t_aster = min(max(v_l_min , v_l_t_aster), v_l_max)
+    v_h_t_aster = min(max(v_h_min , v_h_t_aster), v_h_max)
+    u_new = zeros((n_max, u_dim))
+    u_new[:, 1] = w_f_t_aster
+    u_new[:, 2] = v_l_t_aster
+    u_new[:, 3] = v_h_t_aster
+    return [w_f_t_aster, v_l_t_aster, v_h_t_aster]
+end
+
 
 function forward_plot()
     x_path = runge_kutta_forward(u_control)
@@ -213,16 +244,24 @@ using DataFrames
 # using Fontconfig
 include("thelazia_model.jl")
 # Simulation parameters
-n_max = 10000; t_f = 2000.0
+n_max = 10000; t_f = 2000.0;
 t_span = range(0.0, t_f, length=n_max)
-x_dim = 8
-u_dim = 3
+h = t_span[2]
+x_dim = 8; u_dim = 3;
 u_control = zeros((n_max, u_dim))
 x_path = zeros((n_max, x_dim))
 psi_adjoint = zeros((n_max, x_dim))
-h = t_span[2]
-
+#
+w_f_min = 0.0; w_f_max = 1.0
+v_l_min = 0.0; v_l_max = 1.0
+v_h_min = 0.0; v_h_max = 1.0
+#
 path = string(pwd(), "/default_parameters.json")
 p = load_parameters(path);
+#
+x_old = x_path
+u_old = u_control
 
-backward_plot()
+x_new = runge_kutta_forward(u_control)
+psi_new = runge_kutta_backward(x_new)
+u_new = optimality_condition(x_new, u_old, psi_new)
