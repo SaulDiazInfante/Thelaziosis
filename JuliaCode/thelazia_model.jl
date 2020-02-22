@@ -250,7 +250,7 @@ function load_parameters(file_name)
         "l_c_zero": 2.0,
         "i_c_l_zero": 8.0,
         "i_c_h_zero": 0.0,
-        "t_c_zero": 0.0
+        "t_c_zero": 0.0,
         "a_l_f": 1.0,
         "a_i_f": 1.0,
         "a_l_c": 1.0,

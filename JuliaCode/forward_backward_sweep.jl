@@ -33,7 +33,7 @@ function runge_kutta_forward(u)
     return x
 end
 
-function runge_kutta_backward(x)
+function runge_kutta_backward(x, u)
     psi_s_f_final = 0.0;
     psi_l_f_final = 0.0;
     psi_i_f_final = 0.0;
@@ -57,8 +57,8 @@ function runge_kutta_backward(x)
     #
     for i in n_max : -1: 2
         psi_i = psi[i, :]
-        u_i = u_control[i, :]
-        u_previous = u_control[i - 1, :]
+        u_i = u[i, :]
+        u_previous = u[i - 1, :]
         u_mean = 0.5 * (u_i + u_previous)
         x_i = x[i, :]
         x_previous = x[i - 1, :]
@@ -74,39 +74,48 @@ function runge_kutta_backward(x)
     end
     return psi
 end
-function optimality_condition(x, u, psi)
-    s_f = x[1]; l_f = x[2]; i_f = x[3];
-    s_c = x[4]; l_c = x[5];
-    i_c_l = x[6]; i_c_h = x[7];
-    t_c = x[8];
+function optimality_condition(x, psi)
+    s_f = x[:, 1]; l_f = x[:, 2]; i_f = x[:, 3];
+    s_c = x[:, 4]; l_c = x[:, 5];
+    i_c_l = x[:, 6]; i_c_h = x[:, 7];
+    t_c = x[:, 8];
 
-    psi_s_f = psi[1]; psi_l_f = psi[2]; psi_i_f = psi[3];
-    psi_s_c = psi[4]; psi_l_c = psi[5];
-    psi_i_c_l = psi[6]; psi_i_c_h = psi[7];
-    psi_t_c = psi[8];
+    psi_s_f = psi[:, 1]; psi_l_f = psi[:, 2]; psi_i_f = psi[:, 3];
+    psi_s_c = psi[:, 4]; psi_l_c = psi[:, 5];
+    psi_i_c_l = psi[:, 6]; psi_i_c_h = psi[:, 7];
+    psi_t_c = psi[:, 8];
+
+    a_l_f = p[22]; a_i_f = p[23]; a_l_c = p[24];
+    a_i_c_l = p[25]; a_i_c_h = p[26];
+    b_f = p[27]; b_c_l = p[28]; b_c_h = p[29];
 
     w_f_t_aster = 0.5 * (i_f .* psi_i_f + l_f .* psi_l_f + psi_s_f .* s_f) / b_f
     v_l_t_aster = 0.5 * i_c_l .* psi_i_c_l / b_c_l
     v_h_t_aster = 0.5 * (i_c_h .* psi_i_c_h - i_c_h .* psi_t_c) / b_c_h
-
-    a_l_f = p[21]; a_i_f = p[22]; a_l_c = p[23];
-    a_i_c_l = p[24]; a_i_c_h = p[25];
-    b_f = p[26]; b_c_l = p[27]; b_c_h = p[28];
-
     # Bouds of control signals
 
-    w_f_t_aster = min(max(w_f_min , w_f_t_aster), w_f_max)
-    v_l_t_aster = min(max(v_l_min , v_l_t_aster), v_l_max)
-    v_h_t_aster = min(max(v_h_min , v_h_t_aster), v_h_max)
+    w_f_t_aster = min(
+                        max(w_f_min * ones(n_max), w_f_t_aster),
+                         w_f_max * ones(n_max)
+                    )
+    v_l_t_aster = min(
+                        max(v_l_min * ones(n_max), v_l_t_aster),
+                         v_l_max * ones(n_max)
+                    )
+    v_h_t_aster = min(
+                        max(v_h_min * ones(n_max), v_h_t_aster),
+                        v_h_max * ones(n_max)
+                    )
     u_new = zeros((n_max, u_dim))
     u_new[:, 1] = w_f_t_aster
     u_new[:, 2] = v_l_t_aster
     u_new[:, 3] = v_h_t_aster
-    return [w_f_t_aster, v_l_t_aster, v_h_t_aster]
+    return u_new;
 end
 
 
 function forward_plot()
+    u_control = zeros(n_max)
     x_path = runge_kutta_forward(u_control)
     xDataFrame=[t_span, x_path[:, 1], x_path[:, 2], x_path[:, 3],
                     x_path[:, 4], x_path[:, 5], x_path[:, 6],
@@ -163,7 +172,7 @@ function forward_plot()
             # hstack(p1, p2, p3),
             hstack(p4, p5),
             hstack(p6, p7),
-            hstack(p8, p10)
+            hstack(p8, p10)_contro
             )
     img0 = SVG("flyes_disease_dynamics_rkf.svg", 19cm, 11.74289cm)
     img1 = SVG("cows_disease_dynamics_rkf.svg", 19cm, 11.74289cm)
@@ -172,8 +181,9 @@ function forward_plot()
 end
 
 function backward_plot()
+    u_control = zeros(n_max)
     x_path = runge_kutta_forward(u_control)
-    psi_path = runge_kutta_backward(x_path)
+    psi_path = runge_kutta_backward(x_path, u_control)
     psiDataFrame=[t_span, psi_path[:, 1], psi_path[:, 2], psi_path[:, 3],
                     psi_path[:, 4], psi_path[:, 5], psi_path[:, 6],
                     psi_path[:, 7], psi_path[:, 8]]
@@ -246,11 +256,16 @@ include("thelazia_model.jl")
 # Simulation parameters
 n_max = 10000; t_f = 2000.0;
 t_span = range(0.0, t_f, length=n_max)
-h = t_span[2]
+h = t_span[2]; eps = 1e-3;
 x_dim = 8; u_dim = 3;
-u_control = zeros((n_max, u_dim))
-x_path = zeros((n_max, x_dim))
-psi_adjoint = zeros((n_max, x_dim))
+#
+u_new = zeros((n_max, u_dim))
+x_new = zeros((n_max, x_dim))
+psi_new = zeros((n_max, x_dim))
+#
+u_old = zeros((n_max, u_dim))
+x_old = zeros((n_max, x_dim))
+psi_old = zeros((n_max, x_dim))
 #
 w_f_min = 0.0; w_f_max = 1.0
 v_l_min = 0.0; v_l_max = 1.0
@@ -259,9 +274,17 @@ v_h_min = 0.0; v_h_max = 1.0
 path = string(pwd(), "/default_parameters.json")
 p = load_parameters(path);
 #
-x_old = x_path
-u_old = u_control
-
-x_new = runge_kutta_forward(u_control)
-psi_new = runge_kutta_backward(x_new)
-u_new = optimality_condition(x_new, u_old, psi_new)
+eps_test = -1.0
+while eps_test < 0
+    u_old = u_new
+    x_old = x_new
+    psi_old = psi_new
+    x_new = runge_kutta_forward(u_old)
+    psi_new = runge_kutta_backward(x_new, u_old)
+    u_new = optimality_condition(x_new, psi_new)
+    u = 0.5 * (u_old + u_new)
+    eps_1 = h * sum(abs(u)) - sum(abs(u_old -u));
+    eps_2 = h * sum(abs(x_new)) - sum(abs(x_old - x_new));
+    eps_2 = h * sum(abs(psi_new)) - sum(abs(psi_old - psi_new));
+    eps_test = min(eps_1, eps_2, eps_3)
+end
