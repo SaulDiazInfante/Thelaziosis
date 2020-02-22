@@ -161,13 +161,13 @@ function rhs_adjoints(x, u, psi)
     new_psi_s_f = (beta_f_tilde * i_c_h / n_c_inf
                     + beta_f * i_c_l / n_c_inf) * psi_l_f
                     - (mu_f + beta_f_tilde * i_c_h / n_c_inf
-                    + beta_f * i_c_l / n_c_inf + w_f) * psi_s_f
+                    + beta_f * i_c_l / n_c_inf + w_f_t) * psi_s_f
 
-    new_psi_l_f = k_f * psi_i_f - (k_f + mu_f + w_f) * psi_l_f
+    new_psi_l_f = k_f * psi_i_f - (k_f + mu_f + w_f_t) * psi_l_f
 
     new_psi_i_f = beta_c_tilde * i_c_l * psi_i_c_h / n_c_inf
                     - beta_c_tilde * i_c_l * psi_i_c_l / n_c_inf
-                    - (mu_f + w_f) * psi_i_f + beta_c * psi_l_c*s_c / n_c_inf
+                    - (mu_f + w_f_t) * psi_i_f + beta_c * psi_l_c*s_c / n_c_inf
                     - beta_c * psi_s_c * s_c / n_c_inf
 
     new_psi_s_c = beta_c * i_f * psi_l_c / n_c_inf
@@ -177,7 +177,7 @@ function rhs_adjoints(x, u, psi)
                     - (k_c + mu_c) * psi_l_c
 
     new_psi_i_c_l = beta_c_tilde * i_f * psi_i_c_h / n_c_inf
-                    - (mu_c + beta_c_tilde * i_f / n_c_inf + u_l_t)*psi_i_c_l
+                    - (mu_c + beta_c_tilde * i_f / n_c_inf + v_l_t)*psi_i_c_l
                     + beta_f * psi_l_f * s_f / n_c_inf
                     - beta_f * psi_s_f * s_f / n_c_inf
 
@@ -194,8 +194,8 @@ function rhs_adjoints(x, u, psi)
         new_psi_i_f;
         new_psi_s_c;
         new_psi_l_c;
-        new_psi_i_cl;
-        new_psi_i_ch;
+        new_psi_i_c_l;
+        new_psi_i_c_h;
         new_psi_t_c;
         ]
     return psi;
