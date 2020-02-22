@@ -224,6 +224,11 @@ function load_parameters(file_name)
     i_c_l = 8.0;
     i_c_h =  0.0;
     t_c = 0.0;
+    # cost functional parameterJSON
+    a_l_f = 1.0; a_i_f = 1.0; a_l_c = 1.0;
+    a_i_c_l = 1.0; a_i_c_h = 1.0;
+    b_f = 1.0; b_c_l = 1.0; b_c_h = 1.0;
+
     parameterJSON = JSON.parse("""{
         "n_c": 1000,
         "lambda_f": 500,
@@ -245,7 +250,15 @@ function load_parameters(file_name)
         "l_c_zero": 2.0,
         "i_c_l_zero": 8.0,
         "i_c_h_zero": 0.0,
-        "t_c_zero": 0.0
+        "t_c_zero": 0.0,
+        "a_l_f": 1.0,
+        "a_i_f": 1.0,
+        "a_l_c": 1.0,
+        "a_i_c_l": 1.0,
+        "a_i_c_h": 1.0,
+        "b_f": 1.0,
+        "b_c_l": 1.0,
+        "b_c_h": 1.0
         }""");
 
     parameterDict = Dict(#
@@ -256,7 +269,10 @@ function load_parameters(file_name)
         "mu_c" => 0.000925925925925926, "rho" => .025, "theta" => .001,
         "s_f_zero" => 22400.0, "l_f_zero" => 40.0, "i_f_zero" => 60.0,
         "s_c_zero" => 990.0, "l_c_zero" => 2.0, "i_c_l_zero" => 8.0,
-        "i_c_h_zero" => 0.0, "t_c_zero" => 0.0
+        "i_c_h_zero" => 0.0, "t_c_zero" => 0.0,
+        "a_l_f" => 1.0, "a_i_f" => 1.0, "a_l_c" => 1.0,
+        "a_i_c_l" => 1.0, "a_i_c_h" => 1.0,
+        "b_f" => 1.0, "b_c_l" => 1.0, "b_c_h" => 1.0
         );
     string_data = JSON.json(parameterDict)
     #JSON.print(parameterJSON)
@@ -292,6 +308,14 @@ function load_parameters(file_name)
             parameterDict["i_c_l_zero"];
             parameterDict["i_c_h_zero"];
             parameterDict["t_c_zero"];
+            parameterDict["a_l_f"];
+            parameterDict["a_i_f"];
+            parameterDict["a_l_c"];
+            parameterDict["a_i_c_l"];
+            parameterDict["a_i_c_h"];
+            parameterDict["b_f"];
+            parameterDict["b_c_l"];
+            parameterDict["b_c_h"]
     ]
     return p;
 end
