@@ -177,7 +177,7 @@ function rhs_adjoints(x, u, psi)
                     - (k_c + mu_c) * psi_l_c
 
     new_psi_i_c_l = beta_c_tilde * i_f * psi_i_c_h / n_c_inf
-                    - (mu_c + beta_c_tilde * i_f / n_c_inf + v_l_t)*psi_i_c_l
+                    - (mu_c + beta_c_tilde * i_f / n_c_inf + v_l_t) * psi_i_c_l
                     + beta_f * psi_l_f * s_f / n_c_inf
                     - beta_f * psi_s_f * s_f / n_c_inf
 
