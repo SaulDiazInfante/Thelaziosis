@@ -32,10 +32,10 @@ k_f = p[8]; k_c = p[9]; mu_f = p[10]; mu_c = p[11];
 rho = p[12]; theta = p[13];
 u_zero = [ #
             lambda_f / mu_f - 100.0; 40.0; 60.0;
-            n_c - 10.0; 2.0; 8.0; 0.0; 0.0
+            n_c - 10.0; 2.0; 8.0; 20.0; 0.0
         ];
 t_span = (0.0, 2000);
-ode_problem = ODEProblem(rhs, u_zero, t_span, p)
+ode_problem = ODEProblem(uncontrollted_rhs, u_zero, t_span, p)
 sol = solve(ode_problem)
 t = sol.t
 solDataFrame=[sol.t, sol[1, :], sol[2, :], sol[3, :],

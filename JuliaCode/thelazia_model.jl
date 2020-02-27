@@ -14,55 +14,50 @@ function compute_r_zero(p)
     return r_zero
 end
 
-function rhs(du, u, p, t)
+function uncontrollted_rhs(du, u, p, t)
     n_c = p[1]; lambda_f = p[2]; lambda_c = p[3];
     beta_c = p[4]; beta_c_tilde = p[4];
     beta_f = p[5];  beta_f_tilde = p[6];
     k_f = p[7]; k_c = p[8]; mu_f = p[9];
     mu_c = p[10]; rho = p[11]; theta = p[12];
     #
-    w_f = 0.0; v_l = 0.0; v_h = 0.0;
+    #w_f = 0.0; v_l = 0.0; v_h = 0.0;
     #
     s_f = u[1]; l_f = u[2]; i_f = u[3];
     s_c = u[4]; l_c = u[5];
     i_c_l = u[6]; i_c_h = u[7];
-    t_c = u[8];
+    # t_c = u[8];
 
     new_s_f = (
                 lambda_f
                     - beta_f / n_c * s_f * i_c_l
                     - beta_f_tilde / n_c * s_f * i_c_h
                     - mu_f * s_f
-                    - w_f * s_f
-            )
+                )
     #
     new_l_f = (
                 beta_f / n_c * s_f * i_c_l
                 + beta_f_tilde / n_c * s_f * i_c_h
-                - (k_f + mu_f) * l_f - w_f * l_f
+                - (k_f + mu_f) * l_f
             )
-    new_i_f = k_f * l_f - mu_f * i_f - w_f * i_f
+    new_i_f = k_f * l_f - mu_f * i_f
     #
     new_s_c = (lambda_c
                 - beta_c / n_c * s_c * i_f
                 - mu_c * s_c
-                + rho * t_c
-                + v_h * i_c_h
                 )
     new_l_c = beta_c / n_c * s_c * i_f - (k_c + mu_c) * l_c
     #
     new_i_c_l  = ( theta * k_c * l_c
                     - beta_c_tilde / n_c * i_c_l * i_f
-                    - (mu_c + v_l) * i_c_l
+                    - mu_c * i_c_l
                 )
     #
     new_i_c_h = ( (1.0 - theta ) * k_c * l_c
                     + beta_c_tilde / n_c * i_c_l * i_f
                     - mu_c * i_c_h
-                    - v_h * i_c_h
     )
-    new_t_c = - (rho + mu_c) * t_c + v_l * i_c_l
-    #
+        #
     du[1] = new_s_f
     du[2] = new_l_f
     du[3] = new_i_f
@@ -70,7 +65,6 @@ function rhs(du, u, p, t)
     du[5] = new_l_c
     du[6] = new_i_c_l
     du[7] = new_i_c_h
-    du[8] = new_t_c
 end
 
 function rhs_f(x, u)
@@ -203,11 +197,11 @@ end
 
 function load_parameters(file_name)
     n_c = 1000
-    lambda_f = 500
-    beta_c = .001
-    beta_c_tilde = .001
-    beta_f = .001
-    beta_f_tilde = .001
+    lambda_f = 5000
+    beta_c = .01
+    beta_c_tilde = .01
+    beta_f = .01
+    beta_f_tilde = .01
     k_f = 0.07142857142857142 # 1/14
     k_c = 0.02857142857142857
     mu_f = 0.022222222222222223
@@ -222,7 +216,7 @@ function load_parameters(file_name)
     s_c_zero = n_c - 10.0;
     l_c = 2.0;
     i_c_l = 8.0;
-    i_c_h =  0.0;
+    i_c_h =  20.0;
     t_c = 0.0;
     # cost functional parameterJSON
     a_l_f = 1.0; a_i_f = 1.0; a_l_c = 1.0;
@@ -231,12 +225,12 @@ function load_parameters(file_name)
 
     parameterJSON = JSON.parse("""{
         "n_c": 1000,
-        "lambda_f": 500,
+        "lambda_f": 5000,
         "lambda_c": 0.9259259259259259,
-        "beta_c": 0.001,
-        "beta_c_tilde": 0.001,
-        "beta_f": 0.001,
-        "beta_f_tilde": 0.001,
+        "beta_c": 0.01,
+        "beta_c_tilde": 0.01,
+        "beta_f": 0.01,
+        "beta_f_tilde": 0.01,
         "k_f": 0.07142857142857142,
         "k_c": 0.02857142857142857,
         "mu_f": 0.022222222222222223,
@@ -249,7 +243,7 @@ function load_parameters(file_name)
         "s_c_zero": 990,
         "l_c_zero": 2.0,
         "i_c_l_zero": 8.0,
-        "i_c_h_zero": 0.0,
+        "i_c_h_zero": 20.0,
         "t_c_zero": 0.0,
         "a_l_f": 1.0,
         "a_i_f": 1.0,
@@ -262,14 +256,14 @@ function load_parameters(file_name)
         }""");
 
     parameterDict = Dict(#
-        "n_c" => 1000.0, "lambda_f" => 500.0, "lambda_c" => 0.9259259259259259,
-        "beta_c" => 0.001, "beta_c_tilde" => 0.001, "beta_f" => 0.001,
-        "beta_f_tilde" => 0.001, "k_f" => 0.07142857142857142,
+        "n_c" => 1000.0, "lambda_f" => 5000.0, "lambda_c" => 0.9259259259259259,
+        "beta_c" => 0.01, "beta_c_tilde" => 0.01, "beta_f" => 0.01,
+        "beta_f_tilde" => 0.01, "k_f" => 0.07142857142857142,
         "k_c" => 0.02857142857142857, "mu_f" => 0.022222222222222223,
         "mu_c" => 0.000925925925925926, "rho" => .025, "theta" => .001,
         "s_f_zero" => 22400.0, "l_f_zero" => 40.0, "i_f_zero" => 60.0,
         "s_c_zero" => 990.0, "l_c_zero" => 2.0, "i_c_l_zero" => 8.0,
-        "i_c_h_zero" => 0.0, "t_c_zero" => 0.0,
+        "i_c_h_zero" => 20.0, "t_c_zero" => 0.0,
         "a_l_f" => 1.0, "a_i_f" => 1.0, "a_l_c" => 1.0,
         "a_i_c_l" => 1.0, "a_i_c_h" => 1.0,
         "b_f" => 1.0, "b_c_l" => 1.0, "b_c_h" => 1.0

@@ -113,7 +113,7 @@ function optimality_condition(x, psi)
     return u_new;
 end
 
-
+#=
 function forward_plot()
     u_control = zeros(n_max)
     x_path = runge_kutta_forward(u_control)
@@ -233,7 +233,7 @@ function backward_plot()
     draw(img0, plt0)
     draw(img1, plt1)
 end
-
+=#
 ################################################################################
 using Pkg
 Pkg.add("DifferentialEquations")
