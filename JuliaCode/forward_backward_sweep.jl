@@ -27,10 +27,10 @@ function runge_kutta_forward(u)
         k_3 = rhs_f(x_i + 0.5 * h * k_2, u_mean)
         k_4 = rhs_f(x_i + h * k_3, u_next)
 
-        x_next = h / 6.0 * (k_1 + 2 * k_2 + 2 * k_3 + k_4)
+        x_next = x_i +  h / 6.0 * (k_1 + 2 * k_2 + 2 * k_3 + k_4)
         x[i + 1, :] = x_next
     end
-    return x
+    return x;
 end
 
 function runge_kutta_backward(x, u)
@@ -52,27 +52,27 @@ function runge_kutta_backward(x, u)
         psi_i_c_h_final;
         psi_t_c_final;
         ];
-    psi = zeros(n_max, x_dim)
-    psi[n_max, :] = psi_final
+    psi = zeros(n_max, x_dim);
+    psi[n_max, :] = psi_final;
     #
     for i in n_max : -1: 2
-        psi_i = psi[i, :]
-        u_i = u[i, :]
-        u_previous = u[i - 1, :]
-        u_mean = 0.5 * (u_i + u_previous)
+        psi_i = psi[i, :];
+        u_i = u[i, :];
+        u_previous = u[i - 1, :];
+        u_mean = 0.5 * (u_i + u_previous);
         x_i = x[i, :]
-        x_previous = x[i - 1, :]
-        x_mean = 0.5 * (x_i + x_previous)
+        x_previous = x[i - 1, :];
+        x_mean = 0.5 * (x_i + x_previous);
         #
         k_1 = rhs_adjoints(x_i, u_i, psi_i)
-        k_2 = rhs_adjoints(x_mean, u_mean, psi_i - 0.5 * h * k_1)
-        k_3 = rhs_adjoints(x_mean, u_mean, psi_i - 0.5 * h * k_2)
-        k_4 = rhs_adjoints(x_previous, u_previous, psi_i - h * k_3 )
+        k_2 = rhs_adjoints(x_mean, u_mean, psi_i - 0.5 * h * k_1);
+        k_3 = rhs_adjoints(x_mean, u_mean, psi_i - 0.5 * h * k_2);
+        k_4 = rhs_adjoints(x_previous, u_previous, psi_i - h * k_3);
         #
-        psi_previous = h / 6.0 * (k_1 + 2 * k_2 + 2 * k_3 + k_4)
-        psi[i - 1, :] = psi_previous
+        psi_previous =  psi_i - h / 6.0 * (k_1 + 2 * k_2 + 2 * k_3 + k_4);
+        psi[i - 1, :] = psi_previous;
     end
-    return psi
+    return psi;
 end
 function optimality_condition(x, psi)
     s_f = x[:, 1]; l_f = x[:, 2]; i_f = x[:, 3];
@@ -89,31 +89,32 @@ function optimality_condition(x, psi)
     a_i_c_l = p[25]; a_i_c_h = p[26];
     b_f = p[27]; b_c_l = p[28]; b_c_h = p[29];
 
-    w_f_t_aster = 0.5 * (i_f .* psi_i_f + l_f .* psi_l_f + psi_s_f .* s_f) / b_f
-    v_l_t_aster = 0.5 * i_c_l .* psi_i_c_l / b_c_l
-    v_h_t_aster = 0.5 * (i_c_h .* psi_i_c_h - i_c_h .* psi_t_c) / b_c_h
+    w_f_t_aster = 0.5 * (i_f .* psi_i_f
+                            + l_f .* psi_l_f + psi_s_f .* s_f
+                        ) / b_f;
+    v_l_t_aster = 0.5 * i_c_l .* psi_i_c_l / b_c_l;
+    v_h_t_aster = 0.5 * (i_c_h .* psi_i_c_h - i_c_h .* psi_t_c) / b_c_h;
     # Bouds of control signals
 
     w_f_t_aster = min(
                         max(w_f_min * ones(n_max), w_f_t_aster),
                          w_f_max * ones(n_max)
-                    )
+                    );
     v_l_t_aster = min(
                         max(v_l_min * ones(n_max), v_l_t_aster),
                          v_l_max * ones(n_max)
-                    )
+                    );
     v_h_t_aster = min(
                         max(v_h_min * ones(n_max), v_h_t_aster),
                         v_h_max * ones(n_max)
-                    )
-    u_new = zeros((n_max, u_dim))
-    u_new[:, 1] = w_f_t_aster
-    u_new[:, 2] = v_l_t_aster
-    u_new[:, 3] = v_h_t_aster
+                    );
+    u_new = zeros((n_max, u_dim));
+    u_new[:, 1] = w_f_t_aster;
+    u_new[:, 2] = v_l_t_aster;
+    u_new[:, 3] = v_h_t_aster;
     return u_new;
 end
-
-#=
+#
 function forward_plot()
     u_control = zeros(n_max)
     x_path = runge_kutta_forward(u_control)
@@ -233,7 +234,46 @@ function backward_plot()
     draw(img0, plt0)
     draw(img1, plt1)
 end
-=#
+
+function forward_backward_sweep()
+    u_new = zeros((n_max, u_dim))
+    x_new = zeros((n_max, x_dim))
+    psi_new = zeros((n_max, x_dim))
+    #
+    u_old = zeros((n_max, u_dim))
+    x_old = zeros((n_max, x_dim))
+    psi_old = zeros((n_max, x_dim))
+
+    #    #
+
+    eps_1 = -1.0; eps_2 = -1.0; eps_3 = -1.0;
+    eps_test = -1.0
+    i = 0;
+    printfmt("\t i \t eps_u \t\t eps_x, \t eps_psi, \t eps \n")
+    printfmt("\t============================================================\n")
+    #
+    condition = true
+    while condition
+        u_old = u_new
+        x_old = x_new
+        psi_old = psi_new
+        x_new = runge_kutta_forward(u_old)
+        psi_new = runge_kutta_backward(x_new, u_old)
+        u_new = optimality_condition(x_new, psi_new)
+        u = 0.5 * (u_old + u_new)
+        eps_1 = norm(u_old - u) / norm(u);
+        eps_2 = norm(x_old - x_new) / norm(x_new);
+        eps_3 = norm(psi_old - psi_new) / norm(psi_new);
+        eps_test = max(eps_1, eps_2, eps_3);
+        i = i + 1
+        printfmt("\t {:d} \t {:.6f} \t {:.6f} \t {:.6f} \t {:.6f}\n",
+                    i, eps_1, eps_2, eps_3, eps_test)
+
+        condition = (eps_test >= eps) && (i <= n_iter)
+    end
+    return x_new, u_new, psi_new;
+end
+#
 ################################################################################
 using Pkg
 Pkg.add("DifferentialEquations")
@@ -245,46 +285,28 @@ Pkg.add("Gadfly")
 Pkg.add("JLD")
 Pkg.add("HDF5")
 Pkg.add("PyPlot")
+Pkg.add("Formatting")
+Pkg.add("LinearAlgebra")
 using DifferentialEquations
 using JSON
 using JLD, HDF5
 using CSV
 using Gadfly
 using DataFrames
+using Formatting: printfmt
+using LinearAlgebra:norm
 # using Fontconfig
 include("thelazia_model.jl")
 # Simulation parameters
-n_max = 10000; t_f = 2000.0;
-t_span = range(0.0, t_f, length=n_max)
+n_max = 100; n_iter = 100; t_f = 2000.0;
+t_span = range(0.0, t_f, length=n_max);
 h = t_span[2]; eps = 1e-3;
 x_dim = 8; u_dim = 3;
 #
-u_new = zeros((n_max, u_dim))
-x_new = zeros((n_max, x_dim))
-psi_new = zeros((n_max, x_dim))
-#
-u_old = zeros((n_max, u_dim))
-x_old = zeros((n_max, x_dim))
-psi_old = zeros((n_max, x_dim))
-#
-w_f_min = 0.0; w_f_max = 1.0
-v_l_min = 0.0; v_l_max = 1.0
-v_h_min = 0.0; v_h_max = 1.0
-#
+w_f_min = 0.1; w_f_max = 0.88;
+v_l_min = 0.2; v_l_max = 0.89;
+v_h_min = 0.05; v_h_max = 0.92;
 path = string(pwd(), "/default_parameters.json")
 p = load_parameters(path);
 #
-eps_test = -1.0
-while eps_test < 0
-    u_old = u_new
-    x_old = x_new
-    psi_old = psi_new
-    x_new = runge_kutta_forward(u_old)
-    psi_new = runge_kutta_backward(x_new, u_old)
-    u_new = optimality_condition(x_new, psi_new)
-    u = 0.5 * (u_old + u_new)
-    eps_1 = h * sum(abs(u)) - sum(abs(u_old -u));
-    eps_2 = h * sum(abs(x_new)) - sum(abs(x_old - x_new));
-    eps_2 = h * sum(abs(psi_new)) - sum(abs(psi_old - psi_new));
-    eps_test = min(eps_1, eps_2, eps_3)
-end
+x, u, psi = forward_backward_sweep();
