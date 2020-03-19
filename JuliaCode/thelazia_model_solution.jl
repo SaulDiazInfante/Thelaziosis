@@ -17,6 +17,8 @@ using JLD, HDF5
 #using PyCall
 #pygui(true)
 #using PyPlot
+using Cairo
+using Fontconfig
 using Gadfly
 using Revise
 using DataFrames
@@ -97,7 +99,7 @@ plt1 = vstack(
         hstack(p6, p7),
         hstack(p8, p10)
         )
-img0 = SVG("flyes_disease_dynamics.svg", 19cm, 11.74289cm)
-img1 = SVG("cows_disease_dynamics.svg", 19cm, 11.74289cm)
+img0 = PDF("flyes_disease_dynamics.pdf", 19cm, 11.74289cm)
+img1 = PDF("cows_disease_dynamics.pdf", 19cm, 11.74289cm)
 draw(img0, plt0)
 draw(img1, plt1)

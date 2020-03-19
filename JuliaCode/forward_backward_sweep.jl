@@ -229,8 +229,8 @@ function backward_plot()
             hstack(p6, p7),
             hstack(p8)
             )
-    img0 = SVG("flyes_disease_dynamics_adjoints.svg", 19cm, 11.74289cm)
-    img1 = SVG("cows_disease_dynamics_adjoints.svg", 19cm, 11.74289cm)
+    img0 = PDF("flyes_disease_dynamics_adjoints.pdf", 19cm, 11.74289cm)
+    img1 = PDF("cows_disease_dynamics_adjoints.pdf", 19cm, 11.74289cm)
     draw(img0, plt0)
     draw(img1, plt1)
 end
@@ -298,7 +298,7 @@ using LinearAlgebra:norm
 # using Fontconfig
 include("thelazia_model.jl")
 # Simulation parameters
-n_max = 100; n_iter = 100; t_f = 2000.0;
+n_max = 1000; n_iter = 100; t_f = 2000.0;
 t_span = range(0.0, t_f, length=n_max);
 h = t_span[2]; eps = 1e-3;
 x_dim = 8; u_dim = 3;
