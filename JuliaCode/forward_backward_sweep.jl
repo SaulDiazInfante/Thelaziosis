@@ -259,7 +259,7 @@ function controlled_model_plot(x_path, u_path, psi_path)
     p5 = plot(uDataFrame, x=:x1, y=:x3,
         Guide.xlabel("time (days)"),
         Guide.ylabel("v_l"), Geom.line)
-    p6 = plot(uDataFrame, x=:x1, y=:x7,
+    p6 = plot(uDataFrame, x=:x1, y=:x4,
         Guide.xlabel("time (days)"),
         Guide.ylabel("v_h"), Geom.line)
     #
@@ -362,4 +362,4 @@ p = load_parameters(path);
 #
 x, u, psi = forward_backward_sweep();
 backward_plot(psi)
-# controlled_model_plot(x, u, psi)
+controlled_model_plot(x, u, psi)
