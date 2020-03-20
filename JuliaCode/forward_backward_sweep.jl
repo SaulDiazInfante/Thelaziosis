@@ -318,19 +318,24 @@ function forward_backward_sweep()
     return x_new, u_new, psi_new;
 end
 #
+function load_pkg()
+    Pkg.add("DifferentialEquations")
+    Pkg.add("JSON")
+    Pkg.add("CSV")
+    Pkg.add("Revise")
+    Pkg.add("DataFrames")
+    Pkg.add("Gadfly")
+    Pkg.add("JLD")
+    Pkg.add("HDF5")
+    Pkg.add("PyPlot")
+    Pkg.add("Formatting")
+    Pkg.add("LinearAlgebra")
+    Pkg.add("Cairo")
+    Pkg.add("Fontconfig")
+end
 ################################################################################
 using Pkg
-Pkg.add("DifferentialEquations")
-Pkg.add("JSON")
-Pkg.add("CSV")
-Pkg.add("Revise")
-Pkg.add("DataFrames")
-Pkg.add("Gadfly")
-Pkg.add("JLD")
-Pkg.add("HDF5")
-Pkg.add("PyPlot")
-Pkg.add("Formatting")
-Pkg.add("LinearAlgebra")
+load_pkg()
 using DifferentialEquations
 using JSON
 using JLD, HDF5
