@@ -175,62 +175,106 @@ function forward_plot()
             hstack(p6, p7),
             hstack(p8, p10)_contro
             )
-    img0 = SVG("flyes_disease_dynamics_rkf.svg", 19cm, 11.74289cm)
-    img1 = SVG("cows_disease_dynamics_rkf.svg", 19cm, 11.74289cm)
+    img0 = PDF("flyes_disease_dynamics_rkf.pdf", 19cm, 11.74289cm)
+    img1 = PDF("cows_disease_dynamics_rkf.pdf", 19cm, 11.74289cm)
     draw(img0, plt0)
     draw(img1, plt1)
 end
 
-function backward_plot()
-    u_control = zeros(n_max)
-    x_path = runge_kutta_forward(u_control)
-    psi_path = runge_kutta_backward(x_path, u_control)
+function backward_plot(psi_path)
+
     psiDataFrame=[t_span, psi_path[:, 1], psi_path[:, 2], psi_path[:, 3],
                     psi_path[:, 4], psi_path[:, 5], psi_path[:, 6],
                     psi_path[:, 7], psi_path[:, 8]]
     psiDataFrame = DataFrame(psiDataFrame)
     p1 = plot(psiDataFrame, x=:x1, y=:x2,
         Guide.xlabel("time (days)"),
-        Guide.ylabel("S_f"), Geom.line)
+        Guide.ylabel("Psi_S_f"), Geom.line)
     p2 = plot(psiDataFrame, x=:x1, y=:x3,
         Guide.xlabel("time (days)"),
-        Guide.ylabel("L_f"), Geom.line)
+        Guide.ylabel("Psi_L_f"), Geom.line)
     p3 = plot(psiDataFrame, x=:x1, y=:x4,
         Guide.xlabel("time (days)"),
-        Guide.ylabel("I_f"), Geom.line)
+        Guide.ylabel("Psi_I_f"), Geom.line)
     #
     p4 = plot(psiDataFrame, x=:x1, y=:x5,
         Guide.xlabel("time (days)"),
-        Guide.ylabel("S_c"), Geom.line)
+        Guide.ylabel("Psi_S_c"), Geom.line)
     p5 = plot(psiDataFrame, x=:x1, y=:x6,
         Guide.xlabel("time (days)"),
-        Guide.ylabel("L_c"), Geom.line)
+        Guide.ylabel("Psi_L_c"), Geom.line)
     p6 = plot(psiDataFrame, x=:x1, y=:x7,
         Guide.xlabel("time (days)"),
-        Guide.ylabel("I_cl"), Geom.line)
+        Guide.ylabel("Psi_I_cl"), Geom.line)
     p7 = plot(psiDataFrame, x=:x1, y=:x8,
             Guide.xlabel("time (days)"),
-            Guide.ylabel("I_ch"), Geom.line)
-    p8 = plot(psiDataFrame, x=:x1, y=:x9,
-                Guide.xlabel("time (days)"),
-                Guide.ylabel("T_c"), Geom.line)
-    #
+            Guide.ylabel("Psi_I_ch"), Geom.line)
     #
     time = psiDataFrame[:, 1]
         #
     title(hstack(p1, p2, p3), "Flyes")
-    title(hstack(p4, p5, p6, p7, p8), "Cows")
+    title(hstack(p4, p5, p6, p7), "Cows")
     plt0 = vstack(
             hstack(p1, p2, p3),
             )
     plt1 = vstack(
             # hstack(p1, p2, p3),
             hstack(p4, p5),
-            hstack(p6, p7),
-            hstack(p8)
+            hstack(p6, p7)
             )
-    img0 = SVG("flyes_disease_dynamics_adjoints.svg", 19cm, 11.74289cm)
-    img1 = SVG("cows_disease_dynamics_adjoints.svg", 19cm, 11.74289cm)
+    img0 = PDF("flyes_disease_dynamics_adjoints.pdf", 19cm, 11.74289cm)
+    img1 = PDF("cows_disease_dynamics_adjoints.pdf", 19cm, 11.74289cm)
+    draw(img0, plt0)
+    draw(img1, plt1)
+end
+
+function controlled_model_plot(x_path, u_path, psi_path)
+    xDataFrame=[t_span, x_path[:, 1], x_path[:, 2], x_path[:, 3],
+                    x_path[:, 4], x_path[:, 5], x_path[:, 6],
+                    x_path[:, 7], x_path[:, 8]]
+    xDataFrame = DataFrame(xDataFrame)
+
+    uDataFrame=[t_span, u_path[:, 1], u_path[:, 2], u_path[:, 3]]
+    uDataFrame = DataFrame(uDataFrame)
+
+    psiDataFrame=[t_span, psi_path[:, 1], psi_path[:, 2], psi_path[:, 3],
+                    psi_path[:, 4], psi_path[:, 5], psi_path[:, 6],
+                    psi_path[:, 7], psi_path[:, 8]]
+    psiDataFrame = DataFrame(psiDataFrame)
+
+
+    p1 = plot(xDataFrame, x=:x1, y=:x3,
+        Guide.xlabel("time (days)"),
+        Guide.ylabel("Lf"), Geom.line)
+    p2 = plot(xDataFrame, x=:x1, y=:x6,
+        Guide.xlabel("time (days)"),
+        Guide.ylabel("I_f"), Geom.line)
+    p3 = plot(xDataFrame, x=:x1, y=:x7,
+        Guide.xlabel("time (days)"),
+        Guide.ylabel("I_f"), Geom.line)
+    #
+    p4 = plot(uDataFrame, x=:x1, y=:x2,
+        Guide.xlabel("time (days)"),
+        Guide.ylabel("w_f"), Geom.line)
+    p5 = plot(uDataFrame, x=:x1, y=:x3,
+        Guide.xlabel("time (days)"),
+        Guide.ylabel("v_l"), Geom.line)
+    p6 = plot(uDataFrame, x=:x1, y=:x4,
+        Guide.xlabel("time (days)"),
+        Guide.ylabel("v_h"), Geom.line)
+    #
+    #
+    time = psiDataFrame[:, 1]
+        #
+    title(hstack(p1, p2, p3), "Infected population")
+    title(hstack(p4, p5, p6), "Control signals")
+    plt0 = vstack(p1, p2, p3)
+    plt1 = vstack(
+            # hstack(p1, p2, p3),
+            p4, p5, p6
+            )
+    img0 = PDF("disease_controled_dynamics.pdf", 19cm, 11.74289cm)
+    img1 = PDF("control_signals.pdf", 19cm, 11.74289cm)
     draw(img0, plt0)
     draw(img1, plt1)
 end
@@ -274,23 +318,30 @@ function forward_backward_sweep()
     return x_new, u_new, psi_new;
 end
 #
+function load_pkg()
+    Pkg.add("DifferentialEquations")
+    Pkg.add("JSON")
+    Pkg.add("CSV")
+    Pkg.add("Revise")
+    Pkg.add("DataFrames")
+    Pkg.add("Gadfly")
+    Pkg.add("JLD")
+    Pkg.add("HDF5")
+    Pkg.add("PyPlot")
+    Pkg.add("Formatting")
+    Pkg.add("LinearAlgebra")
+    Pkg.add("Cairo")
+    Pkg.add("Fontconfig")
+end
 ################################################################################
 using Pkg
-Pkg.add("DifferentialEquations")
-Pkg.add("JSON")
-Pkg.add("CSV")
-Pkg.add("Revise")
-Pkg.add("DataFrames")
-Pkg.add("Gadfly")
-Pkg.add("JLD")
-Pkg.add("HDF5")
-Pkg.add("PyPlot")
-Pkg.add("Formatting")
-Pkg.add("LinearAlgebra")
+load_pkg()
 using DifferentialEquations
 using JSON
 using JLD, HDF5
 using CSV
+using Cairo
+using Fontconfig
 using Gadfly
 using DataFrames
 using Formatting: printfmt
@@ -298,7 +349,7 @@ using LinearAlgebra:norm
 # using Fontconfig
 include("thelazia_model.jl")
 # Simulation parameters
-n_max = 100; n_iter = 100; t_f = 2000.0;
+n_max = 1000; n_iter = 100; t_f = 2000.0;
 t_span = range(0.0, t_f, length=n_max);
 h = t_span[2]; eps = 1e-3;
 x_dim = 8; u_dim = 3;
@@ -310,3 +361,5 @@ path = string(pwd(), "/default_parameters.json")
 p = load_parameters(path);
 #
 x, u, psi = forward_backward_sweep();
+backward_plot(psi)
+controlled_model_plot(x, u, psi)
