@@ -1,13 +1,13 @@
 # Forward sweep
 function runge_kutta_forward(u)
-    s_f_zero = p[13];
-    l_f_zero = p[14];
-    i_f_zero = p[15];
-    s_c_zero = p[16];
-    l_c_zero = p[17];
-    i_c_l_zero = p[18];
-    i_c_h_zero = p[19];
-    t_c_zero = p[20];
+    s_f_zero = p[14];
+    l_f_zero = p[15];
+    i_f_zero = p[16];
+    s_c_zero = p[17];
+    l_c_zero = p[18];
+    i_c_l_zero = p[19];
+    i_c_h_zero = p[20];
+    t_c_zero = p[21];
     x_0 = [
                 s_f_zero; l_f_zero; i_f_zero;
                 s_c_zero; l_c_zero;
@@ -22,8 +22,8 @@ function runge_kutta_forward(u)
         u_next = u[i + 1, :]
         u_i = u[i, :]
         u_mean = 0.5 * (u_i + u_next)
-        k_1 = rhs_f(x_i, u_mean)
-        k_2 = rhs_f(x_i + 0.5 * h * k_1, u_i)
+        k_1 = rhs_f(x_i, u_i)
+        k_2 = rhs_f(x_i + 0.5 * h * k_1, u_mean)
         k_3 = rhs_f(x_i + 0.5 * h * k_2, u_mean)
         k_4 = rhs_f(x_i + h * k_3, u_next)
 
@@ -116,7 +116,7 @@ function optimality_condition(x, psi)
 end
 #
 function forward_plot()
-    u_control = zeros(n_max)
+    u_control = zeros((n_max, u_dim))
     x_path = runge_kutta_forward(u_control)
     xDataFrame=[t_span, x_path[:, 1], x_path[:, 2], x_path[:, 3],
                     x_path[:, 4], x_path[:, 5], x_path[:, 6],
@@ -173,7 +173,7 @@ function forward_plot()
             # hstack(p1, p2, p3),
             hstack(p4, p5),
             hstack(p6, p7),
-            hstack(p8, p10)_contro
+            hstack(p8, p10)
             )
     img0 = PDF("flyes_disease_dynamics_rkf.pdf", 19cm, 11.74289cm)
     img1 = PDF("cows_disease_dynamics_rkf.pdf", 19cm, 11.74289cm)
@@ -349,7 +349,7 @@ using LinearAlgebra:norm
 # using Fontconfig
 include("thelazia_model.jl")
 # Simulation parameters
-n_max = 1000; n_iter = 100; t_f = 2000.0;
+n_max = 10000; n_iter = 100; t_f = 2000.0;
 t_span = range(0.0, t_f, length=n_max);
 h = t_span[2]; eps = 1e-3;
 x_dim = 8; u_dim = 3;
@@ -360,6 +360,7 @@ v_h_min = 0.05; v_h_max = 0.92;
 path = string(pwd(), "/default_parameters.json")
 p = load_parameters(path);
 #
-x, u, psi = forward_backward_sweep();
-backward_plot(psi)
-controlled_model_plot(x, u, psi)
+#x, u, psi = forward_backward_sweep();
+#backward_plot(psi)
+forward_plot()
+#controlled_model_plot(x, u, psi)

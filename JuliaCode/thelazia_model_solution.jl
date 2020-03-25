@@ -27,14 +27,22 @@ include("thelazia_model.jl")
 
 path = string(pwd(), "/default_parameters.json")
 p = load_parameters(path);
-n_c = p[1]; lambda_f = p[2]; lambda_c = p[3];
-beta_c = p[4]; beta_c_tilde = p[5];
-beta_f = p[6]; beta_f_tilde = p[7];
-k_f = p[8]; k_c = p[9]; mu_f = p[10]; mu_c = p[11];
-rho = p[12]; theta = p[13];
+n_c_inf = p[1];
+lambda_f = p[2];
+lambda_c = p[3];
+beta_c = p[4];
+beta_c_tilde = p[5];
+beta_f = p[6];
+beta_f_tilde = p[7];
+k_f = p[8];
+k_c = p[9];
+mu_f = p[10];
+mu_c = p[11];
+rho = p[12];
+theta = p[13];
 u_zero = [ #
             lambda_f / mu_f - 100.0; 40.0; 60.0;
-            n_c - 10.0; 2.0; 8.0; 20.0; 0.0
+            n_c_inf - 10.0; 2.0; 8.0; 20.0; 0.0
         ];
 t_span = (0.0, 2000);
 ode_problem = ODEProblem(uncontrollted_rhs, u_zero, t_span, p)

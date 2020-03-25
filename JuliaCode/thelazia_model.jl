@@ -22,21 +22,7 @@ function compute_r_zero(p)
 end
 
 function uncontrollted_rhs(du, u, p, t)
-<<<<<<< HEAD
-    n_c_inf= p[1]; lambda_f = p[2]; lambda_c = p[3];
-    beta_c = p[4]; beta_c_tilde = p[5];
-    beta_f = p[6];  beta_f_tilde = p[7];
-    k_f = p[8]; k_c = p[9]; mu_f = p[10];
-    mu_c = p[11]; rho = p[12]; theta = p[13];
-    #
-    #w_f = 0.0; v_l = 0.0; v_h = 0.0;
-    #
-    s_f = u[1]; l_f = u[2]; i_f = u[3];
-    s_c = u[4]; l_c = u[5];
-    i_c_l = u[6]; i_c_h = u[7];
-    # t_c = u[8];
-=======
-    n_c_inf= p[1];
+    nc_inf = p[1];
     lambda_f = p[2];
     lambda_c = p[3];
     beta_c = p[4];
@@ -58,7 +44,6 @@ function uncontrollted_rhs(du, u, p, t)
     i_c_l = u[6];
     i_c_h = u[7];
     t_c = u[8];
->>>>>>> ff27d52908c492e5fe9915091197e8e7ba12e6c8
 
     new_s_f = (
                 lambda_f
@@ -75,18 +60,14 @@ function uncontrollted_rhs(du, u, p, t)
     new_i_f = k_f * l_f - mu_f * i_f
     #
     new_s_c = (lambda_c
-                - beta_c / n_c_inf* s_c * i_f
+                - beta_c / n_c_inf * s_c * i_f
                 - mu_c * s_c
                 + rho * t_c
                 )
-<<<<<<< HEAD
-=======
-    #
->>>>>>> ff27d52908c492e5fe9915091197e8e7ba12e6c8
-    new_l_c = beta_c / n_c_inf* s_c * i_f - (k_c + mu_c) * l_c
+    new_l_c = beta_c / n_c_inf * s_c * i_f - (k_c + mu_c) * l_c
     #
     new_i_c_l  = ( theta * k_c * l_c
-                    - beta_c_tilde / n_c_inf* i_c_l * i_f
+                    - beta_c_tilde / n_c_inf * i_c_l * i_f
                     - mu_c * i_c_l
                 )
     #
@@ -95,8 +76,6 @@ function uncontrollted_rhs(du, u, p, t)
                     - mu_c * i_c_h
     )
 
-    new_t_c = - (rho + mu_c) * t_c + v_l * i_c_l
-    #
     new_t_c = - (rho + mu_c) * t_c
     du[1] = new_s_f
     du[2] = new_l_f
@@ -109,13 +88,6 @@ function uncontrollted_rhs(du, u, p, t)
 end
 
 function rhs_f(x, u)
-<<<<<<< HEAD
-    n_c_inf= p[1]; lambda_f = p[2]; lambda_c = p[3];
-    beta_c = p[4]; beta_c_tilde = p[4];
-    beta_f = p[5];  beta_f_tilde = p[6];
-    k_f = p[7]; k_c = p[8]; mu_f = p[9];
-    mu_c = p[10]; rho = p[11]; theta = p[12];
-=======
     n_c_inf= p[1];
     lambda_f = p[2];
     lambda_c = p[3];
@@ -129,31 +101,33 @@ function rhs_f(x, u)
     mu_c = p[10];
     rho = p[11];
     theta = p[12];
->>>>>>> ff27d52908c492e5fe9915091197e8e7ba12e6c8
     #
     w_f = u[1];
     v_l = u[2];
     v_h = u[3];
     #
-    s_f = x[1]; l_f = x[2]; i_f = x[3];
-    s_c = x[4]; l_c = x[5];
-    i_c_l = x[6]; i_c_h = x[7];
+    s_f = x[1];
+    l_f = x[2];
+    i_f = x[3];
+    s_c = x[4];
+    l_c = x[5];
+    i_c_l = x[6];
+    i_c_h = x[7];
     t_c = x[8];
 
     new_s_f = (
                 lambda_f
                     - beta_f / n_c_inf* s_f * i_c_l
-                    - beta_f_tilde / n_c_inf* s_f * i_c_h
-                    - mu_f * s_f
-                    - w_f * s_f
+                    - beta_f_tilde / n_c_inf * s_f * i_c_h
+                    - (mu_f +  w_f) * s_f
             )
     #
     new_l_f = (
-                beta_f / n_c_inf* s_f * i_c_l
-                + beta_f_tilde / n_c_inf* s_f * i_c_h
-                - (k_f + mu_f) * l_f - w_f * l_f
+                beta_f / n_c_inf * s_f * i_c_l
+                + beta_f_tilde / n_c_inf * s_f * i_c_h
+                - (k_f + mu_f + w_f) * l_f
             )
-    new_i_f = k_f * l_f - mu_f * i_f - w_f * i_f
+    new_i_f = k_f * l_f - (mu_f  + w_f) * i_f
     #
     new_s_c = (lambda_c
                 - beta_c / n_c_inf * s_c * i_f
@@ -164,14 +138,13 @@ function rhs_f(x, u)
     new_l_c = beta_c / n_c_inf * s_c * i_f - (k_c + mu_c) * l_c
     #
     new_i_c_l  = ( theta * k_c * l_c
-                    - beta_c_tilde / n_c_inf* i_c_l * i_f
+                    - beta_c_tilde / n_c_inf * i_c_l * i_f
                     - (mu_c + v_l) * i_c_l
                 )
     #
     new_i_c_h = ( (1.0 - theta ) * k_c * l_c
-                    + beta_c_tilde / n_c_inf* i_c_l * i_f
-                    - mu_c * i_c_h
-                    - v_h * i_c_h
+                    + beta_c_tilde / n_c_inf * i_c_l * i_f
+                    - (mu_c + v_h) * i_c_h
     )
     new_t_c = - (rho + mu_c) * t_c + v_l * i_c_l
     #
@@ -189,22 +162,39 @@ function rhs_f(x, u)
 end
 
 function rhs_adjoints(x, u, psi)
-    n_c_inf = p[1]; lambda_f = p[2]; lambda_c = p[3];
-    beta_c = p[4]; beta_c_tilde = p[4];
-    beta_f = p[5];  beta_f_tilde = p[6];
-    k_f = p[7]; k_c = p[8]; mu_f = p[9];
-    mu_c = p[10]; rho = p[11]; theta = p[12];
-    a_l_f = p[22]; a_i_f = p[23]; a_l_c = p[24];
-    a_i_c_l = p[25]; a_i_c_h = p[26]; b_f = p[27];
-    b_c_h = p[28]; b_c_l = p[29];
+    n_c_inf = p[1];
+    lambda_f = p[2];
+    lambda_c = p[3];
+    beta_c = p[4];
+    beta_c_tilde = p[5];
+    beta_f = p[6];
+    beta_f_tilde = p[7];
+    k_f = p[8];
+    k_c = p[9];
+    mu_f = p[10];
+    mu_c = p[11];
+    rho = p[12];
+    theta = p[13];
+    a_l_f = p[22];
+    a_i_f = p[23];
+    a_l_c = p[24];
+    a_i_c_l = p[25];
+    a_i_c_h = p[26];
+    b_f = p[27];
+    b_c_l = p[28];
+    b_c_h = p[29];
     #
     w_f_t = u[1];
     v_l_t = u[2];
     v_h_t = u[3];
     #
-    s_f = x[1]; l_f = x[2]; i_f = x[3];
-    s_c = x[4]; l_c = x[5];
-    i_c_l = x[6]; i_c_h = x[7];
+    s_f = x[1];
+    l_f = x[2];
+    i_f = x[3];
+    s_c = x[4];
+    l_c = x[5];
+    i_c_l = x[6];
+    i_c_h = x[7];
     t_c = x[8];
 
     psi_s_f = psi[1]; psi_l_f = psi[2]; psi_i_f = psi[3];
@@ -219,31 +209,31 @@ function rhs_adjoints(x, u, psi)
 
     new_psi_l_f = k_f * psi_i_f - (k_f + mu_f + w_f_t) * psi_l_f + a_l_f
 
-    new_psi_i_f = beta_c_tilde * i_c_l * psi_i_c_h / n_c_inf
+    new_psi_i_f = (beta_c_tilde * i_c_l * psi_i_c_h / n_c_inf
                     - beta_c_tilde * i_c_l * psi_i_c_l / n_c_inf
                     - (mu_f + w_f_t) * psi_i_f + beta_c * psi_l_c*s_c / n_c_inf
                     - beta_c * psi_s_c * s_c / n_c_inf
-                    + a_i_f
+                    + a_i_f)
 
-    new_psi_s_c = beta_c * i_f * psi_l_c / n_c_inf
-                    - (mu_c + beta_c * i_f / n_c_inf) * psi_s_c
+    new_psi_s_c = (beta_c * i_f * psi_l_c / n_c_inf
+                    - (mu_c + beta_c * i_f / n_c_inf) * psi_s_c)
 
-    new_psi_l_c = - k_c * psi_i_c_h * (theta - 1.0) + k_c * psi_i_c_l * theta
+    new_psi_l_c = (- k_c * psi_i_c_h * (theta - 1.0) + k_c * psi_i_c_l * theta
                     - (k_c + mu_c) * psi_l_c
-                    + a_l_c
+                    + a_l_c)
 
-    new_psi_i_c_l = beta_c_tilde * i_f * psi_i_c_h / n_c_inf
+    new_psi_i_c_l = (beta_c_tilde * i_f * psi_i_c_h / n_c_inf
                     - (mu_c + beta_c_tilde * i_f / n_c_inf + v_l_t) * psi_i_c_l
                     + beta_f * psi_l_f * s_f / n_c_inf
                     - beta_f * psi_s_f * s_f / n_c_inf
-                    + a_i_c_l
+                    + a_i_c_l)
 
-    new_psi_i_c_h = -(mu_c + v_h_t) * psi_i_c_h
+    new_psi_i_c_h = (-(mu_c + v_h_t) * psi_i_c_h
                     + beta_f_tilde * psi_l_f * s_f / n_c_inf
                     - beta_f_tilde * psi_s_f * s_f / n_c_inf
                     + psi_t_c * v_h_t
-                    + a_i_c_h
-    new_psi_t_c = -(mu_c + rho) * psi_t_c
+                    + a_i_c_h)
+    new_psi_t_c = (-(mu_c + rho) * psi_t_c)
 
     psi = [
         new_psi_s_f;
@@ -259,9 +249,9 @@ function rhs_adjoints(x, u, psi)
 end
 
 function load_parameters(file_name)
-    n_c_inf= 10000
+    n_c_inf = 1000
     lambda_f = 5000
-    lambda_c = 0.9259259259259259,
+    lambda_c = 0.9259259259259259
     beta_c = .01
     beta_c_tilde = .01
     beta_f = .01
@@ -277,7 +267,7 @@ function load_parameters(file_name)
     s_f_zero = lambda_f / mu_f - 100.0;
     l_f_zrop = 40.0;
     i_f_zero = 60.0;
-    s_c_zero = n_c_inf- 10.0;
+    s_c_zero = n_c_inf - 10.0;
     l_c = 2.0;
     i_c_l = 8.0;
     i_c_h =  20.0;
@@ -288,19 +278,6 @@ function load_parameters(file_name)
     b_f = 1.0; b_c_l = 1.0; b_c_h = 1.0;
     #
     parameterDict = Dict(#
-<<<<<<< HEAD
-        "n_c_inf" => 1000.0, "lambda_f" => 5000.0, "lambda_c" => 0.9259259259259259,
-        "beta_c" => 0.01, "beta_c_tilde" => 0.01, "beta_f" => 0.01,
-        "beta_f_tilde" => 0.01, "k_f" => 0.07142857142857142,
-        "k_c" => 0.02857142857142857, "mu_f" => 0.022222222222222223,
-        "mu_c" => 0.000925925925925926, "rho" => .025, "theta" => 0.3,
-        "s_f_zero" => 22400.0, "l_f_zero" => 40.0, "i_f_zero" => 60.0,
-        "s_c_zero" => 990.0, "l_c_zero" => 2.0, "i_c_l_zero" => 8.0,
-        "i_c_h_zero" => 20.0, "t_c_zero" => 0.0,
-        "a_l_f" => 1.0, "a_i_f" => 1.0, "a_l_c" => 1.0,
-        "a_i_c_l" => 1.0, "a_i_c_h" => 1.0,
-        "b_f" => 1.0, "b_c_l" => 1.0, "b_c_h" => 1.0
-=======
         "n_c_inf" => 1000.0,
         "lambda_f" => 5000.0,
         "lambda_c" => 0.9259259259259259,
@@ -330,7 +307,6 @@ function load_parameters(file_name)
         "b_f" => 1.0,
         "b_c_l" => 1.0,
         "b_c_h" => 1.0
->>>>>>> ff27d52908c492e5fe9915091197e8e7ba12e6c8
         );
     string_data = JSON.json(parameterDict)
     #JSON.print(parameterJSON)
