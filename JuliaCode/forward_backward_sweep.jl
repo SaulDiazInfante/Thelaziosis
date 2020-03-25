@@ -360,7 +360,7 @@ v_h_min = 0.05; v_h_max = 0.92;
 path = string(pwd(), "/default_parameters.json")
 p = load_parameters(path);
 #
-#x, u, psi = forward_backward_sweep();
-#backward_plot(psi)
+x, u, psi = forward_backward_sweep();
+backward_plot(psi)
 forward_plot()
-#controlled_model_plot(x, u, psi)
+controlled_model_plot(x, u, psi)

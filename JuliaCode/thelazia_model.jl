@@ -92,15 +92,15 @@ function rhs_f(x, u)
     lambda_f = p[2];
     lambda_c = p[3];
     beta_c = p[4];
-    beta_c_tilde = p[4];
-    beta_f = p[5];
-    beta_f_tilde = p[6];
-    k_f = p[7];
-    k_c = p[8];
-    mu_f = p[9];
-    mu_c = p[10];
-    rho = p[11];
-    theta = p[12];
+    beta_c_tilde = p[5];
+    beta_f = p[6];
+    beta_f_tilde = p[7];
+    k_f = p[8];
+    k_c = p[9];
+    mu_f = p[10];
+    mu_c = p[11];
+    rho = p[12];
+    theta = p[13];
     #
     w_f = u[1];
     v_l = u[2];
@@ -260,7 +260,6 @@ function load_parameters(file_name)
     k_c = 0.02857142857142857
     mu_f = 0.022222222222222223
     mu_c = 0.000925925925925926
-    lambda_c = n_c_inf* mu_c
     rho = 0.025
     theta = 0.3
     # Initial conditions
