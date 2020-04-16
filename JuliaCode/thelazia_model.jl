@@ -9,14 +9,14 @@ function compute_r_zero(p)
     s_f_hat = lambda_f / mu_f
     #
     frac_1 = k_f / (mu_f + k_f)
-    frac_2 = beta_c * s_c_hat / (mu_c * n_c_inf)
+    frac_2 = beta_c * s_c_hat / (mu_f * n_c_inf)
 
     frac_3 = (1.0 - theta) * k_c / (mu_c + k_c)
     frac_4 = beta_f_tilde * s_f_hat / (mu_c * n_c_inf)
 
     frac_5 = beta_f * s_f_hat / (n_c_inf * mu_c)
     frac_6 = theta * k_c / (mu_c  + k_c)
-    r_zero = (frac_1 * frac_2 + frac_3 * frac_4 + frac_5 * frac_6) ^ 0.25
+    r_zero = (frac_1 * frac_2 ( frac_3 * frac_4 + frac_5 * frac_6)) ^ 0.25
     println("R0:\t", r_zero)
     return r_zero
 end

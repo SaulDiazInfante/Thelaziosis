@@ -349,7 +349,7 @@ using LinearAlgebra:norm
 # using Fontconfig
 include("thelazia_model.jl")
 # Simulation parameters
-n_max = 10000; n_iter = 100; t_f = 2000.0;
+n_max = 500000; n_iter = 100; t_f = 700;
 t_span = range(0.0, t_f, length=n_max);
 h = t_span[2]; eps = 1e-3;
 x_dim = 8; u_dim = 3;
