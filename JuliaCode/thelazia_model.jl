@@ -16,7 +16,7 @@ function compute_r_zero(p)
 
     frac_5 = beta_f * s_f_hat / (n_c_inf * mu_c)
     frac_6 = theta * k_c / (mu_c  + k_c)
-    r_zero = (frac_1 * frac_2 ( frac_3 * frac_4 + frac_5 * frac_6)) ^ 0.25
+    r_zero = (frac_1 * frac_2 * ( frac_3 * frac_4 + frac_5 * frac_6)) ^ 0.25
     println("R0:\t", r_zero)
     return r_zero
 end
