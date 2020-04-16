@@ -2,6 +2,7 @@
 using Pkg
 #
 # Pkg.build("PyCall")
+Pkg.add("Cairo")
 Pkg.add("DifferentialEquations")
 Pkg.add("JSON")
 Pkg.add("CSV")
@@ -11,6 +12,7 @@ Pkg.add("Gadfly")
 Pkg.add("JLD")
 Pkg.add("HDF5")
 Pkg.add("PyPlot")
+Pkg.add("Fontconfig")
 using DifferentialEquations
 using JSON
 using JLD, HDF5
@@ -42,9 +44,9 @@ rho = p[12];
 theta = p[13];
 u_zero = [ #
             lambda_f / mu_f - 100.0; 40.0; 60.0;
-            n_c_inf - 10.0; 2.0; 8.0; 20.0; 0.0
+            n_c_inf - 50.0; 2.0; 8.0; 20.0; 0.0
         ];
-t_span = (0.0, 2000);
+t_span = (0.0, 10000);
 ode_problem = ODEProblem(uncontrollted_rhs, u_zero, t_span, p)
 sol = solve(ode_problem)
 t = sol.t
